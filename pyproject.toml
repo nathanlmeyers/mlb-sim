@@ -1,0 +1,21 @@
+[project]
+name = "mlb-sim"
+version = "0.1.0"
+description = "MLB game simulation engine with pitch-by-pitch and box score models"
+requires-python = ">=3.12"
+dependencies = [
+    "pybaseball>=2.3",
+    "numpy>=1.26",
+    "pandas>=2.1",
+    "psycopg2-binary>=2.9",
+    "sqlalchemy>=2.0",
+    "click>=8.0",
+    "MLB-StatsAPI>=1.7",
+]
+
+[project.scripts]
+mlb-sim = "cli:cli"
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.backends._legacy:_Backend"
