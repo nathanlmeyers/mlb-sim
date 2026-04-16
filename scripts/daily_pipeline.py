@@ -109,6 +109,87 @@ def step3_fetch_lineups(target_date: str) -> dict:
     return lineups
 
 
+def _cache_kalshi_prices(kalshi_markets: dict, target_date: str):
+    """Cache today's Kalshi prices for future backtesting."""
+    history_path = Path(".context/kalshi_history.json")
+    history = {}
+    if history_path.exists():
+        with open(history_path) as f:
+            history = json.load(f)
+
+    today_prices = {}
+    for game_title, mkt in kalshi_markets.get("today", {}).items():
+        ml = mkt.get("ml", {})
+        prices = {}
+        for side, info in ml.items():
+            mid = info.get("mid")
+            if mid:
+                prices[side] = mid
+        if prices:
+            today_prices[game_title] = prices
+
+        # Also cache totals
+        totals = {}
+        for t in mkt.get("total", []):
+            if t.get("line") and t.get("over_bid"):
+                over_mid = (t["over_bid"] + (t.get("over_ask") or t["over_bid"])) / 2
+                totals[str(t["line"])] = over_mid
+        if totals:
+            today_prices.setdefault(game_title, {})["totals"] = totals
+
+    if today_prices:
+        history[target_date] = today_prices
+        with open(history_path, "w") as f:
+            json.dump(history, f, indent=2)
+        print(f"  Cached Kalshi prices for {len(today_prices)} games")
+
+
+def _parse_market_odds_for_game(game_title: str, kalshi_markets: dict) -> dict | None:
+    """Extract market odds for a specific game from Kalshi data.
+
+    Returns {"home_win_prob": float, "away_win_prob": float, "total": float|None}
+    or None if no data.
+    """
+    for markets_set in [kalshi_markets.get("today", {}), kalshi_markets.get("tomorrow", {})]:
+        for mkt_title, mkt in markets_set.items():
+            # Fuzzy match on game title
+            if not any(word in mkt_title.lower() for word in game_title.lower().split()[:2]):
+                continue
+
+            ml = mkt.get("ml", {})
+            if len(ml) < 2:
+                continue
+
+            # Get the two sides' midpoints
+            sides = list(ml.values())
+            if not all(s.get("mid") for s in sides):
+                continue
+
+            # First side listed is typically away on Kalshi
+            probs = [s["mid"] for s in sides]
+            # Normalize to sum to 1
+            total_p = sum(probs)
+            if total_p > 0:
+                probs = [p / total_p for p in probs]
+
+            # Parse total from totals markets
+            game_total = None
+            for t in mkt.get("total", []):
+                if t.get("line") and t.get("over_bid"):
+                    over_mid = (t["over_bid"] + (t.get("over_ask") or t["over_bid"])) / 2
+                    if abs(over_mid - 0.5) < 0.15:  # closest to 50/50 is the market line
+                        game_total = t["line"]
+
+            return {
+                "home_win_prob": probs[1] if len(probs) > 1 else probs[0],
+                "away_win_prob": probs[0] if len(probs) > 1 else 1 - probs[0],
+                "total": game_total,
+                "raw_ml": ml,
+            }
+
+    return None
+
+
 def step4_run_simulations(
     target_date: str,
     current_games: list,
@@ -117,6 +198,7 @@ def step4_run_simulations(
     starter_lookup: dict,
     park_factors: dict,
     prior_games: list | None,
+    kalshi_markets: dict | None = None,
 ) -> list:
     """Run simulations for all today's games."""
     print(f"\n[4/5] Running simulations...")
@@ -153,11 +235,30 @@ def step4_run_simulations(
 
         park = park_factors.get(TEAM_ABBR.get(home, ""), neutral)
 
+        # Look up Kalshi market odds for this game
+        game_market = None
+        if kalshi_markets:
+            game_market = _parse_market_odds_for_game(
+                f"{away} {home}", kalshi_markets
+            )
+
         # Run box score sim
         results = simulate_n_box_score_games(ht, at, hs, as_, park, n_sims=5000, rng=rng)
 
         home_qf = _starter_quality_factor(hs)
         away_qf = _starter_quality_factor(as_)
+
+        # Apply market blending to win probability
+        model_wp = results["home_win_pct"]
+        blended_wp = model_wp
+        market_weight_used = 0.0
+        if game_market and game_market.get("home_win_prob"):
+            from betting.confidence import compute_confidence
+            confidence = 0.5  # default when we don't have dual engines
+            adj_wt = config.TRAINED_MARKET_WEIGHT * (1.0 - config.MARKET_CONFIDENCE_DISCOUNT * confidence)
+            blended_wp = (1 - adj_wt) * model_wp + adj_wt * game_market["home_win_prob"]
+            blended_wp = max(0.02, min(0.98, blended_wp))
+            market_weight_used = adj_wt
 
         pred = {
             "game_id": str(g["game_id"]),
@@ -168,8 +269,11 @@ def step4_run_simulations(
             "home_sp": hs_name or "TBD",
             "away_sp_qf": away_qf,
             "home_sp_qf": home_qf,
-            "home_wp": results["home_win_pct"],
-            "away_wp": 1 - results["home_win_pct"],
+            "model_home_wp": results["home_win_pct"],
+            "home_wp": blended_wp,
+            "away_wp": 1 - blended_wp,
+            "market_home_wp": game_market.get("home_win_prob") if game_market else None,
+            "market_weight": market_weight_used,
             "home_cover": results["home_cover_pct"],
             "total_mean": results["total_mean"],
             "total_std": results["total_std"],
@@ -306,11 +410,14 @@ def step5_compare_and_report(predictions: list, kalshi_markets: dict, target_dat
 
     # Print all predictions
     for pred in predictions:
-        fair_ml = win_probability_to_moneyline(pred["home_wp"])
+        model_wp = pred.get("model_home_wp", pred["home_wp"])
+        mkt_wp = pred.get("market_home_wp")
+        blended = pred["home_wp"]
+        mkt_str = f"Mkt:{mkt_wp:.0%}" if mkt_wp else "Mkt:—"
         print(f"  {pred['away'][:12]+' @ '+pred['home'][:12]:<30} "
-              f"HW:{pred['home_wp']:>5.1%} "
-              f"Tot:{pred['total_mean']:>5.1f} "
-              f"SP:{pred['away_sp'][:10]}({pred['away_sp_qf']:.2f}) v {pred['home_sp'][:10]}({pred['home_sp_qf']:.2f})")
+              f"Mdl:{model_wp:.0%} {mkt_str} →{blended:.0%}  "
+              f"Tot:{pred['total_mean']:.1f}  "
+              f"SP:{pred['away_sp'][:10]}({pred['away_sp_qf']:.2f})v{pred['home_sp'][:10]}({pred['home_sp_qf']:.2f})")
 
     # Print edges
     if edges:
@@ -362,13 +469,17 @@ def main():
     # Step 2: Fetch Kalshi
     kalshi_markets = step2_fetch_kalshi(target_date)
 
+    # Cache Kalshi prices for future backtesting
+    _cache_kalshi_prices(kalshi_markets, target_date)
+
     # Step 3: Fetch lineups
     lineups = step3_fetch_lineups(target_date)
 
-    # Step 4: Run simulations
+    # Step 4: Run simulations (with market priors)
     predictions = step4_run_simulations(
         target_date, current_games, pitcher_idx, prior_pitcher_idx,
         starter_lookup, park_factors, prior_games,
+        kalshi_markets=kalshi_markets,
     )
 
     # Step 5: Compare and report

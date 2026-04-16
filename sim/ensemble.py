@@ -38,6 +38,7 @@ def predict_game(
     weather: WeatherAdjustment | None = None,
     schedule_home: ScheduleAdjustment | None = None,
     schedule_away: ScheduleAdjustment | None = None,
+    market_odds: dict | None = None,
     n_sims: int = config.DEFAULT_NUM_SIMS,
     rng: np.random.Generator | None = None,
 ) -> dict:
@@ -120,6 +121,24 @@ def predict_game(
         box_results["home_win_pct"], detailed_results["home_win_pct"]
     )
 
+    # 8. Blend with market odds (Kalshi) as Bayesian prior
+    market_weight_applied = 0.0
+    if market_odds and config.TRAINED_MARKET_WEIGHT > 0:
+        market_wp = market_odds.get("home_win_prob")
+        if market_wp and 0.05 < market_wp < 0.95:
+            # Confidence-adjusted weight: trust model more when engines agree
+            adj_mkt_wt = config.TRAINED_MARKET_WEIGHT * (
+                1.0 - config.MARKET_CONFIDENCE_DISCOUNT * confidence
+            )
+            calibrated_wp = (1 - adj_mkt_wt) * calibrated_wp + adj_mkt_wt * market_wp
+            calibrated_wp = float(np.clip(calibrated_wp, 0.02, 0.98))
+            market_weight_applied = adj_mkt_wt
+
+            # Blend total toward market total if available
+            market_total = market_odds.get("total")
+            if market_total and market_total > 0:
+                total_mean = (1 - adj_mkt_wt) * total_mean + adj_mkt_wt * market_total
+
     # Build betting prediction
     prediction = BettingPrediction(
         home_win_prob=calibrated_wp,
@@ -143,6 +162,8 @@ def predict_game(
         "raw_blended_wp": blended_wp,
         "calibrated_wp": calibrated_wp,
         "confidence": confidence,
+        "market_odds": market_odds,
+        "market_weight_applied": market_weight_applied,
         "box_results": box_results,
         "detailed_results": detailed_results,
     }

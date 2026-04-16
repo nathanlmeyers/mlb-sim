@@ -202,6 +202,11 @@ HBP_PER_PITCH = 0.004
 # Pitcher command (strike%)
 LEAGUE_AVG_STRIKE_PCT = 0.62  # MLB avg ~62% of pitches are strikes
 
+# Market prior (Kalshi/Vegas) blending
+# Blend model prediction with market odds for better calibration
+TRAINED_MARKET_WEIGHT = 0.50  # 0=pure model, 1=pure market. Grid search to optimize.
+MARKET_CONFIDENCE_DISCOUNT = 0.30  # reduce market weight by 30% when engines agree
+
 # Betting parameters
 MIN_BET_EV = 0.03          # 3% minimum edge to recommend a bet
 KELLY_FRACTION = 0.125     # eighth-Kelly for conservative sizing
