@@ -1,0 +1,34 @@
+{
+  "source": "fangraphs_leaders_major_league_2024",
+  "season": 2024,
+  "batting": {
+    "PA": 182449,
+    "BB_pct": 0.082,
+    "K_pct": 0.226,
+    "BB_K_ratio": 0.36,
+    "AVG": 0.243,
+    "OBP": 0.312,
+    "SLG": 0.399,
+    "OPS": 0.711,
+    "ISO": 0.156,
+    "Spd": 5.0,
+    "BABIP": 0.291,
+    "wOBA": 0.310,
+    "wRC_plus": 100
+  },
+  "batted_ball": {
+    "GB_FB_ratio": 1.11,
+    "LD_pct": 0.196,
+    "GB_pct": 0.422,
+    "FB_pct": 0.381,
+    "IFFB_pct": 0.103,
+    "HR_FB_pct": 0.116,
+    "IFH_pct": 0.067,
+    "pull_pct": 0.406,
+    "center_pct": 0.352,
+    "oppo_pct": 0.242,
+    "soft_pct": 0.161,
+    "med_pct": 0.526,
+    "hard_pct": 0.313
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "2026-04-15": {
+    "New York M vs Los Angeles D": {
+      "NYM": 0.355,
+      "LAD": 0.645
+    },
+    "Texas vs A's": {
+      "TEX": 0.475,
+      "ATH": 0.525
+    },
+    "Seattle vs San Diego": {
+      "SEA": 0.495,
+      "SD": 0.505
+    },
+    "Colorado vs Houston": {
+      "COL": 0.355,
+      "HOU": 0.635
+    },
+    "Toronto vs Milwaukee": {
+      "TOR": 0.615,
+      "MIL": 0.385
+    },
+    "Tampa Bay vs Chicago WS": {
+      "TB": 0.475,
+      "CWS": 0.525
+    },
+    "Miami vs Atlanta": {
+      "MIA": 0.17500000000000004,
+      "ATL": 0.825
+    },
+    "Los Angeles A vs New York Y": {
+      "LAA": 0.18499999999999997,
+      "NYY": 0.825
+    },
+    "Washington vs Pittsburgh": {
+      "WSH": 0.14500000000000002,
+      "PIT": 0.86
+    },
+    "San Francisco vs Cincinnati": {
+      "SF": 0.025000000000000015,
+      "CIN": 0.975
+    },
+    "Kansas City vs Detroit": {
+      "KC": 0.45499999999999996,
+      "DET": 0.545
+    },
+    "Chicago C vs Philadelphia": {
+      "CHC": 0.935,
+      "PHI": 0.06999999999999998
+    }
+  },
+  "2026-04-18": {
+    "San Diego vs Los Angeles A": {
+      "SD": 0.495,
+      "LAA": 0.505
+    },
+    "Toronto vs Arizona": {
+      "TOR": 0.41500000000000004,
+      "AZ": 0.585
+    },
+    "Los Angeles D vs Colorado": {
+      "LAD": 0.725,
+      "COL": 0.275
+    },
+    "Texas vs Seattle": {
+      "TEX": 0.44499999999999995,
+      "SEA": 0.555
+    },
+    "Atlanta vs Philadelphia": {
+      "ATL": 0.46499999999999997,
+      "PHI": 0.535
+    },
+    "St. Louis vs Houston": {
+      "STL": 0.43499999999999994,
+      "HOU": 0.5650000000000001
+    },
+    "Baltimore vs Cleveland": {
+      "BAL": 0.44499999999999995,
+      "CLE": 0.555
+    },
+    "Milwaukee vs Miami": {
+      "MIL": 0.495,
+      "MIA": 0.505
+    },
+    "Detroit vs Boston": {
+      "DET": 0.575,
+      "BOS": 0.41500000000000004
+    },
+    "Tampa Bay vs Pittsburgh": {
+      "TB": 0.41500000000000004,
+      "PIT": 0.585
+    },
+    "San Francisco vs Washington": {
+      "SF": 0.515,
+      "WSH": 0.495
+    },
+    "Chicago WS vs A's": {
+      "CWS": 0.405,
+      "ATH": 0.595
+    },
+    "New York M vs Chicago C": {
+      "NYM": 0.485,
+      "CHC": 0.525
+    },
+    "Cincinnati vs Minnesota": {
+      "CIN": 0.44499999999999995,
+      "MIN": 0.555
+    },
+    "Kansas City vs New York Y": {
+      "KC": 0.405,
+      "NYY": 0.595
+    }
+  }
+}

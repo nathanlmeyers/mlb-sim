@@ -1,0 +1,52 @@
+{
+  "source": "computed_from_statcast_2024_fangraphs_batted_ball",
+  "season": 2024,
+  "league_totals": {
+    "PA": 182449,
+    "SO": 41197,
+    "BB": 14929,
+    "HBP": 2020,
+    "H": 39823,
+    "1B": 25902,
+    "2B": 7771,
+    "3B": 697,
+    "HR": 5453,
+    "BIP": 124303,
+    "est_GB": 52455,
+    "est_FB": 47359,
+    "est_LD": 24363
+  },
+  "probabilities": {
+    "ground_ball": {
+      "P_OUT": 0.761,
+      "P_SINGLE": 0.172,
+      "P_INFIELD_HIT": 0.067,
+      "P_DOUBLE": 0.008
+    },
+    "fly_ball_non_HR": {
+      "P_OUT": 0.9027,
+      "P_SINGLE": 0.0292,
+      "P_DOUBLE": 0.0438,
+      "P_TRIPLE": 0.0097
+    },
+    "line_drive": {
+      "P_OUT": 0.33,
+      "P_SINGLE": 0.4494,
+      "P_DOUBLE": 0.1605,
+      "P_TRIPLE": 0.0193,
+      "P_HR": 0.028
+    }
+  },
+  "league_averages": {
+    "K_pct": 0.2258,
+    "BB_pct": 0.0818,
+    "HBP_pct": 0.0111,
+    "HR_FB_pct": 0.116,
+    "BABIP": 0.291,
+    "runs_per_game": 4.39,
+    "GB_pct": 0.422,
+    "FB_pct": 0.381,
+    "LD_pct": 0.196,
+    "IFFB_pct": 0.103
+  }
+}

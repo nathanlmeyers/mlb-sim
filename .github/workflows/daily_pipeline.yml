@@ -1,0 +1,115 @@
+name: MLB Daily Pipeline
+
+on:
+  schedule:
+    # 13:00 UTC = 9am ET (EDT) — morning run: settle yesterday's bets
+    - cron: '0 13 * * *'
+    # 18:00 UTC = 2pm ET (EDT) — afternoon run: generate today's picks with lineups
+    - cron: '0 18 * * *'
+  workflow_dispatch:
+    inputs:
+      run_type:
+        description: 'Which run to execute (morning settles yesterday, afternoon generates today picks, both runs everything)'
+        required: false
+        default: 'afternoon'
+        type: choice
+        options:
+          - morning
+          - afternoon
+          - both
+
+jobs:
+  run_pipeline:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install numpy pandas MLB-StatsAPI sqlalchemy click
+
+      - name: Restore 2025 season cache
+        id: cache-2025
+        uses: actions/cache@v4
+        with:
+          path: .context/season_2025.json
+          key: season-2025-v1
+
+      - name: Fetch 2025 season (cache miss — one-time ~15 min)
+        if: steps.cache-2025.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p .context
+          python scripts/fetch_season.py 2025
+
+      - name: Determine run type
+        id: run_type
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            HOUR=$(date -u +%H)
+            if [ "$HOUR" = "13" ]; then
+              echo "type=morning" >> $GITHUB_OUTPUT
+            else
+              echo "type=afternoon" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "type=${{ inputs.run_type }}" >> $GITHUB_OUTPUT
+          fi
+          echo "Run type: $(cat $GITHUB_OUTPUT | grep type= | cut -d= -f2)"
+
+      - name: Compute dates
+        id: dates
+        run: |
+          TODAY=$(python -c "from datetime import date; print(date.today().isoformat())")
+          YESTERDAY=$(python -c "from datetime import date, timedelta; print((date.today()-timedelta(days=1)).isoformat())")
+          echo "today=$TODAY" >> $GITHUB_OUTPUT
+          echo "yesterday=$YESTERDAY" >> $GITHUB_OUTPUT
+          echo "Today=$TODAY  Yesterday=$YESTERDAY"
+
+      - name: Morning run — settle yesterday
+        if: steps.run_type.outputs.type == 'morning' || steps.run_type.outputs.type == 'both'
+        run: |
+          echo "=== Morning run for ${{ steps.dates.outputs.today }} (settling ${{ steps.dates.outputs.yesterday }}) ==="
+          python scripts/fetch_daily.py ${{ steps.dates.outputs.yesterday }}
+          python scripts/paper_trade.py settle ${{ steps.dates.outputs.yesterday }} || echo "(No open bets to settle or games not yet final)"
+          python scripts/paper_trade.py report
+
+      - name: Afternoon run — generate today's picks
+        if: steps.run_type.outputs.type == 'afternoon' || steps.run_type.outputs.type == 'both'
+        run: |
+          echo "=== Afternoon run for ${{ steps.dates.outputs.today }} — generating picks ==="
+          python scripts/daily_pipeline.py
+          python scripts/paper_trade.py log ${{ steps.dates.outputs.today }}
+          python scripts/paper_trade.py report
+
+      - name: Commit updated data
+        run: |
+          git config user.name "mlb-sim-bot"
+          git config user.email "actions@users.noreply.github.com"
+
+          # Stage all tracked data files
+          git add -A .context/paper_ledger.json \
+                    .context/pipeline_*.json \
+                    .context/season_2026.json \
+                    .context/season_2026_summary.json \
+                    .context/espn_odds_2026.json \
+                    .context/kalshi_history.json \
+                    .context/games_2026_*.json \
+                    2>/dev/null || true
+
+          if git diff --cached --quiet; then
+            echo "No data changes to commit"
+          else
+            git commit -m "auto: ${{ steps.run_type.outputs.type }} run ${{ steps.dates.outputs.today }}"
+            git push
+          fi

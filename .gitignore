@@ -5,3 +5,15 @@ dist/
 build/
 .env
 .venv/
+
+# Big data files — cached in GitHub Actions, refetched locally via scripts/fetch_season.py 2025
+.context/season_2025.json
+.context/espn_odds_2025.json
+
+# Eval artifacts — regenerated on demand, noisy in git
+.context/eval_*.json
+
+# Conductor workspace internals — not part of the project
+.context/plans/
+.context/notes.md
+.context/todos.md

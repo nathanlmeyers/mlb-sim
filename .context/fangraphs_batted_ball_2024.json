@@ -1,0 +1,23 @@
+{
+  "source": "fangraphs_leaders_major_league_type2_2024",
+  "season": 2024,
+  "league_totals": {
+    "BABIP": 0.291,
+    "GB_FB_ratio": 1.11,
+    "LD_pct": 0.196,
+    "GB_pct": 0.422,
+    "FB_pct": 0.381,
+    "IFFB_pct": 0.103,
+    "HR_FB_pct": 0.116,
+    "infield_hits": 3504,
+    "IFH_pct": 0.067,
+    "bunt_hits": 371,
+    "bunt_hit_pct": 0.312,
+    "pull_pct": 0.406,
+    "center_pct": 0.352,
+    "oppo_pct": 0.242,
+    "soft_pct": 0.161,
+    "med_pct": 0.526,
+    "hard_pct": 0.313
+  }
+}

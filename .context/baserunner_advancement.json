@@ -1,0 +1,49 @@
+{
+  "source": "baseball_reference_2024_baserunning",
+  "season": 2024,
+  "raw": {
+    "runs_per_game": 4.39,
+    "on_first_single_total": 8241,
+    "on_first_single_stayed_2nd": 5534,
+    "on_first_single_to_3rd": 2615,
+    "on_first_double_total": 2455,
+    "on_first_double_to_3rd": 1457,
+    "on_first_double_scored": 936,
+    "on_second_single_total": 4881,
+    "on_second_single_to_3rd": 1711,
+    "on_second_single_scored": 3010,
+    "GIDP_opp": "need from situational page",
+    "GIDP_suc": "need from situational page",
+    "extra_bases_taken_pct": 0.42,
+    "stolen_base_pct": 0.79
+  },
+  "computed_probabilities": {
+    "P_ADVANCE_FIRST_TO_THIRD_ON_SINGLE": 0.3173,
+    "P_SCORE_FROM_FIRST_ON_DOUBLE": 0.3813,
+    "P_SCORE_FROM_SECOND_ON_SINGLE": 0.6167,
+    "P_DOUBLE_PLAY_ON_GB_OUT": 0.2962,
+    "P_SCORE_FROM_THIRD_LT_2_OUTS": 0.512,
+    "P_SCORE_FROM_THIRD_ON_SINGLE_ESTIMATED": 0.89,
+    "P_SCORE_FROM_SECOND_ON_DOUBLE_ESTIMATED": 0.95
+  },
+  "notes": {
+    "P_SCORE_FROM_THIRD_ON_SINGLE": "Not directly available; estimated ~0.87-0.92 from run expectancy tables",
+    "P_SCORE_FROM_SECOND_ON_DOUBLE": "Not directly available; estimated ~0.95 (nearly always scores)",
+    "P_DOUBLE_PLAY_ON_GB": "Need situational batting GIDP data - browser disconnected before extraction",
+    "P_SAC_FLY": "Need lt_2_out_on_third data - browser disconnected before extraction"
+  },
+  "situational": {
+    "GIDP_opp": 33097,
+    "GIDP_suc": 3227,
+    "GIDP_pct": 0.098,
+    "lt_2_out_on_third_opp": 9170,
+    "lt_2_out_on_third_scored": 4693,
+    "lt_2_out_on_third_pct": 0.512,
+    "no_out_on_second_opp": 7473,
+    "no_out_on_second_adv": 3810,
+    "productive_outs_opp": 16110,
+    "productive_outs": 4507,
+    "productive_outs_pct": 0.28,
+    "PA_with_platoon_adv_pct": 0.541
+  }
+}
