@@ -37,7 +37,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install numpy pandas MLB-StatsAPI sqlalchemy click
+          pip install numpy pandas MLB-StatsAPI sqlalchemy psycopg2-binary click
 
       - name: Restore 2025 season cache
         id: cache-2025
