@@ -204,8 +204,15 @@ LEAGUE_AVG_STRIKE_PCT = 0.62  # MLB avg ~62% of pitches are strikes
 
 # Market prior (Kalshi/Vegas) blending
 # Blend model prediction with market odds for better calibration
-TRAINED_MARKET_WEIGHT = 0.50  # 0=pure model, 1=pure market. Grid search to optimize.
+# NBA sim uses 0.70 after grid search on 200 games; starting higher based on
+# paper trading losses showing old 0.50 weight was too lenient vs sharp markets.
+TRAINED_MARKET_WEIGHT = 0.65  # 0=pure model, 1=pure market. Grid search to optimize.
 MARKET_CONFIDENCE_DISCOUNT = 0.30  # reduce market weight by 30% when engines agree
+
+# Bet selection thresholds (tightened after day-2 paper losses against sharp markets)
+MIN_EDGE_THRESHOLD = 0.04  # minimum 4% edge to log a bet (was 2%)
+MIN_MARKET_PRICE = 0.15    # skip bets where market price < 15% (don't bet vs strong conviction)
+MAX_MARKET_PRICE = 0.85    # skip bets where market price > 85% (don't fade heavy favorites)
 
 # Betting parameters
 MIN_BET_EV = 0.03          # 3% minimum edge to recommend a bet

@@ -17,6 +17,7 @@ from pathlib import Path
 sys.path.insert(0, ".")
 
 import statsapi
+import config
 
 LEDGER_PATH = Path(".context/paper_ledger.json")
 BANKROLL_START = 20.00  # starting bankroll
@@ -57,17 +58,24 @@ def log_bets(target_date: str):
     print(f"Bankroll: ${bankroll:.2f}")
     print(f"{'='*70}")
 
+    skipped_extreme = 0
+    skipped_small = 0
     for e in edges:
-        if e.get("edge", 0) < 0.04:
+        if e.get("edge", 0) < config.MIN_EDGE_THRESHOLD:
+            skipped_small += 1
             continue  # skip small edges
+
+        buy_price = e.get("kalshi", 0.50)
+        # Defensive: skip extreme markets (don't bet vs strong conviction)
+        if buy_price < config.MIN_MARKET_PRICE or buy_price > config.MAX_MARKET_PRICE:
+            skipped_extreme += 1
+            continue
 
         # Kelly sizing
         kelly_pct = min(0.03, e["edge"] * 0.125)  # eighth-Kelly, max 3%
         stake = round(bankroll * kelly_pct, 2)
         if stake < 0.01:
             continue
-
-        buy_price = e.get("kalshi", 0.50)
         shares = int(stake / buy_price) if buy_price > 0 else 0
         if shares < 1:
             shares = 1
@@ -111,6 +119,9 @@ def log_bets(target_date: str):
         print(f"  Remaining bankroll: ${ledger['bankroll']:.2f}")
     else:
         print("  No bets met the threshold.")
+
+    if skipped_small or skipped_extreme:
+        print(f"  Filtered: {skipped_small} small-edge, {skipped_extreme} extreme-market")
 
 
 def settle_bets(target_date: str):

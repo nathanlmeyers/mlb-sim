@@ -320,6 +320,9 @@ def step5_compare_and_report(predictions: list, kalshi_markets: dict, target_dat
     print(f"  {'Game':<30} {'Model':>8} {'Kalshi':>8} {'Edge':>8} {'Type':>8} {'EV':>8}")
     print(f"  {'-'*80}")
 
+    filtered_extreme = 0
+    filtered_small_edge = 0
+
     for pred in predictions:
         away_short = pred["away"][:12]
         home_short = pred["home"][:12]
@@ -352,18 +355,25 @@ def step5_compare_and_report(predictions: list, kalshi_markets: dict, target_dat
                     kalshi_price = mid
 
                 edge = model_prob - kalshi_price
-                if abs(edge) > 0.02:
+                # Skip extreme markets — don't bet against strong market conviction
+                if kalshi_price < config.MIN_MARKET_PRICE or kalshi_price > config.MAX_MARKET_PRICE:
+                    if edge > 0:
+                        filtered_extreme += 1
+                    continue
+                if edge > 0:
+                    if edge < config.MIN_EDGE_THRESHOLD:
+                        filtered_small_edge += 1
+                        continue
                     ev = model_prob * (1.0 / kalshi_price - 1) - (1 - model_prob)
                     direction = "HOME ML" if (is_home_side and edge > 0) or (not is_home_side and edge < 0) else "AWAY ML"
-                    if edge > 0:
-                        edges.append({
-                            "game": game_label,
-                            "type": direction,
-                            "model": model_prob,
-                            "kalshi": kalshi_price,
-                            "edge": edge,
-                            "ev": ev,
-                        })
+                    edges.append({
+                        "game": game_label,
+                        "type": direction,
+                        "model": model_prob,
+                        "kalshi": kalshi_price,
+                        "edge": edge,
+                        "ev": ev,
+                    })
 
         # Check totals (may be in tomorrow's markets)
         for markets_set in [today_markets, tomorrow_markets]:
@@ -387,7 +397,12 @@ def step5_compare_and_report(predictions: list, kalshi_markets: dict, target_dat
                         over_edge = model_over - over_mid
                         under_edge = model_under - kalshi_under
 
-                        if under_edge > 0.05:
+                        # Skip extreme markets on totals too
+                        if over_mid < config.MIN_MARKET_PRICE or over_mid > config.MAX_MARKET_PRICE:
+                            filtered_extreme += 1
+                            continue
+
+                        if under_edge > config.MIN_EDGE_THRESHOLD:
                             ev = model_under * (1.0 / kalshi_under - 1) - (1 - model_under)
                             edges.append({
                                 "game": game_label,
@@ -397,7 +412,7 @@ def step5_compare_and_report(predictions: list, kalshi_markets: dict, target_dat
                                 "edge": under_edge,
                                 "ev": ev,
                             })
-                        elif over_edge > 0.05:
+                        elif over_edge > config.MIN_EDGE_THRESHOLD:
                             ev = model_over * (1.0 / over_mid - 1) - (1 - model_over)
                             edges.append({
                                 "game": game_label,
@@ -444,6 +459,15 @@ def step5_compare_and_report(predictions: list, kalshi_markets: dict, target_dat
                 print(f"    {e['type']:<15} {e['game']:<25} Kelly: {kelly:.2%} of bankroll")
     else:
         print("\n  No significant edges found vs Kalshi prices.")
+
+    # Show filter counts
+    if filtered_extreme or filtered_small_edge:
+        print()
+        print(f"  FILTERS APPLIED:")
+        if filtered_extreme:
+            print(f"    Skipped {filtered_extreme} bets vs extreme markets (< {config.MIN_MARKET_PRICE:.0%} or > {config.MAX_MARKET_PRICE:.0%})")
+        if filtered_small_edge:
+            print(f"    Skipped {filtered_small_edge} bets with edge < {config.MIN_EDGE_THRESHOLD:.0%} (noise)")
 
     print()
     print("=" * 85)
