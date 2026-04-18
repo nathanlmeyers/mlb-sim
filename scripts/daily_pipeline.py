@@ -199,8 +199,12 @@ def step4_run_simulations(
     park_factors: dict,
     prior_games: list | None,
     kalshi_markets: dict | None = None,
+    only_game_id: str | None = None,
 ) -> list:
-    """Run simulations for all today's games."""
+    """Run simulations for today's games.
+
+    If only_game_id is set, run for just that one game.
+    """
     print(f"\n[4/5] Running simulations...")
     neutral = ParkFactor(venue="N", overall_factor=1.0, hr_factor=1.0, h_factor=1.0, bb_factor=1.0)
     league_avg = build_league_average_pitcher(is_starter=True)
@@ -209,6 +213,11 @@ def step4_run_simulations(
     # Get schedule
     sched = statsapi.schedule(start_date=target_date, end_date=target_date)
     games = [g for g in sched if g.get("game_type") == "R"]
+    if only_game_id:
+        games = [g for g in games if str(g.get("game_id")) == str(only_game_id)]
+        if not games:
+            print(f"  Game ID {only_game_id} not found in today's schedule")
+            return []
 
     predictions = []
     for i, g in enumerate(games):
@@ -475,57 +484,117 @@ def step5_compare_and_report(predictions: list, kalshi_markets: dict, target_dat
     return edges
 
 
-def main():
-    target_date = sys.argv[1] if len(sys.argv) > 1 else date.today().isoformat()
+def _merge_pipeline_output(target_date: str, predictions: list, edges: list, kalshi_count: int):
+    """Merge new predictions/edges into today's pipeline file, deduping by game_id.
 
-    print(f"MLB Daily Pipeline — {target_date}")
+    This lets per-game runs accumulate results across multiple invocations.
+    """
+    out_path = Path(".context") / f"pipeline_{target_date.replace('-', '_')}.json"
+    existing = {"date": target_date, "predictions": [], "edges": [], "kalshi_games": 0}
+    if out_path.exists():
+        with open(out_path) as f:
+            existing = json.load(f)
+
+    # Dedup predictions by game_id (new entries replace old)
+    new_ids = {p["game_id"] for p in predictions}
+    merged_preds = [p for p in existing.get("predictions", []) if p["game_id"] not in new_ids]
+    merged_preds.extend(predictions)
+
+    # Dedup edges by (game, type)
+    new_edge_keys = {(e["game"], e["type"]) for e in edges}
+    merged_edges = [e for e in existing.get("edges", []) if (e["game"], e["type"]) not in new_edge_keys]
+    merged_edges.extend(edges)
+
+    output = {
+        "date": target_date,
+        "predictions": merged_preds,
+        "edges": merged_edges,
+        "kalshi_games": max(kalshi_count, existing.get("kalshi_games", 0)),
+    }
+    with open(out_path, "w") as f:
+        json.dump(output, f, indent=2)
+    print(f"\nSaved to {out_path} ({len(merged_preds)} predictions, {len(merged_edges)} edges)")
+
+
+def cmd_full(target_date: str):
+    """Full daily pipeline: fetch yesterday, all games, settle, log.
+
+    Used for manual runs or legacy full-pipeline cron.
+    """
+    print(f"MLB Daily Pipeline — {target_date} (FULL)")
     print("=" * 50)
 
-    # Load data
     print("\n[0/5] Loading data...")
     current_games, prior_games, pitcher_idx, prior_pitcher_idx, starter_lookup, park_factors = load_all_data()
 
-    # Step 1: Fetch yesterday
     current_games = step1_fetch_yesterday(target_date, current_games)
-    # Rebuild indexes after update
     pitcher_idx = _build_pitcher_index(current_games)
 
-    # Step 2: Fetch Kalshi
     kalshi_markets = step2_fetch_kalshi(target_date)
-
-    # Cache Kalshi prices for future backtesting
     _cache_kalshi_prices(kalshi_markets, target_date)
 
-    # Step 3: Fetch lineups
     lineups = step3_fetch_lineups(target_date)
 
-    # Step 4: Run simulations (with market priors)
     predictions = step4_run_simulations(
         target_date, current_games, pitcher_idx, prior_pitcher_idx,
         starter_lookup, park_factors, prior_games,
         kalshi_markets=kalshi_markets,
     )
 
-    # Step 5: Compare and report
+    edges = step5_compare_and_report(predictions, kalshi_markets, target_date)
+    _merge_pipeline_output(target_date, predictions, edges, len(kalshi_markets.get("today", {})))
+
+    print(f"\nLINEUP STATUS: {len(lineups)} games with confirmed lineups")
+
+
+def cmd_single_game(game_id: str, target_date: str):
+    """Per-game pipeline: fetch just this game's Kalshi + simulate + log edge.
+
+    Skips yesterday fetch and settle (those happen in the morning job).
+    """
+    print(f"MLB Per-Game Pipeline — game {game_id} on {target_date}")
+    print("=" * 50)
+
+    print("\n[0/3] Loading data...")
+    current_games, prior_games, pitcher_idx, prior_pitcher_idx, starter_lookup, park_factors = load_all_data()
+
+    # Fetch Kalshi markets (filtered by parse logic to just matching games)
+    kalshi_markets = step2_fetch_kalshi(target_date)
+    _cache_kalshi_prices(kalshi_markets, target_date)
+
+    # Run simulation for just this game
+    predictions = step4_run_simulations(
+        target_date, current_games, pitcher_idx, prior_pitcher_idx,
+        starter_lookup, park_factors, prior_games,
+        kalshi_markets=kalshi_markets,
+        only_game_id=game_id,
+    )
+
+    if not predictions:
+        print(f"\nNo prediction produced for game {game_id} (possibly not in today's schedule)")
+        return
+
+    # Compare + log edges for this game only
     edges = step5_compare_and_report(predictions, kalshi_markets, target_date)
 
-    # Save results
-    output = {
-        "date": target_date,
-        "predictions": predictions,
-        "edges": edges,
-        "kalshi_games": len(kalshi_markets.get("today", {})),
-    }
-    out_path = Path(".context") / f"pipeline_{target_date.replace('-', '_')}.json"
-    with open(out_path, "w") as f:
-        json.dump(output, f, indent=2)
-    print(f"\nSaved to {out_path}")
+    # Merge into today's pipeline file
+    _merge_pipeline_output(target_date, predictions, edges, len(kalshi_markets.get("today", {})))
 
-    # Lineup status
-    print(f"\nLINEUP STATUS:")
-    print(f"  Lineups confirmed for {len(lineups)} games")
-    print(f"  MLB lineups typically released 2-4 hours before first pitch")
-    print(f"  Re-run pipeline after lineups are confirmed for updated predictions")
+
+def main():
+    import argparse
+    parser = argparse.ArgumentParser(description="MLB daily prediction pipeline")
+    parser.add_argument("date", nargs="?", default=None, help="Target date (YYYY-MM-DD); defaults to today")
+    parser.add_argument("--game-id", dest="game_id", default=None,
+                        help="Run pipeline for a single game only (skips yesterday fetch + settle)")
+    args = parser.parse_args()
+
+    target_date = args.date or date.today().isoformat()
+
+    if args.game_id:
+        cmd_single_game(args.game_id, target_date)
+    else:
+        cmd_full(target_date)
 
 
 if __name__ == "__main__":
