@@ -194,8 +194,8 @@
       "shares": 1,
       "cost": 0.41,
       "potential_payout": 1.0,
-      "status": "open",
-      "result": null
+      "status": "settled",
+      "result": "loss"
     }
   ],
   "settled": [],
