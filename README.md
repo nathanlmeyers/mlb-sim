@@ -149,8 +149,8 @@ Runs 5 steps:
 1. Fetch yesterday's completed games → update season data
 2. Fetch Kalshi market prices (ML, totals, spreads, HR)
 3. Fetch confirmed lineups from MLB Stats API
-4. Run simulations (5000 sims per game)
-5. Compare model vs market, identify edges, output report
+4. Run simulations via `predict_game()` — box score (5000 sims) + detailed (500 sims) blended 60/40, with market prior if Kalshi prices available
+5. Compare model vs market, identify edges ≥ 4%, output report
 
 Output saved to `.context/pipeline_YYYY_MM_DD.json`.
 
@@ -162,7 +162,7 @@ python scripts/paper_trade.py settle 2026-04-18 # settle after games finish
 python scripts/paper_trade.py report            # full P&L history
 ```
 
-Paper trading started with $20. Live trading (planned week of 2026-04-20) uses a separate $500 bankroll, same eighth-Kelly / 3% cap sizing rules plus daily-loss and exposure circuit breakers (see "Live Trading Plan" below).
+Paper trading uses a $20 bankroll with eighth-Kelly sizing and 3% max per bet. Ledger is stored in `.context/paper_ledger.json`.
 
 ---
 
@@ -223,52 +223,66 @@ NEGATIVE_BINOMIAL_R = 4.0         # Run distribution dispersion parameter
 ## Directory Structure
 
 ```
-bandung/
 ├── config.py              # All constants (bet selection, simulation, regression)
-├── cli.py                 # Click CLI
+├── cli.py                 # Click CLI (init_db, fetch, smoke_test, backtest, backtest_json, fetch_season, train)
+├── pyproject.toml
+├── .github/workflows/
+│   └── daily_pipeline.yml # Automated daily pipeline (settle + per-game matrix)
 ├── sim/                   # Simulation engines
-│   ├── game.py           # Box score model
-│   ├── detailed_game.py  # Pitch-by-pitch with TTO
-│   ├── plate_appearance.py  # Count progression
-│   ├── inning.py         # Half-inning simulation
-│   ├── baserunners.py    # Base state machine
-│   └── ensemble.py       # Blending + market prior
+│   ├── game.py           # Box score model (negative binomial, 5000 sims)
+│   ├── detailed_game.py  # Pitch-by-pitch with TTO + bullpen management
+│   ├── plate_appearance.py  # Count-progression Markov chain per PA
+│   ├── inning.py         # Half-inning loop
+│   ├── baserunners.py    # 8-state base machine with empirical advancement rates
+│   └── ensemble.py       # Blends both engines (60/40) + record anchor + market prior
 ├── models/                # Player and environment models
-│   ├── batter_model.py
-│   ├── pitcher_model.py
-│   ├── team_model.py
-│   ├── weather.py
-│   ├── schedule_features.py
-│   └── calibration.py
-├── data/                  # Data fetching
+│   ├── batter_model.py   # K%, BB%, BABIP, HR/FB, platoon splits, Bayesian regression
+│   ├── pitcher_model.py  # Same rate stats + strike%, 2025 prior blending
+│   ├── team_model.py     # Team-level offense/defense aggregates
+│   ├── weather.py        # Temperature, wind, dome detection
+│   ├── schedule_features.py  # Rest days, travel, fatigue
+│   └── calibration.py    # Isotonic regression + logistic fallback
+├── data/                  # Data fetching (all read-only)
 │   ├── fetch.py          # MLB Stats API wrappers
-│   ├── kalshi.py         # Kalshi API client
-│   ├── lineup_fetcher.py # Real lineup + player model builder
-│   └── load.py           # PostgreSQL loaders (optional)
+│   ├── kalshi.py         # Kalshi public API client (read-only, no auth)
+│   ├── lineup_fetcher.py # Real lineup + per-player model builder from API
+│   ├── db.py             # PostgreSQL schema definitions (optional)
+│   └── load.py           # PostgreSQL bulk loaders (optional)
 ├── betting/               # Bet evaluation
-│   ├── ev.py             # EV + Kelly + vig removal
-│   ├── predictions.py    # BettingPrediction dataclass
-│   └── confidence.py     # Engine agreement scoring
+│   ├── ev.py             # EV calculation, fractional Kelly, odds conversion
+│   ├── predictions.py    # BettingPrediction dataclass (ML, run line, total evaluation)
+│   └── confidence.py     # Engine agreement scoring (scales market weight)
 ├── backtest/              # Evaluation framework
 │   ├── json_backtest.py  # JSON-backed backtest (no DB needed)
-│   ├── model_eval.py     # Composite scoring
-│   └── evaluate.py       # PostgreSQL-backed (optional)
-└── scripts/
-    ├── daily_pipeline.py      # Full daily workflow
-    ├── daily_picks.py         # Quick daily scanner
-    ├── paper_trade.py         # Paper trading tracker
-    ├── fetch_daily.py         # Pull yesterday's games
-    ├── fetch_season.py        # Pull full season
-    ├── fetch_kalshi_history.py  # Historical Kalshi events
-    ├── fetch_espn_odds.py     # ESPN DraftKings closing lines
-    └── train_ensemble.py      # Grid search weights
+│   ├── model_eval.py     # Composite scoring across ML/RL/O-U/Brier
+│   └── evaluate.py       # PostgreSQL-backed evaluation (optional)
+├── scripts/
+│   ├── daily_pipeline.py      # Full daily workflow (5 steps, supports --game-id)
+│   ├── list_games_for_dispatch.py  # Outputs game matrix JSON for GHA per-game jobs
+│   ├── paper_trade.py         # Paper trading: log, settle, report subcommands
+│   ├── daily_picks.py         # Quick standalone daily scanner
+│   ├── fetch_daily.py         # Pull yesterday's games
+│   ├── fetch_season.py        # Pull full season (2025 or 2026)
+│   ├── fetch_kalshi_history.py  # Historical Kalshi settled events
+│   ├── fetch_espn_odds.py     # ESPN DraftKings closing lines
+│   └── train_ensemble.py      # Grid search ensemble weights
+└── .context/              # Cached data (gitignored)
+    ├── season_2025.json        # 2559 games with full box scores
+    ├── season_2026.json        # 317+ games, updated daily by GHA
+    ├── espn_odds_2026.json     # 258 games with DraftKings closing lines
+    ├── park_factors_2024.json  # 30 stadiums
+    ├── kalshi_history.json     # Daily market prices
+    ├── paper_ledger.json       # Paper trading bankroll + bet history
+    └── pipeline_*.json         # Daily pipeline outputs
 ```
 
 ---
 
-## Live Trading Plan (Week of 2026-04-20)
+## Roadmap: Live Trading (Week of 2026-04-20)
 
-Going from paper to real money on Kalshi in one week. Approved bankroll: **$500** (bets $5-15 at eighth-Kelly / 3% cap). Full detail in the planning doc; summary below.
+> **None of the features below exist yet.** This section describes planned work, not current capabilities. The codebase today is paper-trading only.
+
+Going from paper to real money on Kalshi in one week. Planned bankroll: **$500** (bets $5-15 at eighth-Kelly / 3% cap). Summary below.
 
 ### Day 1 — validate or stop (hard gate)
 
@@ -330,11 +344,12 @@ No dashboard. No Postgres migration. No new sim features. No spreads or HR props
 
 **What's weak:**
 - Only 14 paper bets total — 1 under the tightened config. Sample size too small to distinguish skill from luck.
-- Market weight (0.65) is a guess; needs grid search. The Day-1 backtest is the first real test of whether the current live config has positive EV.
-- Not yet trading O/U in paper — pipeline detects the edges but `paper_trade.py` only logs ML.
-- Kalshi trade client, risk circuit breaker, and CLV tracking are still to build.
+- Market weight (0.65) is a guess; needs grid search on 50+ games with closing-line data.
+- Not yet trading O/U in paper — pipeline detects totals edges but `paper_trade.py` only logs moneyline bets.
 
-**Realistic week-1 expectation ($500 bankroll, $5-15 bets):**
-- At true 3-5% ROI on ~10-15 bets, expected P&L is roughly **-$40 to +$60** — variance-dominated at this sample size.
-- Primary deliverable: working live infrastructure + quantified evidence the config has edge, NOT profit.
-- Scaling above $10/bet waits for the quantitative gates documented above.
+**Not yet built (see Roadmap above):**
+- Kalshi trade client (authenticated order placement) — `data/kalshi.py` is read-only
+- Risk circuit breaker (daily loss cap, exposure limit, streak halt, bankroll floor)
+- Live mode in `paper_trade.py` (currently only: `log`, `settle`, `report`)
+- Backtest of current live config against the 258 ESPN-closing-line games
+- Nightly CLV / calibration tracking
