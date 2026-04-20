@@ -106,5 +106,43 @@
       "CIN": 0.405,
       "MIN": 0.595
     }
+  },
+  "2026-04-20": {
+    "A's vs Seattle": {
+      "ATH": 0.43499999999999994,
+      "SEA": 0.5650000000000001
+    },
+    "Toronto vs Los Angeles A": {
+      "TOR": 0.515,
+      "LAA": 0.485
+    },
+    "Los Angeles D vs Colorado": {
+      "LAD": 0.675,
+      "COL": 0.33499999999999996
+    },
+    "Philadelphia vs Chicago C": {
+      "PHI": 0.495,
+      "CHC": 0.515
+    },
+    "Baltimore vs Kansas City": {
+      "BAL": 0.515,
+      "KC": 0.485
+    },
+    "Atlanta vs Washington": {
+      "ATL": 0.605,
+      "WSH": 0.405
+    },
+    "St. Louis vs Miami": {
+      "STL": 0.45499999999999996,
+      "MIA": 0.555
+    },
+    "Cincinnati vs Tampa Bay": {
+      "CIN": 0.475,
+      "TB": 0.525
+    },
+    "Houston vs Cleveland": {
+      "HOU": 0.45499999999999996,
+      "CLE": 0.555
+    }
   }
 }
