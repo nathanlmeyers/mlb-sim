@@ -76,6 +76,7 @@ jobs:
     needs: dispatch
     if: needs.dispatch.outputs.games != '[]' && needs.dispatch.outputs.games != ''
     runs-on: ubuntu-latest
+    timeout-minutes: 300
     permissions:
       contents: write
     strategy:
@@ -98,12 +99,20 @@ jobs:
         run: |
           TRIGGER=${{ matrix.game.trigger_ts }}
           NOW=$(date -u +%s)
+          WAIT=$((TRIGGER - NOW))
+          MAX_WAIT=14400  # 4 hours max sleep to avoid runner timeout
           echo "Game: ${{ matrix.game.title }}"
           echo "First pitch: ${{ matrix.game.first_pitch }}"
           echo "Trigger at:  $(date -u -d @$TRIGGER '+%FT%TZ' 2>/dev/null || date -u -r $TRIGGER '+%FT%TZ')"
           echo "Current:     $(date -u '+%FT%TZ')"
-          echo "Sleeping $((TRIGGER - NOW)) seconds..."
-          while [ "$(date -u +%s)" -lt "$TRIGGER" ]; do sleep 30; done
+          if [ "$WAIT" -gt "$MAX_WAIT" ]; then
+            echo "Sleep would be ${WAIT}s (>$MAX_WAIT). Skipping — a later dispatch window will pick this game up."
+            exit 0
+          fi
+          if [ "$WAIT" -gt 0 ]; then
+            echo "Sleeping ${WAIT} seconds..."
+            while [ "$(date -u +%s)" -lt "$TRIGGER" ]; do sleep 30; done
+          fi
           echo "Woken at $(date -u '+%FT%TZ')"
       - name: Run pipeline for this game
         run: |
@@ -118,21 +127,21 @@ jobs:
         run: |
           git config user.name mlb-sim-bot
           git config user.email actions@users.noreply.github.com
+          git add -A .context/
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "auto: game ${{ matrix.game.id }} — ${{ matrix.game.title }}"
           for i in 1 2 3 4 5; do
             git fetch origin main
-            git pull --rebase origin main || git rebase --abort
-            git add -A .context/
-            if git diff --cached --quiet; then
-              echo "No changes to commit"
-              exit 0
-            fi
-            if git commit -m "auto: game ${{ matrix.game.id }} — ${{ matrix.game.title }}" 2>/dev/null; then
-              if git push 2>&1; then
+            if git rebase origin/main; then
+              if git push origin HEAD:main; then
                 echo "Pushed successfully on attempt $i"
                 exit 0
               fi
-              # push failed — reset and retry
-              git reset --soft HEAD~1 2>/dev/null || true
+            else
+              git rebase --abort
             fi
             echo "Attempt $i failed, retrying..."
             sleep $((RANDOM % 30 + 5))
