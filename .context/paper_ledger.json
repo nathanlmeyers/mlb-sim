@@ -1,5 +1,5 @@
 {
-  "bankroll": 18.279999999999998,
+  "bankroll": 17.799999999999997,
   "bets": [
     {
       "date": "2026-04-13",
@@ -196,9 +196,23 @@
       "potential_payout": 1.0,
       "status": "settled",
       "result": "loss"
+    },
+    {
+      "date": "2026-04-20",
+      "game": "Los Angeles  @ Colorado Roc",
+      "type": "AWAY ML",
+      "side": "AWAY",
+      "model_prob": 0.5292088080808081,
+      "kalshi_price": 0.485,
+      "edge": 0.04420880808080807,
+      "shares": 1,
+      "cost": 0.48,
+      "potential_payout": 1.0,
+      "status": "open",
+      "result": null
     }
   ],
   "settled": [],
-  "total_wagered": 5.719999999999999,
+  "total_wagered": 6.199999999999999,
   "total_returned": 4.0
 }

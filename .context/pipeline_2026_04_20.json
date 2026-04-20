@@ -37,8 +37,54 @@
       "park_factor": 0.99,
       "home_rpg": 4.471715795787674,
       "away_rpg": 4.725345808680201
+    },
+    {
+      "game_id": "824370",
+      "away": "Los Angeles Dodgers",
+      "home": "Colorado Rockies",
+      "venue": "Coors Field",
+      "away_sp": "Justin Wrobleski",
+      "home_sp": "Jose Quintana",
+      "away_sp_qf": 0.6663047824471812,
+      "home_sp_qf": 1.0381926202333531,
+      "model_home_wp": 0.4472,
+      "home_wp": 0.47079119191919194,
+      "away_wp": 0.5292088080808081,
+      "market_home_wp": 0.4898989898989899,
+      "market_weight": 0.5525,
+      "home_cover": 0.3334,
+      "total_mean": 10.7914,
+      "total_std": 4.870635075634389,
+      "spread_mean": -0.6686,
+      "over_pct_by_line": {
+        "6.0": 0.8146,
+        "6.5": 0.8146,
+        "7.0": 0.7326,
+        "7.5": 0.7326,
+        "8.0": 0.6586,
+        "8.5": 0.6586,
+        "9.0": 0.5604,
+        "9.5": 0.5604,
+        "10.0": 0.4804,
+        "10.5": 0.4804,
+        "11.0": 0.3932,
+        "11.5": 0.3932,
+        "12.0": 0.3278
+      },
+      "park_factor": 1.13,
+      "home_rpg": 4.588029733979381,
+      "away_rpg": 4.932656898143475
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "game": "Los Angeles  @ Colorado Roc",
+      "type": "AWAY ML",
+      "model": 0.5292088080808081,
+      "kalshi": 0.485,
+      "edge": 0.04420880808080807,
+      "ev": 0.09115218160991367
+    }
+  ],
   "kalshi_games": 9
 }
