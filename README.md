@@ -52,19 +52,18 @@ The key insight: our *unblended* model already beats DraftKings closing lines (5
 
 ## Paper Trading Results So Far
 
-| Day | Bets | Record | P&L | ROI | Notes |
-|-----|------|--------|-----|-----|-------|
-| Apr 13 | 7 | 3-4 | +$0.15 | +5.3% | Old 0.50 market weight, 2% edge threshold |
-| Apr 15 | 6 | 1-5 | -$1.46 | — | Lost to sharp market (bet vs 86%+ conviction) |
-| **Total** | **13** | **4-9** | **-$1.31** | **-24.7%** | **Pre-tightening** |
-| Apr 18+ | 1 | TBD | TBD | TBD | Post-tightening: 4% edge min, 15-85% market bounds |
+| Day | Bets | Record | P&L | Notes |
+|-----|------|--------|-----|-------|
+| Apr 13 | 7 | 3-4 | +$0.15 | Old 0.50 market weight, 2% edge threshold |
+| Apr 15 | 6 | 1-5 | -$1.46 | Lost to sharp market (bet vs 86%+ conviction) |
+| Apr 18 | 1 | 0-1 | -$0.41 | First post-tightening bet (NYM ML, 6% edge) — lost |
+| **Total** | **14** | **4-10** | **-$1.72** | Bankroll: **$18.28** / $20 |
 
-**Lesson from Apr 15:** Bet WSH +$0.44 when Kalshi had PIT at 86%; PIT won 2-0. Bet SF +$0.58 when Kalshi had CIN at 98%; SF lost 3-8. Betting against extreme market confidence with an untested early-season model was a clear mistake. Now filtered.
+**Status:** We have 1 bet under the tightened config (4% edge, 15-85% market band, market weight 0.65). That's not nearly enough to validate or invalidate the tightening. We need either more paper bets or a proper backtest against the 258 ESPN-closing-line games in `.context/espn_odds_2026.json` before risking real money.
 
-**Comparison to DraftKings on same 13 games:**
-- DK picked 9 winners (69.2%), we picked 4 (30.8%)
-- If we'd bet DK favorites at same stakes: +$0.30 (vs our -$1.31)
-- We were systematically betting against sharp money
+**Lesson from Apr 15:** Bet WSH +$0.44 when Kalshi had PIT at 86%; PIT won 2-0. Bet SF +$0.58 when Kalshi had CIN at 98%; SF lost 3-8. Betting against extreme market confidence with an untested early-season model was a clear mistake. Now filtered via `MIN_MARKET_PRICE=0.15` / `MAX_MARKET_PRICE=0.85`.
+
+**Comparison to DraftKings on first 13 games:** DK picked 9 winners (69.2%), we picked 4 (30.8%). If we'd bet DK favorites at same stakes: +$0.30 (vs our -$1.31). We were systematically betting against sharp money.
 
 ---
 
@@ -128,16 +127,29 @@ Historical data cached locally in `.context/`:
 
 ## Daily Pipeline
 
+### Automated (GitHub Actions)
+
+The pipeline runs **automatically** via `.github/workflows/daily_pipeline.yml`:
+
+- **Settle job** (08:00 ET daily): fetches yesterday's completed games, settles any open bets in the paper ledger, commits data back to the repo.
+- **Dispatch job** (10:00 / 13:00 / 16:00 / 19:00 ET): lists today's eligible games and spawns one GHA job per game via a matrix strategy.
+- **Per-game jobs**: each job sleeps until T-60 min before first pitch, then runs the simulation pipeline for that single game, logs any qualifying edges to the paper ledger, and commits the results with retry-on-conflict. One job per game keeps the daily run narrow and lets predictions use the most-recent lineup info.
+
+No laptop or manual trigger required. Results are version-controlled in `.context/`.
+
+### Manual run
+
 ```bash
-python scripts/daily_pipeline.py          # today
+python scripts/daily_pipeline.py              # today
 python scripts/daily_pipeline.py 2026-04-18   # specific date
+python scripts/daily_pipeline.py --game-id <MLB_GAME_PK>  # single-game mode used by per-game GHA jobs
 ```
 
 Runs 5 steps:
 1. Fetch yesterday's completed games → update season data
 2. Fetch Kalshi market prices (ML, totals, spreads, HR)
 3. Fetch confirmed lineups from MLB Stats API
-4. Run simulations (box score, 5000 sims per game)
+4. Run simulations (5000 sims per game)
 5. Compare model vs market, identify edges, output report
 
 Output saved to `.context/pipeline_YYYY_MM_DD.json`.
@@ -150,7 +162,7 @@ python scripts/paper_trade.py settle 2026-04-18 # settle after games finish
 python scripts/paper_trade.py report            # full P&L history
 ```
 
-Starts with $20 bankroll. Uses eighth-Kelly sizing with 3% max per bet.
+Paper trading started with $20. Live trading (planned week of 2026-04-20) uses a separate $500 bankroll, same eighth-Kelly / 3% cap sizing rules plus daily-loss and exposure circuit breakers (see "Live Trading Plan" below).
 
 ---
 
@@ -254,13 +266,56 @@ bandung/
 
 ---
 
-## What's Next
+## Live Trading Plan (Week of 2026-04-20)
 
-1. **Accumulate 20+ paper bets** with the tightened thresholds to see if we close the gap to DK closing-line performance
-2. **Grid-search market weight** once we have 50+ paired (prediction, outcome, market price) samples
-3. **Add totals to paper trading** — O/U is our strongest signal (64% backtest accuracy), but we only trade ML currently
-4. **Scheduled remote agent** — set up automated daily fetch + pipeline via GitHub Actions or Anthropic cloud trigger
-5. **Live betting** — only after 50+ paper bets show consistent profit vs DK benchmark
+Going from paper to real money on Kalshi in one week. Approved bankroll: **$500** (bets $5-15 at eighth-Kelly / 3% cap). Full detail in the planning doc; summary below.
+
+### Day 1 — validate or stop (hard gate)
+
+New `scripts/backtest_live_config.py` replays the detailed+TTO model against the 258 games in `.context/espn_odds_2026.json` using the **exact current live config** (market weight 0.65, 4% edge, 15-85% band, eighth-Kelly). ESPN closing lines are the market-price proxy.
+
+- ROI > +2% on 50+ simulated bets → proceed
+- ROI ≤ 0% → halt live-client work and grid-search `TRAINED_MARKET_WEIGHT` (0.4-0.8) and `MIN_EDGE_THRESHOLD` (0.03-0.08) until the gate passes
+
+### Day 2-3 — Kalshi trade client
+
+New `betting/kalshi_client.py`: RSA-PSS request signing, four functions only (`get_balance`, `place_order`, `get_order`, `cancel_order`). Env-var auth (`KALSHI_API_KEY_ID`, `KALSHI_PRIVATE_KEY_PATH`). Verified first with balance lookup, then a $0.10 test limit order on a cheap unrelated market.
+
+### Day 4 — risk controls + live mode
+
+New `betting/risk.py` enforces daily caps scaled to $500 bankroll:
+
+| Limit | Value | Purpose |
+|---|---|---|
+| `DAILY_LOSS_CAP` | $50 | Hard stop at 10% daily drawdown |
+| `MAX_DAILY_EXPOSURE` | $75 | Cap total open bets across games |
+| `MAX_BETS_PER_DAY` | 5 | Keep sample size quality-weighted |
+| `CONSECUTIVE_LOSS_HALT` | 4 | Pause after 4-bet losing streak |
+| `MIN_BANKROLL_FLOOR` | $250 | Full stop at 50% drawdown — manual review |
+| `MAX_BET_OVERRIDE` | $10 | Cap per-bet stake until go/no-go gate passes |
+
+`scripts/paper_trade.py` gains a `live` subcommand that requires `MLB_BET_MODE=live` env var, `--yes-i-really-mean-it` flag, AND typing the exact ticker back to confirm each bet. Places a limit order at the model price, polls for fill, cancels after 30s if unfilled.
+
+**Totals-first**: when the daily exposure cap forces choices, totals edges fire before moneyline (64% backtest accuracy on O/U vs 54% on ML).
+
+### Day 5 — nightly calibration
+
+New `scripts/nightly_calibration.py` runs via GHA at 03:00 ET. Computes rolling 14-day Brier, ROI, and **CLV** (did we beat the closing line?) and appends to `.context/calibration_log.jsonl`. Loud warning if 7-day Brier > 0.255 or CLV < 0 — no auto-tuning, just surfacing drift.
+
+### Day 6-7 — observe
+
+Let bets run at capped stake. Do not touch config.
+
+### Scaling gate
+
+Don't raise `MAX_BET_OVERRIDE` above $10 until **any** of:
+- 50+ live bets with bootstrap 95% lower-CI ROI > -15%
+- 100+ paper+live bets under current config with combined ROI > +3%
+- Day-1 backtest ROI > +5% AND 20+ live bets with positive ROI
+
+### Explicit non-goals
+
+No dashboard. No Postgres migration. No new sim features. No spreads or HR props. No adaptive Kelly. No multi-sportsbook. No market-making. The model is ahead of the evidence — the scarce resource is bets, not features.
 
 ---
 
@@ -274,13 +329,12 @@ bandung/
 - Paper trading framework prevents catastrophic real-money losses while validating
 
 **What's weak:**
-- Only 13 real paper bets — sample size too small to distinguish skill from luck
-- Market weight (0.65) is a guess; needs grid search on 50+ games
-- Not yet trading O/U markets despite them being our strongest signal
-- No automation — pipeline has to be run manually each day
-- Early season: only 2-3 weeks of 2026 data, so team/pitcher models are high-variance
+- Only 14 paper bets total — 1 under the tightened config. Sample size too small to distinguish skill from luck.
+- Market weight (0.65) is a guess; needs grid search. The Day-1 backtest is the first real test of whether the current live config has positive EV.
+- Not yet trading O/U in paper — pipeline detects the edges but `paper_trade.py` only logs ML.
+- Kalshi trade client, risk circuit breaker, and CLV tracking are still to build.
 
-**Expected realistic performance:**
-- Best case: 53-55% ML accuracy (beats DK closing line), 2-5% ROI on O/U at Kalshi
-- Likely case: Break even or slightly profitable once past the rookie-season-mistakes phase
-- Worst case: Small losses that we notice quickly, adjust, and keep iterating
+**Realistic week-1 expectation ($500 bankroll, $5-15 bets):**
+- At true 3-5% ROI on ~10-15 bets, expected P&L is roughly **-$40 to +$60** — variance-dominated at this sample size.
+- Primary deliverable: working live infrastructure + quantified evidence the config has edge, NOT profit.
+- Scaling above $10/bet waits for the quantitative gates documented above.
