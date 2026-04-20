@@ -209,8 +209,15 @@ LEAGUE_AVG_STRIKE_PCT = 0.62  # MLB avg ~62% of pitches are strikes
 TRAINED_MARKET_WEIGHT = 0.65  # 0=pure model, 1=pure market. Grid search to optimize.
 MARKET_CONFIDENCE_DISCOUNT = 0.30  # reduce market weight by 30% when engines agree
 
-# Bet selection thresholds (tightened after day-2 paper losses against sharp markets)
-MIN_EDGE_THRESHOLD = 0.04  # minimum 4% edge to log a bet (was 2%)
+# Bet selection thresholds.
+# As of Phase 3 (apr 2026), MIN_EDGE_THRESHOLD is applied to the
+# RAW model edge (raw_model_prob − market_prob), not the post-blend edge.
+# Previously the filter ran on the blended prob, which made the effective
+# raw threshold 0.04 / (1 − TRAINED_MARKET_WEIGHT) ≈ 11.4% at mw=0.65 — much
+# more restrictive than the 4% label implied. Now 4% means 4%; expect many
+# more candidates per day. Walk-forward swept this and edge ≥ 6% w/ mw=0.40
+# was the strongest post-hoc OOS combo, but that's data-snooped.
+MIN_EDGE_THRESHOLD = 0.04
 MIN_MARKET_PRICE = 0.15    # skip bets where market price < 15% (don't bet vs strong conviction)
 MAX_MARKET_PRICE = 0.85    # skip bets where market price > 85% (don't fade heavy favorites)
 

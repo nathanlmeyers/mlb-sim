@@ -356,31 +356,43 @@ def step5_compare_and_report(predictions: list, kalshi_markets: dict, target_dat
                 # Determine if this is home or away
                 is_home_side = any(pred["home"][:4].upper().startswith(s[:3]) for s in [side])
 
-                if is_home_side:
-                    model_prob = pred["home_wp"]
-                    kalshi_price = mid
-                else:
-                    model_prob = pred["away_wp"]
-                    kalshi_price = mid
+                # IMPORTANT: filter on the RAW-model edge, not the post-blend edge.
+                # `pred["home_wp"]` is the ensemble *after* blending with kalshi at
+                # weight 0.65, so |home_wp − kalshi| ≥ 0.04 algebraically requires
+                # |raw_model − kalshi| ≥ 0.04 / (1 − 0.65) = 0.114. Filtering on the
+                # blended price under-counts that — it makes the threshold appear to
+                # be 4% but the real model disagreement is 11%+. We now use the raw
+                # model probability for the filter so the threshold has its
+                # intended meaning.
+                raw_model_home = pred.get("model_home_wp", pred["home_wp"])
+                raw_model_prob = raw_model_home if is_home_side else (1 - raw_model_home)
+                blended_prob = pred["home_wp"] if is_home_side else pred["away_wp"]
+                kalshi_price = mid
 
-                edge = model_prob - kalshi_price
+                raw_edge = raw_model_prob - kalshi_price
+
                 # Skip extreme markets — don't bet against strong market conviction
                 if kalshi_price < config.MIN_MARKET_PRICE or kalshi_price > config.MAX_MARKET_PRICE:
-                    if edge > 0:
+                    if raw_edge > 0:
                         filtered_extreme += 1
                     continue
-                if edge > 0:
-                    if edge < config.MIN_EDGE_THRESHOLD:
+                if raw_edge > 0:
+                    if raw_edge < config.MIN_EDGE_THRESHOLD:
                         filtered_small_edge += 1
                         continue
-                    ev = model_prob * (1.0 / kalshi_price - 1) - (1 - model_prob)
-                    direction = "HOME ML" if (is_home_side and edge > 0) or (not is_home_side and edge < 0) else "AWAY ML"
+                    # EV uses the BLENDED probability (best estimate of true win prob
+                    # given both model + market). The filter uses the raw edge so we
+                    # only bet when the model is genuinely confident enough to
+                    # override the market prior, not just nudge it.
+                    ev = blended_prob * (1.0 / kalshi_price - 1) - (1 - blended_prob)
+                    direction = "HOME ML" if (is_home_side and raw_edge > 0) or (not is_home_side and raw_edge < 0) else "AWAY ML"
                     edges.append({
                         "game": game_label,
                         "type": direction,
-                        "model": model_prob,
+                        "model": blended_prob,        # what we use for sizing
+                        "raw_model": raw_model_prob,  # what we filtered on
                         "kalshi": kalshi_price,
-                        "edge": edge,
+                        "edge": raw_edge,
                         "ev": ev,
                     })
 

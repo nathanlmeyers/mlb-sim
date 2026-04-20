@@ -4,11 +4,24 @@ A pitch-by-pitch MLB game simulation engine with betting pipeline, Kalshi market
 
 **Live repo:** https://github.com/nathanlmeyers/mlb-sim
 
+> **⚠️ HONEST STATE (2026-04-20):** Walk-forward validation shows the moneyline
+> model **under-performs an "always bet home" baseline** on out-of-sample games
+> (51.1% accuracy vs 51.8% baseline, n=311). The earlier 54.5% in-sample claim
+> was overfitting. **Live trading is not justified by current evidence.** See
+> [`.context/remediation_plan.md`](./.context/remediation_plan.md) and
+> [`NOT_YET.md`](./NOT_YET.md) for the planned path to validation. This
+> document below describes what the codebase *does*, not what it *proves*.
+
 ---
 
 ## What This Does
 
-Simulates MLB games using real player stats, runs daily against confirmed lineups, compares predictions to Kalshi market prices, and identifies profitable betting edges. All predictions are paper-traded and tracked against DraftKings closing lines to validate that the model has genuine alpha before risking real money.
+Simulates MLB games using real player stats, runs daily against confirmed
+lineups, compares predictions to Kalshi market prices, and identifies *candidate*
+betting edges. Predictions are paper-traded and tracked against DraftKings
+closing lines (CLV). The current model has **not** yet demonstrated sustained
+out-of-sample edge, so paper trading is restricted to totals (the strongest
+in-sample signal — also untested OOS as of writing).
 
 ---
 
@@ -35,18 +48,38 @@ The key insight: our *unblended* model already beats DraftKings closing lines (5
 
 ---
 
-## Backtest Results (167 games, 2026 Mar 28 – Apr 9)
+## Backtest Results
+
+### In-sample (legacy, kept for context — DO NOT trust as edge evidence)
+
+This was the original headline. It evaluated on the same data the
+hyperparameters were tuned against.
 
 | Model | ML Accuracy | Brier | Run-Line Acc | O/U Acc |
 |-------|-------------|-------|--------------|---------|
-| **Detailed+TTO (our best)** | **54.5%** | **0.2467** | **60.5%** | **64.1%** |
-| Box + SP (2025 priors) | 53.3% | 0.2525 | 59.9% | 58.7% |
-| Detailed+TTO + SP | 52.7% | 0.2505 | 58.7% | 54.5% |
-| Box (no SP) | 49.7% | 0.2526 | 60.5% | 61.7% |
-| **DraftKings closing line** | 52.7% | 0.2499 | — | — |
-| Always Home baseline | 55.1% | 0.2475 | — | — |
+| Detailed+TTO ("our best") | 54.5% | 0.2467 | 60.5% | 64.1% |
+| DraftKings closing line | 52.7% | 0.2499 | — | — |
+| Always-home baseline | 55.1% | 0.2475 | — | — |
 
-**Our model beats DK closing lines on both accuracy and Brier.** Over/under at 64.1% is particularly strong — O/U markets are where our TTO + count-progression model adds the most value.
+Notice "always home" already beats the model. That should have been the
+flag. The 54.5% number is fragile and does not survive walk-forward.
+
+### Walk-forward out-of-sample (the number that matters)
+
+Run `python scripts/walk_forward_backtest.py` for fresh numbers. As of
+2026-04-20, with 4 cutoffs (Apr 5/8/12/14) and 311 OOS games:
+
+| Metric | Value | Interpretation |
+|---|---|---|
+| OOS accuracy (ML) | **51.1%** | 95% CI [45.3%, 56.9%] |
+| Always-home baseline | **51.8%** | model is below baseline |
+| OOS Brier | 0.2518 | calibrated, but no edge |
+| Live-config bets fired | 5 | n too small for any verdict |
+
+**Bottom line: the moneyline model has not demonstrated edge OOS.** The
+totals signal (the supposedly strongest one) is not yet evaluated OOS at
+scale — that requires the ESPN-closing-line backfill (Phase B2 of the
+remediation plan) to complete.
 
 ---
 
@@ -55,15 +88,21 @@ The key insight: our *unblended* model already beats DraftKings closing lines (5
 | Day | Bets | Record | P&L | Notes |
 |-----|------|--------|-----|-------|
 | Apr 13 | 7 | 3-4 | +$0.15 | Old 0.50 market weight, 2% edge threshold |
-| Apr 15 | 6 | 1-5 | -$1.46 | Lost to sharp market (bet vs 86%+ conviction) |
-| Apr 18 | 1 | 0-1 | -$0.41 | First post-tightening bet (NYM ML, 6% edge) — lost |
+| Apr 15 | 6 | 1-5 | -$1.46 | Bet against extreme market conviction (filter now blocks this) |
+| Apr 18 | 1 | 0-1 | -$0.41 | First post-tightening ML bet — lost |
 | **Total** | **14** | **4-10** | **-$1.72** | Bankroll: **$18.28** / $20 |
 
-**Status:** We have 1 bet under the tightened config (4% edge, 15-85% market band, market weight 0.65). That's not nearly enough to validate or invalidate the tightening. We need either more paper bets or a proper backtest against the 258 ESPN-closing-line games in `.context/espn_odds_2026.json` before risking real money.
+**CLV vs DK closing (run `python scripts/paper_trade.py clv`):** mean
++8.9% on 13 matched bets, 85% positive. **However** that average is
+dominated by 3 Apr 15 bets at extreme Kalshi prices (2.5%, 14.5%,
+17.5%) — exactly the bets the new `MIN_MARKET_PRICE=0.15` filter would
+now block. Excluding those, mean CLV ≈ +1.5% on 10 bets, indistinguishable
+from noise.
 
-**Lesson from Apr 15:** Bet WSH +$0.44 when Kalshi had PIT at 86%; PIT won 2-0. Bet SF +$0.58 when Kalshi had CIN at 98%; SF lost 3-8. Betting against extreme market confidence with an untested early-season model was a clear mistake. Now filtered via `MIN_MARKET_PRICE=0.15` / `MAX_MARKET_PRICE=0.85`.
-
-**Comparison to DraftKings on first 13 games:** DK picked 9 winners (69.2%), we picked 4 (30.8%). If we'd bet DK favorites at same stakes: +$0.30 (vs our -$1.31). We were systematically betting against sharp money.
+**Status:** Paper trading is now defaulted to **totals only** (use
+`--allow-ml` to override). The walk-forward verdict is that ML loses to
+"always home" baseline OOS, so we should not log moneyline bets until
+the model demonstrates OOS edge.
 
 ---
 
@@ -117,11 +156,11 @@ When our two engines agree strongly, market weight is discounted by 30%. When th
 - **Baseball Reference** — baserunner advancement rates
 
 Historical data cached locally in `.context/`:
-- `season_2025.json` — 2559 games with full box scores
-- `season_2026.json` — 317+ games, updated daily
-- `espn_odds_2026.json` — 258 games with DraftKings closing lines
+- `season_2025.json` — full box scores (regenerate with `python scripts/fetch_season.py 2025`)
+- `season_2026.json` — 332 games, updated daily
+- `espn_odds_2026.json` — DraftKings closing lines (refresh with `python scripts/fetch_espn_odds.py 2026`)
 - `park_factors_2024.json` — 30 stadiums
-- `kalshi_history.json` — daily market prices accumulated
+- `kalshi_history.json` — daily market prices accumulated (currently 2 days; B3 of remediation plan adds nightly closing snapshots)
 
 ---
 
@@ -278,78 +317,40 @@ NEGATIVE_BINOMIAL_R = 4.0         # Run distribution dispersion parameter
 
 ---
 
-## Roadmap: Live Trading (Week of 2026-04-20)
+## Roadmap
 
-> **None of the features below exist yet.** This section describes planned work, not current capabilities. The codebase today is paper-trading only.
+The earlier "Live Trading: Week of 2026-04-20" plan was retired after
+walk-forward showed the moneyline model has no OOS edge. The current
+plan is in [`.context/remediation_plan.md`](./.context/remediation_plan.md),
+summarized in [`NOT_YET.md`](./NOT_YET.md). Both should be read before
+considering any live trading work.
 
-Going from paper to real money on Kalshi in one week. Planned bankroll: **$500** (bets $5-15 at eighth-Kelly / 3% cap). Summary below.
-
-### Day 1 — validate or stop (hard gate)
-
-New `scripts/backtest_live_config.py` replays the detailed+TTO model against the 258 games in `.context/espn_odds_2026.json` using the **exact current live config** (market weight 0.65, 4% edge, 15-85% band, eighth-Kelly). ESPN closing lines are the market-price proxy.
-
-- ROI > +2% on 50+ simulated bets → proceed
-- ROI ≤ 0% → halt live-client work and grid-search `TRAINED_MARKET_WEIGHT` (0.4-0.8) and `MIN_EDGE_THRESHOLD` (0.03-0.08) until the gate passes
-
-### Day 2-3 — Kalshi trade client
-
-New `betting/kalshi_client.py`: RSA-PSS request signing, four functions only (`get_balance`, `place_order`, `get_order`, `cancel_order`). Env-var auth (`KALSHI_API_KEY_ID`, `KALSHI_PRIVATE_KEY_PATH`). Verified first with balance lookup, then a $0.10 test limit order on a cheap unrelated market.
-
-### Day 4 — risk controls + live mode
-
-New `betting/risk.py` enforces daily caps scaled to $500 bankroll:
-
-| Limit | Value | Purpose |
-|---|---|---|
-| `DAILY_LOSS_CAP` | $50 | Hard stop at 10% daily drawdown |
-| `MAX_DAILY_EXPOSURE` | $75 | Cap total open bets across games |
-| `MAX_BETS_PER_DAY` | 5 | Keep sample size quality-weighted |
-| `CONSECUTIVE_LOSS_HALT` | 4 | Pause after 4-bet losing streak |
-| `MIN_BANKROLL_FLOOR` | $250 | Full stop at 50% drawdown — manual review |
-| `MAX_BET_OVERRIDE` | $10 | Cap per-bet stake until go/no-go gate passes |
-
-`scripts/paper_trade.py` gains a `live` subcommand that requires `MLB_BET_MODE=live` env var, `--yes-i-really-mean-it` flag, AND typing the exact ticker back to confirm each bet. Places a limit order at the model price, polls for fill, cancels after 30s if unfilled.
-
-**Totals-first**: when the daily exposure cap forces choices, totals edges fire before moneyline (64% backtest accuracy on O/U vs 54% on ML).
-
-### Day 5 — nightly calibration
-
-New `scripts/nightly_calibration.py` runs via GHA at 03:00 ET. Computes rolling 14-day Brier, ROI, and **CLV** (did we beat the closing line?) and appends to `.context/calibration_log.jsonl`. Loud warning if 7-day Brier > 0.255 or CLV < 0 — no auto-tuning, just surfacing drift.
-
-### Day 6-7 — observe
-
-Let bets run at capped stake. Do not touch config.
-
-### Scaling gate
-
-Don't raise `MAX_BET_OVERRIDE` above $10 until **any** of:
-- 50+ live bets with bootstrap 95% lower-CI ROI > -15%
-- 100+ paper+live bets under current config with combined ROI > +3%
-- Day-1 backtest ROI > +5% AND 20+ live bets with positive ROI
-
-### Explicit non-goals
-
-No dashboard. No Postgres migration. No new sim features. No spreads or HR props. No adaptive Kelly. No multi-sportsbook. No market-making. The model is ahead of the evidence — the scarce resource is bets, not features.
+In short: validate totals OOS first (Phase C), then re-tune (Phase D),
+then production hardening (Phase E), then a gated live launch (Phase F).
+Realistic earliest live date is **late May 2026** — and only if totals
+clear the OOS gate, which they may not.
 
 ---
 
 ## Honest Assessment
 
-**What's working:**
-- Simulation engine is calibrated (runs ~4.4 per team, 52% home win rate matches MLB averages)
-- Backtest beats DraftKings closing lines (54.5% vs 52.7% accuracy)
-- Pipeline is end-to-end functional: data → simulate → compare vs market → recommend
-- O/U and run-line accuracy both 60%+ in backtest
-- Paper trading framework prevents catastrophic real-money losses while validating
+**What works:**
+- Simulation engine is calibrated (runs ~4.4 per team, ~52% home win rate)
+- Pipeline is end-to-end functional: data → simulate → compare → recommend
+- Walk-forward backtest exists and produces honest OOS numbers
+- CLV instrumentation exists (`paper_trade.py clv`)
+- Risk module + live-trading hard gate are pre-built (`betting/risk.py`,
+  `scripts/check_live_gate.py`)
 
-**What's weak:**
-- Only 14 paper bets total — 1 under the tightened config. Sample size too small to distinguish skill from luck.
-- Market weight (0.65) is a guess; needs grid search on 50+ games with closing-line data.
-- Not yet trading O/U in paper — pipeline detects totals edges but `paper_trade.py` only logs moneyline bets.
+**What does not work yet:**
+- ML model has no demonstrated OOS edge (51.1% < 51.8% always-home baseline)
+- Totals OOS evaluation exists but needs more closing-line data to be conclusive
+- Hyperparameters (TRAINED_MARKET_WEIGHT=0.65, MIN_EDGE_THRESHOLD=0.04) were
+  tuned in-sample; D1 of the remediation plan replaces this with real
+  walk-forward grid search
+- Kalshi historical price snapshots are sparse (2 days); B3 adds nightly closing snapshots
+- No real-money trade client exists; `data/kalshi.py` is read-only
 
-**Not yet built (see Roadmap above):**
-- Kalshi trade client (authenticated order placement) — `data/kalshi.py` is read-only
-- Risk circuit breaker (daily loss cap, exposure limit, streak halt, bankroll floor)
-- Live mode in `paper_trade.py` (currently only: `log`, `settle`, `report`)
-- Backtest of current live config against the 258 ESPN-closing-line games
-- Nightly CLV / calibration tracking
+**What you should not do:**
+- Place real bets. The walk-forward gate is failing and the live gate
+  in `scripts/check_live_gate.py` will refuse.

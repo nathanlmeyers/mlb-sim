@@ -110,3 +110,77 @@ def format_odds(american: int) -> str:
 def breakeven_win_rate(american: int) -> float:
     """Calculate the win rate needed to break even at given odds."""
     return implied_probability(american)
+
+
+# ---------------------------------------------------------------------------
+# Kalshi fee-aware EV
+# ---------------------------------------------------------------------------
+#
+# Kalshi's per-trade fee schedule (as of 2026-04, per public docs):
+#
+#   fee_per_contract = ceil(0.07 * count * price * (1 - price) * 100) cents
+#
+# i.e. 0.07 × N × p × (1-p), evaluated in dollars where N is contracts and
+# p is the trade price (between 0 and 1). The fee is rounded UP to the next
+# cent. Fees apply on the buy side; settlement of winning shares pays $1
+# without additional fee. Losing shares pay $0 (fee already paid at buy).
+#
+# The fee is a parabola maxed at p=0.5 (≈$0.0175 per share) and falls to
+# zero at extremes — sharp prices are nearly fee-free. This matters for our
+# breakeven math: a 50% bet needs to win ~52% to break even after fee, while
+# a 90% bet only needs ~90.2%.
+#
+# Source: https://help.kalshi.com/articles/4399  (verify before going live —
+# Kalshi has changed fee schedules historically). If this rate changes the
+# constant below should be the only edit needed.
+
+KALSHI_FEE_RATE = 0.07  # multiplier on p*(1-p) per contract
+
+
+def kalshi_fee_per_share(price: float) -> float:
+    """Per-share fee in dollars at the given Kalshi buy price.
+
+    Args:
+        price: trade price as a probability in (0, 1)
+
+    Returns: dollars per contract, rounded up to next cent.
+    """
+    if not (0.0 < price < 1.0):
+        return 0.0
+    raw = KALSHI_FEE_RATE * price * (1 - price)
+    # Round up to next cent
+    cents = int(np.ceil(raw * 100))
+    return cents / 100.0
+
+
+def calculate_ev_kalshi(sim_prob: float, price: float) -> float:
+    """Expected value per dollar staked on a Kalshi YES contract.
+
+    EV = sim_prob × (1 - price - fee) + (1 - sim_prob) × (-price - fee)
+       = sim_prob - price - fee_per_share
+
+    Note we still divide by `price` to express EV per dollar staked (same
+    convention as `calculate_ev`). Returns 0 if price is degenerate.
+
+    For symmetric NO contracts, just call this with `1 - price` and
+    `1 - sim_prob`.
+    """
+    if not (0.0 < price < 1.0):
+        return 0.0
+    fee = kalshi_fee_per_share(price)
+    profit_if_win = 1.0 - price - fee
+    loss_if_lose = -price - fee
+    ev_per_share = sim_prob * profit_if_win + (1 - sim_prob) * loss_if_lose
+    # Normalize per dollar staked
+    return ev_per_share / price
+
+
+def kalshi_breakeven(price: float) -> float:
+    """Win probability needed to break even on a Kalshi YES at the given price."""
+    if not (0.0 < price < 1.0):
+        return 0.5
+    fee = kalshi_fee_per_share(price)
+    # 0 = p*(1-price-fee) + (1-p)*(-price-fee)
+    # 0 = p - p*price - p*fee - price - fee + p*price + p*fee
+    # 0 = p - price - fee
+    return price + fee
