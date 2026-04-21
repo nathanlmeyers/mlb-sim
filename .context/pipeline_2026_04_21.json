@@ -1,0 +1,44 @@
+{
+  "date": "2026-04-21",
+  "predictions": [
+    {
+      "game_id": "824448",
+      "away": "Houston Astros",
+      "home": "Cleveland Guardians",
+      "venue": "Progressive Field",
+      "away_sp": "Ryan Weiss",
+      "home_sp": "Parker Messick",
+      "away_sp_qf": 1.1365036305545742,
+      "home_sp_qf": 0.6500269803578949,
+      "model_home_wp": 0.5706,
+      "home_wp": 0.573031,
+      "away_wp": 0.42696900000000004,
+      "market_home_wp": 0.575,
+      "market_weight": 0.5525,
+      "home_cover": 0.4356,
+      "total_mean": 9.391,
+      "total_std": 4.493920226261254,
+      "spread_mean": 0.7726,
+      "over_pct_by_line": {
+        "6.0": 0.722,
+        "6.5": 0.722,
+        "7.0": 0.6126,
+        "7.5": 0.6126,
+        "8.0": 0.5308,
+        "8.5": 0.5308,
+        "9.0": 0.4334,
+        "9.5": 0.4334,
+        "10.0": 0.3588,
+        "10.5": 0.3588,
+        "11.0": 0.2774,
+        "11.5": 0.2774,
+        "12.0": 0.2226
+      },
+      "park_factor": 0.99,
+      "home_rpg": 4.471715795787674,
+      "away_rpg": 4.725345808680201
+    }
+  ],
+  "edges": [],
+  "kalshi_games": 15
+}
