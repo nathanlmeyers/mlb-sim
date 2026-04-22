@@ -1,0 +1,44 @@
+{
+  "date": "2026-04-22",
+  "predictions": [
+    {
+      "game_id": "823878",
+      "away": "St. Louis Cardinals",
+      "home": "Miami Marlins",
+      "venue": "loanDepot park",
+      "away_sp": "Kyle Leahy",
+      "home_sp": "Janson Junk",
+      "away_sp_qf": 0.8568865030751955,
+      "home_sp_qf": 0.695035739595979,
+      "model_home_wp": 0.5546,
+      "home_wp": 0.554821,
+      "away_wp": 0.445179,
+      "market_home_wp": 0.555,
+      "market_weight": 0.5525,
+      "home_cover": 0.4152,
+      "total_mean": 8.9852,
+      "total_std": 4.24718506307413,
+      "spread_mean": 0.5308,
+      "over_pct_by_line": {
+        "6.0": 0.6972,
+        "6.5": 0.6972,
+        "7.0": 0.5882,
+        "7.5": 0.5882,
+        "8.0": 0.5024,
+        "8.5": 0.5024,
+        "9.0": 0.3968,
+        "9.5": 0.3968,
+        "10.0": 0.3286,
+        "10.5": 0.3286,
+        "11.0": 0.2502,
+        "11.5": 0.2502,
+        "12.0": 0.1982
+      },
+      "park_factor": 1.01,
+      "home_rpg": 4.588748304468614,
+      "away_rpg": 4.486615398591748
+    }
+  ],
+  "edges": [],
+  "kalshi_games": 15
+}
