@@ -1,0 +1,53 @@
+{
+  "date": "2026-04-23",
+  "predictions": [
+    {
+      "game_id": "824288",
+      "away": "Milwaukee Brewers",
+      "home": "Detroit Tigers",
+      "venue": "Comerica Park",
+      "away_sp": "Brandon Sproat",
+      "home_sp": "Tarik Skubal",
+      "away_sp_qf": 1.1302266125761018,
+      "home_sp_qf": 0.6,
+      "model_home_wp": 0.5478,
+      "home_wp": 0.618078,
+      "away_wp": 0.381922,
+      "market_home_wp": 0.675,
+      "market_weight": 0.5525,
+      "home_cover": 0.4164,
+      "total_mean": 9.073,
+      "total_std": 4.255028907069845,
+      "spread_mean": 0.5734,
+      "over_pct_by_line": {
+        "6.0": 0.7116,
+        "6.5": 0.7116,
+        "7.0": 0.5956,
+        "7.5": 0.5956,
+        "8.0": 0.5066,
+        "8.5": 0.5066,
+        "9.0": 0.4064,
+        "9.5": 0.4064,
+        "10.0": 0.3298,
+        "10.5": 0.3298,
+        "11.0": 0.2504,
+        "11.5": 0.2504,
+        "12.0": 0.1956
+      },
+      "park_factor": 1.0,
+      "home_rpg": 4.2430568365003705,
+      "away_rpg": 4.682204286642014
+    }
+  ],
+  "edges": [
+    {
+      "game": "Milwaukee Br @ Detroit Tige",
+      "type": "AWAY ML",
+      "model": 0.381922,
+      "kalshi": 0.32499999999999996,
+      "edge": 0.05692200000000003,
+      "ev": 0.17514461538461557
+    }
+  ],
+  "kalshi_games": 9
+}

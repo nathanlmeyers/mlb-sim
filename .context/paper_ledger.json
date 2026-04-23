@@ -1,5 +1,5 @@
 {
-  "bankroll": 18.799999999999997,
+  "bankroll": 18.479999999999997,
   "bets": [
     {
       "date": "2026-04-13",
@@ -210,9 +210,23 @@
       "potential_payout": 1.0,
       "status": "settled",
       "result": "win"
+    },
+    {
+      "date": "2026-04-23",
+      "game": "Milwaukee Br @ Detroit Tige",
+      "type": "AWAY ML",
+      "side": "AWAY",
+      "model_prob": 0.381922,
+      "kalshi_price": 0.32499999999999996,
+      "edge": 0.05692200000000003,
+      "shares": 1,
+      "cost": 0.32,
+      "potential_payout": 1.0,
+      "status": "open",
+      "result": null
     }
   ],
   "settled": [],
-  "total_wagered": 6.199999999999999,
+  "total_wagered": 6.52,
   "total_returned": 5.0
 }
