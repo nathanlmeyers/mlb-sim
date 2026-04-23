@@ -74,6 +74,43 @@
       "park_factor": 0.98,
       "home_rpg": 4.713515099342393,
       "away_rpg": 4.108165903318112
+    },
+    {
+      "game_id": "824770",
+      "away": "New York Yankees",
+      "home": "Boston Red Sox",
+      "venue": "Fenway Park",
+      "away_sp": "Cam Schlittler",
+      "home_sp": "Payton Tolle",
+      "away_sp_qf": 0.6014004547178083,
+      "home_sp_qf": 1.196670109665009,
+      "model_home_wp": 0.4442,
+      "home_wp": 0.472267,
+      "away_wp": 0.527733,
+      "market_home_wp": 0.495,
+      "market_weight": 0.5525,
+      "home_cover": 0.3246,
+      "total_mean": 9.24,
+      "total_std": 4.395998180163408,
+      "spread_mean": -0.5992,
+      "over_pct_by_line": {
+        "6.0": 0.7154,
+        "6.5": 0.7154,
+        "7.0": 0.6146,
+        "7.5": 0.6146,
+        "8.0": 0.5278,
+        "8.5": 0.5278,
+        "9.0": 0.4276,
+        "9.5": 0.4276,
+        "10.0": 0.3474,
+        "10.5": 0.3474,
+        "11.0": 0.2642,
+        "11.5": 0.2642,
+        "12.0": 0.2074
+      },
+      "park_factor": 1.04,
+      "home_rpg": 4.2390606289077715,
+      "away_rpg": 4.437174173121471
     }
   ],
   "edges": [
