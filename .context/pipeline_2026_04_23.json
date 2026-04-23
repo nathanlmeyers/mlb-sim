@@ -37,6 +37,43 @@
       "park_factor": 1.0,
       "home_rpg": 4.2430568365003705,
       "away_rpg": 4.682204286642014
+    },
+    {
+      "game_id": "824689",
+      "away": "Philadelphia Phillies",
+      "home": "Chicago Cubs",
+      "venue": "Wrigley Field",
+      "away_sp": "Cristopher S\u00e1nchez",
+      "home_sp": "Edward Cabrera",
+      "away_sp_qf": 0.6,
+      "home_sp_qf": 0.8758356347894097,
+      "model_home_wp": 0.544,
+      "home_wp": 0.5114025,
+      "away_wp": 0.4885975,
+      "market_home_wp": 0.485,
+      "market_weight": 0.5525,
+      "home_cover": 0.4068,
+      "total_mean": 8.3558,
+      "total_std": 3.9832657907802234,
+      "spread_mean": 0.4438,
+      "over_pct_by_line": {
+        "6.0": 0.6512,
+        "6.5": 0.6512,
+        "7.0": 0.5302,
+        "7.5": 0.5302,
+        "8.0": 0.4438,
+        "8.5": 0.4438,
+        "9.0": 0.3342,
+        "9.5": 0.3342,
+        "10.0": 0.2714,
+        "10.5": 0.2714,
+        "11.0": 0.2012,
+        "11.5": 0.2012,
+        "12.0": 0.1542
+      },
+      "park_factor": 0.98,
+      "home_rpg": 4.713515099342393,
+      "away_rpg": 4.108165903318112
     }
   ],
   "edges": [
@@ -47,6 +84,14 @@
       "kalshi": 0.32499999999999996,
       "edge": 0.05692200000000003,
       "ev": 0.17514461538461557
+    },
+    {
+      "game": "Philadelphia @ Chicago Cubs",
+      "type": "AWAY ML",
+      "model": 0.4885975,
+      "kalshi": 0.41500000000000004,
+      "edge": 0.07359749999999998,
+      "ev": 0.1773433734939759
     }
   ],
   "kalshi_games": 9
