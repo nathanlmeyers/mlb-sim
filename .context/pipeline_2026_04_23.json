@@ -111,6 +111,43 @@
       "park_factor": 1.04,
       "home_rpg": 4.2390606289077715,
       "away_rpg": 4.437174173121471
+    },
+    {
+      "game_id": "822912",
+      "away": "Pittsburgh Pirates",
+      "home": "Texas Rangers",
+      "venue": "Globe Life Field",
+      "away_sp": "Bubba Chandler",
+      "home_sp": "Jacob deGrom",
+      "away_sp_qf": 0.8666334459071818,
+      "home_sp_qf": 0.8252443824449707,
+      "model_home_wp": 0.5182,
+      "home_wp": 0.555107,
+      "away_wp": 0.444893,
+      "market_home_wp": 0.585,
+      "market_weight": 0.5525,
+      "home_cover": 0.377,
+      "total_mean": 8.571,
+      "total_std": 4.156219315676207,
+      "spread_mean": 0.2102,
+      "over_pct_by_line": {
+        "6.0": 0.6646,
+        "6.5": 0.6646,
+        "7.0": 0.5492,
+        "7.5": 0.5492,
+        "8.0": 0.4656,
+        "8.5": 0.4656,
+        "9.0": 0.3608,
+        "9.5": 0.3608,
+        "10.0": 0.293,
+        "10.5": 0.293,
+        "11.0": 0.2134,
+        "11.5": 0.2134,
+        "12.0": 0.1676
+      },
+      "park_factor": 0.99,
+      "home_rpg": 4.201007566286725,
+      "away_rpg": 4.369774648927196
     }
   ],
   "edges": [

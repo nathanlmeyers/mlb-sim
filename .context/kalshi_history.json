@@ -251,28 +251,12 @@
       "TEX": 0.585
     },
     "Minnesota vs New York M": {
-      "MIN": 0.505,
-      "NYM": 0.495
+      "MIN": 0.475,
+      "NYM": 0.53
     },
     "New York Y vs Boston": {
-      "NYY": 0.575,
-      "BOS": 0.42500000000000004
-    },
-    "Los Angeles D vs San Francisco": {
-      "LAD": 0.925,
-      "SF": 0.07499999999999998
-    },
-    "Chicago WS vs Arizona": {
-      "CWS": 0.44499999999999995,
-      "AZ": 0.555
-    },
-    "San Diego vs Colorado": {
-      "SD": 0.16000000000000003,
-      "COL": 0.835
-    },
-    "Philadelphia vs Chicago C": {
-      "PHI": 0.495,
-      "CHC": 0.515
+      "NYY": 0.53,
+      "BOS": 0.46499999999999997
     }
   }
 }
