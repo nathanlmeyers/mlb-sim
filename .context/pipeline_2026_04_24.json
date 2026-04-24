@@ -1,0 +1,44 @@
+{
+  "date": "2026-04-24",
+  "predictions": [
+    {
+      "game_id": "824529",
+      "away": "Detroit Tigers",
+      "home": "Cincinnati Reds",
+      "venue": "Great American Ball Park",
+      "away_sp": "Framber Valdez",
+      "home_sp": "Andrew Abbott",
+      "away_sp_qf": 0.7361119641661941,
+      "home_sp_qf": 0.8119281567477119,
+      "model_home_wp": 0.5026,
+      "home_wp": 0.492876,
+      "away_wp": 0.507124,
+      "market_home_wp": 0.485,
+      "market_weight": 0.5525,
+      "home_cover": 0.3674,
+      "total_mean": 8.7546,
+      "total_std": 4.154898174444231,
+      "spread_mean": 0.0634,
+      "over_pct_by_line": {
+        "6.0": 0.6822,
+        "6.5": 0.6822,
+        "7.0": 0.5686,
+        "7.5": 0.5686,
+        "8.0": 0.4858,
+        "8.5": 0.4858,
+        "9.0": 0.38,
+        "9.5": 0.38,
+        "10.0": 0.3082,
+        "10.5": 0.3082,
+        "11.0": 0.2268,
+        "11.5": 0.2268,
+        "12.0": 0.172
+      },
+      "park_factor": 1.05,
+      "home_rpg": 4.0951560670817155,
+      "away_rpg": 4.2430568365003705
+    }
+  ],
+  "edges": [],
+  "kalshi_games": 14
+}
