@@ -74,6 +74,43 @@
       "park_factor": 0.98,
       "home_rpg": 4.486615398591748,
       "away_rpg": 4.183086406188489
+    },
+    {
+      "game_id": "825093",
+      "away": "San Diego Padres",
+      "home": "Arizona Diamondbacks",
+      "venue": "Estadio Alfredo Harp Helu",
+      "away_sp": "Germ\u00e1n M\u00e1rquez",
+      "home_sp": "Zac Gallen",
+      "away_sp_qf": 1.137382940040736,
+      "home_sp_qf": 0.9971400101431445,
+      "model_home_wp": 0.5486,
+      "home_wp": 0.530036,
+      "away_wp": 0.46996400000000005,
+      "market_home_wp": 0.515,
+      "market_weight": 0.5525,
+      "home_cover": 0.4164,
+      "total_mean": 9.4932,
+      "total_std": 4.403675028882127,
+      "spread_mean": 0.5764,
+      "over_pct_by_line": {
+        "6.0": 0.7376,
+        "6.5": 0.7376,
+        "7.0": 0.632,
+        "7.5": 0.632,
+        "8.0": 0.5492,
+        "8.5": 0.5492,
+        "9.0": 0.444,
+        "9.5": 0.444,
+        "10.0": 0.3708,
+        "10.5": 0.3708,
+        "11.0": 0.2844,
+        "11.5": 0.2844,
+        "12.0": 0.2284
+      },
+      "park_factor": 1.01,
+      "home_rpg": 4.453097980240633,
+      "away_rpg": 4.358705849532175
     }
   ],
   "edges": [
