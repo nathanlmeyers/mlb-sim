@@ -37,8 +37,54 @@
       "park_factor": 0.99,
       "home_rpg": 4.303028752469288,
       "away_rpg": 4.2390606289077715
+    },
+    {
+      "game_id": "823070",
+      "away": "Seattle Mariners",
+      "home": "St. Louis Cardinals",
+      "venue": "Busch Stadium",
+      "away_sp": "Bryan Woo",
+      "home_sp": "Matthew Liberatore",
+      "away_sp_qf": 0.6966996250511746,
+      "home_sp_qf": 0.8765455272056324,
+      "model_home_wp": 0.5334,
+      "home_wp": 0.47903399999999996,
+      "away_wp": 0.520966,
+      "market_home_wp": 0.43499999999999994,
+      "market_weight": 0.5525,
+      "home_cover": 0.382,
+      "total_mean": 8.4218,
+      "total_std": 4.057078352706539,
+      "spread_mean": 0.3034,
+      "over_pct_by_line": {
+        "6.0": 0.655,
+        "6.5": 0.655,
+        "7.0": 0.5292,
+        "7.5": 0.5292,
+        "8.0": 0.4458,
+        "8.5": 0.4458,
+        "9.0": 0.345,
+        "9.5": 0.345,
+        "10.0": 0.2708,
+        "10.5": 0.2708,
+        "11.0": 0.2014,
+        "11.5": 0.2014,
+        "12.0": 0.157
+      },
+      "park_factor": 0.98,
+      "home_rpg": 4.486615398591748,
+      "away_rpg": 4.183086406188489
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "game": "Seattle Mari @ St. Louis Ca",
+      "type": "AWAY ML",
+      "model": 0.520966,
+      "kalshi": 0.43499999999999994,
+      "edge": 0.0859660000000001,
+      "ev": 0.19762298850574733
+    }
+  ],
   "kalshi_games": 15
 }
