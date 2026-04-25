@@ -1,0 +1,44 @@
+{
+  "date": "2026-04-25",
+  "predictions": [
+    {
+      "game_id": "824851",
+      "away": "Boston Red Sox",
+      "home": "Baltimore Orioles",
+      "venue": "Oriole Park at Camden Yards",
+      "away_sp": "Garrett Crochet",
+      "home_sp": "Trevor Rogers",
+      "away_sp_qf": 0.6842135307753017,
+      "home_sp_qf": 0.6422235456155525,
+      "model_home_wp": 0.5406,
+      "home_wp": 0.531981,
+      "away_wp": 0.46801899999999996,
+      "market_home_wp": 0.525,
+      "market_weight": 0.5525,
+      "home_cover": 0.3954,
+      "total_mean": 8.2104,
+      "total_std": 4.028316253721894,
+      "spread_mean": 0.4764,
+      "over_pct_by_line": {
+        "6.0": 0.6342,
+        "6.5": 0.6342,
+        "7.0": 0.5122,
+        "7.5": 0.5122,
+        "8.0": 0.424,
+        "8.5": 0.424,
+        "9.0": 0.3216,
+        "9.5": 0.3216,
+        "10.0": 0.261,
+        "10.5": 0.261,
+        "11.0": 0.192,
+        "11.5": 0.192,
+        "12.0": 0.147
+      },
+      "park_factor": 0.99,
+      "home_rpg": 4.303028752469288,
+      "away_rpg": 4.2390606289077715
+    }
+  ],
+  "edges": [],
+  "kalshi_games": 15
+}
