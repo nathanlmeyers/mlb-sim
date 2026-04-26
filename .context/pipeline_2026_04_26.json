@@ -1,0 +1,44 @@
+{
+  "date": "2026-04-26",
+  "predictions": [
+    {
+      "game_id": "824852",
+      "away": "Boston Red Sox",
+      "home": "Baltimore Orioles",
+      "venue": "Oriole Park at Camden Yards",
+      "away_sp": "Connelly Early",
+      "home_sp": "Kyle Bradish",
+      "away_sp_qf": 0.6150042826418084,
+      "home_sp_qf": 0.8081977632988089,
+      "model_home_wp": 0.5262,
+      "home_wp": 0.547637,
+      "away_wp": 0.45236299999999996,
+      "market_home_wp": 0.5650000000000001,
+      "market_weight": 0.5525,
+      "home_cover": 0.3742,
+      "total_mean": 8.2588,
+      "total_std": 3.990767164343217,
+      "spread_mean": 0.1988,
+      "over_pct_by_line": {
+        "6.0": 0.6396,
+        "6.5": 0.6396,
+        "7.0": 0.513,
+        "7.5": 0.513,
+        "8.0": 0.4286,
+        "8.5": 0.4286,
+        "9.0": 0.3312,
+        "9.5": 0.3312,
+        "10.0": 0.2604,
+        "10.5": 0.2604,
+        "11.0": 0.1854,
+        "11.5": 0.1854,
+        "12.0": 0.1418
+      },
+      "park_factor": 0.99,
+      "home_rpg": 4.303028752469288,
+      "away_rpg": 4.2390606289077715
+    }
+  ],
+  "edges": [],
+  "kalshi_games": 18
+}
