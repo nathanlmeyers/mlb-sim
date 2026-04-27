@@ -1,0 +1,44 @@
+{
+  "date": "2026-04-27",
+  "predictions": [
+    {
+      "game_id": "824446",
+      "away": "Tampa Bay Rays",
+      "home": "Cleveland Guardians",
+      "venue": "Progressive Field",
+      "away_sp": "Steven Matz",
+      "home_sp": "Parker Messick",
+      "away_sp_qf": 0.6913552816448144,
+      "home_sp_qf": 0.6500269803578949,
+      "model_home_wp": 0.541,
+      "home_wp": 0.548735,
+      "away_wp": 0.451265,
+      "market_home_wp": 0.555,
+      "market_weight": 0.5525,
+      "home_cover": 0.407,
+      "total_mean": 8.4538,
+      "total_std": 4.058061798445165,
+      "spread_mean": 0.457,
+      "over_pct_by_line": {
+        "6.0": 0.6642,
+        "6.5": 0.6642,
+        "7.0": 0.5394,
+        "7.5": 0.5394,
+        "8.0": 0.4514,
+        "8.5": 0.4514,
+        "9.0": 0.3446,
+        "9.5": 0.3446,
+        "10.0": 0.2772,
+        "10.5": 0.2772,
+        "11.0": 0.203,
+        "11.5": 0.203,
+        "12.0": 0.1578
+      },
+      "park_factor": 0.99,
+      "home_rpg": 4.471715795787674,
+      "away_rpg": 4.320247738226853
+    }
+  ],
+  "edges": [],
+  "kalshi_games": 8
+}
