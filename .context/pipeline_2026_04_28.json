@@ -1,0 +1,44 @@
+{
+  "date": "2026-04-28",
+  "predictions": [
+    {
+      "game_id": "824447",
+      "away": "Tampa Bay Rays",
+      "home": "Cleveland Guardians",
+      "venue": "Progressive Field",
+      "away_sp": "Nick Martinez",
+      "home_sp": "Tanner Bibee",
+      "away_sp_qf": 0.9843203963717999,
+      "home_sp_qf": 0.9302567828173551,
+      "model_home_wp": 0.5296,
+      "home_wp": 0.5381085,
+      "away_wp": 0.4618915,
+      "market_home_wp": 0.545,
+      "market_weight": 0.5525,
+      "home_cover": 0.4024,
+      "total_mean": 9.0346,
+      "total_std": 4.266169574688751,
+      "spread_mean": 0.387,
+      "over_pct_by_line": {
+        "6.0": 0.7054,
+        "6.5": 0.7054,
+        "7.0": 0.594,
+        "7.5": 0.594,
+        "8.0": 0.5042,
+        "8.5": 0.5042,
+        "9.0": 0.399,
+        "9.5": 0.399,
+        "10.0": 0.3292,
+        "10.5": 0.3292,
+        "11.0": 0.2514,
+        "11.5": 0.2514,
+        "12.0": 0.195
+      },
+      "park_factor": 0.99,
+      "home_rpg": 4.471715795787674,
+      "away_rpg": 4.320247738226853
+    }
+  ],
+  "edges": [],
+  "kalshi_games": 15
+}
