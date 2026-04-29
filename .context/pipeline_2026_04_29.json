@@ -1,0 +1,44 @@
+{
+  "date": "2026-04-29",
+  "predictions": [
+    {
+      "game_id": "824608",
+      "away": "Los Angeles Angels",
+      "home": "Chicago White Sox",
+      "venue": "Rate Field",
+      "away_sp": "Yusei Kikuchi",
+      "home_sp": "Erick Fedde",
+      "away_sp_qf": 0.8866273713482336,
+      "home_sp_qf": 1.0484542915585373,
+      "model_home_wp": 0.5054,
+      "home_wp": 0.5991040000000001,
+      "away_wp": 0.4008959999999999,
+      "market_home_wp": 0.675,
+      "market_weight": 0.5525,
+      "home_cover": 0.3726,
+      "total_mean": 8.8766,
+      "total_std": 4.249584972676744,
+      "spread_mean": 0.0322,
+      "over_pct_by_line": {
+        "6.0": 0.6906,
+        "6.5": 0.6906,
+        "7.0": 0.574,
+        "7.5": 0.574,
+        "8.0": 0.491,
+        "8.5": 0.491,
+        "9.0": 0.385,
+        "9.5": 0.385,
+        "10.0": 0.32,
+        "10.5": 0.32,
+        "11.0": 0.2488,
+        "11.5": 0.2488,
+        "12.0": 0.1928
+      },
+      "park_factor": 1.0,
+      "home_rpg": 4.199274432705442,
+      "away_rpg": 4.273984710570066
+    }
+  ],
+  "edges": [],
+  "kalshi_games": 15
+}
