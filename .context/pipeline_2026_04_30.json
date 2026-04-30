@@ -1,0 +1,44 @@
+{
+  "date": "2026-04-30",
+  "predictions": [
+    {
+      "game_id": "824929",
+      "away": "Detroit Tigers",
+      "home": "Atlanta Braves",
+      "venue": "Truist Park",
+      "away_sp": "Framber Valdez",
+      "home_sp": "Bryce Elder",
+      "away_sp_qf": 0.7361119641661941,
+      "home_sp_qf": 0.8794514683707697,
+      "model_home_wp": 0.539,
+      "home_wp": 0.5448039851485149,
+      "away_wp": 0.4551960148514851,
+      "market_home_wp": 0.5495049504950495,
+      "market_weight": 0.5525,
+      "home_cover": 0.3952,
+      "total_mean": 8.7246,
+      "total_std": 4.209650203995577,
+      "spread_mean": 0.4358,
+      "over_pct_by_line": {
+        "6.0": 0.6766,
+        "6.5": 0.6766,
+        "7.0": 0.5542,
+        "7.5": 0.5542,
+        "8.0": 0.4736,
+        "8.5": 0.4736,
+        "9.0": 0.3728,
+        "9.5": 0.3728,
+        "10.0": 0.3092,
+        "10.5": 0.3092,
+        "11.0": 0.227,
+        "11.5": 0.227,
+        "12.0": 0.1772
+      },
+      "park_factor": 1.0,
+      "home_rpg": 4.59265743957646,
+      "away_rpg": 4.2430568365003705
+    }
+  ],
+  "edges": [],
+  "kalshi_games": 9
+}
