@@ -37,8 +37,45 @@
       "park_factor": 1.0,
       "home_rpg": 4.59265743957646,
       "away_rpg": 4.2430568365003705
+    },
+    {
+      "game_id": "825016",
+      "away": "Kansas City Royals",
+      "home": "Athletics",
+      "venue": "Sutter Health Park",
+      "away_sp": "Noah Cameron",
+      "home_sp": "Jeffrey Springs",
+      "away_sp_qf": 0.8840841113529041,
+      "home_sp_qf": 0.8800832465016326,
+      "model_home_wp": 0.5482,
+      "home_wp": 0.5434506881188119,
+      "away_wp": 0.4565493118811881,
+      "market_home_wp": 0.5396039603960396,
+      "market_weight": 0.5525,
+      "home_cover": 0.409,
+      "total_mean": 8.3628,
+      "total_std": 4.071851686886447,
+      "spread_mean": 0.5432,
+      "over_pct_by_line": {
+        "6.0": 0.6412,
+        "6.5": 0.6412,
+        "7.0": 0.531,
+        "7.5": 0.531,
+        "8.0": 0.4424,
+        "8.5": 0.4424,
+        "9.0": 0.3436,
+        "9.5": 0.3436,
+        "10.0": 0.2766,
+        "10.5": 0.2766,
+        "11.0": 0.1992,
+        "11.5": 0.1992,
+        "12.0": 0.1562
+      },
+      "park_factor": 0.96,
+      "home_rpg": 4.373875346892362,
+      "away_rpg": 4.05700652105952
     }
   ],
   "edges": [],
-  "kalshi_games": 9
+  "kalshi_games": 11
 }
