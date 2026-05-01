@@ -1,0 +1,44 @@
+{
+  "date": "2026-05-01",
+  "predictions": [
+    {
+      "game_id": "824686",
+      "away": "Arizona Diamondbacks",
+      "home": "Chicago Cubs",
+      "venue": "Wrigley Field",
+      "away_sp": "Zac Gallen",
+      "home_sp": "Colin Rea",
+      "away_sp_qf": 0.9971400101431445,
+      "home_sp_qf": 0.8566841065246198,
+      "model_home_wp": 0.5636,
+      "home_wp": 0.5754235,
+      "away_wp": 0.4245765,
+      "market_home_wp": 0.585,
+      "market_weight": 0.5525,
+      "home_cover": 0.4246,
+      "total_mean": 9.1986,
+      "total_std": 4.394218706436902,
+      "spread_mean": 0.7466,
+      "over_pct_by_line": {
+        "6.0": 0.7138,
+        "6.5": 0.7138,
+        "7.0": 0.6068,
+        "7.5": 0.6068,
+        "8.0": 0.5216,
+        "8.5": 0.5216,
+        "9.0": 0.4186,
+        "9.5": 0.4186,
+        "10.0": 0.3462,
+        "10.5": 0.3462,
+        "11.0": 0.2598,
+        "11.5": 0.2598,
+        "12.0": 0.207
+      },
+      "park_factor": 0.98,
+      "home_rpg": 4.713515099342393,
+      "away_rpg": 4.453097980240633
+    }
+  ],
+  "edges": [],
+  "kalshi_games": 15
+}
