@@ -662,11 +662,11 @@
     },
     "New York M vs Los Angeles A": {
       "NYM": 0.545,
-      "LAA": 0.45499999999999996
+      "LAA": 0.46499999999999997
     },
     "Chicago WS vs San Diego": {
       "CWS": 0.375,
-      "SD": 0.635
+      "SD": 0.625
     },
     "Atlanta vs Colorado": {
       "ATL": 0.675,
@@ -689,8 +689,8 @@
       "MIA": 0.555
     },
     "Houston vs Boston": {
-      "HOU": 0.46499999999999997,
-      "BOS": 0.545
+      "HOU": 0.44499999999999995,
+      "BOS": 0.555
     },
     "Milwaukee vs Washington": {
       "MIL": 0.545,
@@ -709,8 +709,8 @@
       "CHC": 0.605
     },
     "Toronto vs Minnesota": {
-      "TOR": 0.555,
-      "MIN": 0.45499999999999996
+      "TOR": 0.5650000000000001,
+      "MIN": 0.44499999999999995
     },
     "Baltimore vs New York Y": {
       "BAL": 0.395,

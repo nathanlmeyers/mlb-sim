@@ -1,5 +1,5 @@
 {
-  "bankroll": 18.629999999999995,
+  "bankroll": 18.189999999999994,
   "bets": [
     {
       "date": "2026-04-13",
@@ -252,9 +252,23 @@
       "potential_payout": 1.0,
       "status": "settled",
       "result": "win"
+    },
+    {
+      "date": "2026-05-02",
+      "game": "Toronto Blue @ Minnesota Tw",
+      "type": "HOME ML",
+      "side": "HOME",
+      "model_prob": 0.49071671782178217,
+      "kalshi_price": 0.44499999999999995,
+      "edge": 0.045716717821782216,
+      "shares": 1,
+      "cost": 0.44,
+      "potential_payout": 1.0,
+      "status": "open",
+      "result": null
     }
   ],
   "settled": [],
-  "total_wagered": 7.369999999999999,
+  "total_wagered": 7.81,
   "total_returned": 6.0
 }

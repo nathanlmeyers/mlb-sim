@@ -37,8 +37,54 @@
       "park_factor": 0.99,
       "home_rpg": 4.437174173121471,
       "away_rpg": 4.303028752469288
+    },
+    {
+      "game_id": "823715",
+      "away": "Toronto Blue Jays",
+      "home": "Minnesota Twins",
+      "venue": "Target Field",
+      "away_sp": "Dylan Cease",
+      "home_sp": "Connor Prielipp",
+      "away_sp_qf": 0.7994397376974028,
+      "home_sp_qf": 1.0,
+      "model_home_wp": 0.5526,
+      "home_wp": 0.49071671782178217,
+      "away_wp": 0.5092832821782178,
+      "market_home_wp": 0.44059405940594054,
+      "market_weight": 0.5525,
+      "home_cover": 0.4126,
+      "total_mean": 9.0642,
+      "total_std": 4.246042670534529,
+      "spread_mean": 0.5282,
+      "over_pct_by_line": {
+        "6.0": 0.7002,
+        "6.5": 0.7002,
+        "7.0": 0.5888,
+        "7.5": 0.5888,
+        "8.0": 0.5106,
+        "8.5": 0.5106,
+        "9.0": 0.405,
+        "9.5": 0.405,
+        "10.0": 0.3316,
+        "10.5": 0.3316,
+        "11.0": 0.2518,
+        "11.5": 0.2518,
+        "12.0": 0.2038
+      },
+      "park_factor": 1.01,
+      "home_rpg": 4.630527861395164,
+      "away_rpg": 4.118755952793887
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "game": "Toronto Blue @ Minnesota Tw",
+      "type": "HOME ML",
+      "model": 0.49071671782178217,
+      "kalshi": 0.44499999999999995,
+      "edge": 0.045716717821782216,
+      "ev": 0.10273419735231959
+    }
+  ],
   "kalshi_games": 15
 }
