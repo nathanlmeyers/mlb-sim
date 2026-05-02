@@ -1,0 +1,44 @@
+{
+  "date": "2026-05-02",
+  "predictions": [
+    {
+      "game_id": "823554",
+      "away": "Baltimore Orioles",
+      "home": "New York Yankees",
+      "venue": "Yankee Stadium",
+      "away_sp": "Kyle Bradish",
+      "home_sp": "Ryan Weathers",
+      "away_sp_qf": 0.8081977632988089,
+      "home_sp_qf": 0.9459836777201905,
+      "model_home_wp": 0.5146,
+      "home_wp": 0.5667067673267326,
+      "away_wp": 0.43329323267326736,
+      "market_home_wp": 0.6089108910891089,
+      "market_weight": 0.5525,
+      "home_cover": 0.3772,
+      "total_mean": 8.882,
+      "total_std": 4.171291886214629,
+      "spread_mean": 0.1652,
+      "over_pct_by_line": {
+        "6.0": 0.7004,
+        "6.5": 0.7004,
+        "7.0": 0.582,
+        "7.5": 0.582,
+        "8.0": 0.4912,
+        "8.5": 0.4912,
+        "9.0": 0.3928,
+        "9.5": 0.3928,
+        "10.0": 0.3212,
+        "10.5": 0.3212,
+        "11.0": 0.2392,
+        "11.5": 0.2392,
+        "12.0": 0.1868
+      },
+      "park_factor": 0.99,
+      "home_rpg": 4.437174173121471,
+      "away_rpg": 4.303028752469288
+    }
+  ],
+  "edges": [],
+  "kalshi_games": 15
+}
