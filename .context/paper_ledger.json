@@ -1,5 +1,5 @@
 {
-  "bankroll": 18.189999999999994,
+  "bankroll": 17.859999999999996,
   "bets": [
     {
       "date": "2026-04-13",
@@ -266,9 +266,23 @@
       "potential_payout": 1.0,
       "status": "open",
       "result": null
+    },
+    {
+      "date": "2026-05-02",
+      "game": "Atlanta Brav @ Colorado Roc",
+      "type": "HOME ML",
+      "side": "HOME",
+      "model_prob": 0.41089600000000004,
+      "kalshi_price": 0.33499999999999996,
+      "edge": 0.07589600000000007,
+      "shares": 1,
+      "cost": 0.33,
+      "potential_payout": 1.0,
+      "status": "open",
+      "result": null
     }
   ],
   "settled": [],
-  "total_wagered": 7.81,
+  "total_wagered": 8.139999999999999,
   "total_returned": 6.0
 }
