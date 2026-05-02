@@ -74,6 +74,43 @@
       "park_factor": 1.01,
       "home_rpg": 4.630527861395164,
       "away_rpg": 4.118755952793887
+    },
+    {
+      "game_id": "822988",
+      "away": "San Francisco Giants",
+      "home": "Tampa Bay Rays",
+      "venue": "Tropicana Field",
+      "away_sp": "Landen Roupp",
+      "home_sp": "Griffin Jax",
+      "away_sp_qf": 0.771780024558382,
+      "home_sp_qf": 0.8957716958237355,
+      "model_home_wp": 0.5088,
+      "home_wp": 0.5730005,
+      "away_wp": 0.4269995,
+      "market_home_wp": 0.625,
+      "market_weight": 0.5525,
+      "home_cover": 0.3644,
+      "total_mean": 8.3738,
+      "total_std": 4.075594871917473,
+      "spread_mean": 0.0634,
+      "over_pct_by_line": {
+        "6.0": 0.6512,
+        "6.5": 0.6512,
+        "7.0": 0.5308,
+        "7.5": 0.5308,
+        "8.0": 0.4486,
+        "8.5": 0.4486,
+        "9.0": 0.3472,
+        "9.5": 0.3472,
+        "10.0": 0.2754,
+        "10.5": 0.2754,
+        "11.0": 0.195,
+        "11.5": 0.195,
+        "12.0": 0.1506
+      },
+      "park_factor": 0.96,
+      "home_rpg": 4.320247738226853,
+      "away_rpg": 4.302323630666407
     }
   ],
   "edges": [
