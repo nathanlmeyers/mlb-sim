@@ -74,6 +74,43 @@
       "park_factor": 0.98,
       "home_rpg": 4.486615398591748,
       "away_rpg": 4.932656898143475
+    },
+    {
+      "game_id": "824285",
+      "away": "Texas Rangers",
+      "home": "Detroit Tigers",
+      "venue": "Comerica Park",
+      "away_sp": "Jack Leiter",
+      "home_sp": "Tyler Holton",
+      "away_sp_qf": 0.890577097262268,
+      "home_sp_qf": 1.0372656856869251,
+      "model_home_wp": 0.518,
+      "home_wp": 0.5244658910891089,
+      "away_wp": 0.4755341089108911,
+      "market_home_wp": 0.5297029702970297,
+      "market_weight": 0.5525,
+      "home_cover": 0.3724,
+      "total_mean": 8.8456,
+      "total_std": 4.16295095335028,
+      "spread_mean": 0.1488,
+      "over_pct_by_line": {
+        "6.0": 0.6954,
+        "6.5": 0.6954,
+        "7.0": 0.5792,
+        "7.5": 0.5792,
+        "8.0": 0.4922,
+        "8.5": 0.4922,
+        "9.0": 0.3854,
+        "9.5": 0.3854,
+        "10.0": 0.3132,
+        "10.5": 0.3132,
+        "11.0": 0.2362,
+        "11.5": 0.2362,
+        "12.0": 0.1838
+      },
+      "park_factor": 1.0,
+      "home_rpg": 4.2430568365003705,
+      "away_rpg": 4.201007566286725
     }
   ],
   "edges": [
