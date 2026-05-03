@@ -684,5 +684,67 @@
       "SF": 0.385,
       "TB": 0.615
     }
+  },
+  "2026-05-03": {
+    "Texas vs Detroit": {
+      "TEX": 0.45499999999999996,
+      "DET": 0.545
+    },
+    "Kansas City vs Seattle": {
+      "KC": 0.46499999999999997,
+      "SEA": 0.535
+    },
+    "Chicago WS vs San Diego": {
+      "CWS": 0.375,
+      "SD": 0.625
+    },
+    "New York M vs Los Angeles A": {
+      "NYM": 0.545,
+      "LAA": 0.45499999999999996
+    },
+    "Cleveland vs A's": {
+      "CLE": 0.515,
+      "ATH": 0.485
+    },
+    "Atlanta vs Colorado": {
+      "ATL": 0.615,
+      "COL": 0.385
+    },
+    "Arizona vs Chicago C": {
+      "AZ": 0.405,
+      "CHC": 0.595
+    },
+    "Los Angeles D vs St. Louis": {
+      "LAD": 0.5650000000000001,
+      "STL": 0.43499999999999994
+    },
+    "San Francisco vs Tampa Bay": {
+      "SF": 0.475,
+      "TB": 0.525
+    },
+    "Philadelphia vs Miami": {
+      "PHI": 0.5650000000000001,
+      "MIA": 0.43499999999999994
+    },
+    "Milwaukee vs Washington": {
+      "MIL": 0.555,
+      "WSH": 0.45499999999999996
+    },
+    "Houston vs Boston": {
+      "HOU": 0.44999999999999996,
+      "BOS": 0.555
+    },
+    "Cincinnati vs Pittsburgh": {
+      "CIN": 0.475,
+      "PIT": 0.525
+    },
+    "Baltimore vs New York Y": {
+      "BAL": 0.33499999999999996,
+      "NYY": 0.655
+    },
+    "Toronto vs Minnesota": {
+      "TOR": 0.495,
+      "MIN": 0.505
+    }
   }
 }
