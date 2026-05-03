@@ -37,8 +37,54 @@
       "park_factor": 1.01,
       "home_rpg": 4.630527861395164,
       "away_rpg": 4.118755952793887
+    },
+    {
+      "game_id": "823065",
+      "away": "Los Angeles Dodgers",
+      "home": "St. Louis Cardinals",
+      "venue": "Busch Stadium",
+      "away_sp": "Justin Wrobleski",
+      "home_sp": "Dustin May",
+      "away_sp_qf": 0.6663047824471812,
+      "home_sp_qf": 0.8830486703502165,
+      "model_home_wp": 0.459,
+      "home_wp": 0.4543010148514851,
+      "away_wp": 0.5456989851485149,
+      "market_home_wp": 0.45049504950495045,
+      "market_weight": 0.5525,
+      "home_cover": 0.329,
+      "total_mean": 9.1368,
+      "total_std": 4.296799478681779,
+      "spread_mean": -0.5132,
+      "over_pct_by_line": {
+        "6.0": 0.713,
+        "6.5": 0.713,
+        "7.0": 0.6016,
+        "7.5": 0.6016,
+        "8.0": 0.5214,
+        "8.5": 0.5214,
+        "9.0": 0.4124,
+        "9.5": 0.4124,
+        "10.0": 0.3398,
+        "10.5": 0.3398,
+        "11.0": 0.2608,
+        "11.5": 0.2608,
+        "12.0": 0.207
+      },
+      "park_factor": 0.98,
+      "home_rpg": 4.486615398591748,
+      "away_rpg": 4.932656898143475
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "game": "Los Angeles  @ St. Louis Ca",
+      "type": "AWAY ML",
+      "model": 0.5456989851485149,
+      "kalshi": 0.45499999999999996,
+      "edge": 0.09069898514851493,
+      "ev": 0.19933842889783504
+    }
+  ],
   "kalshi_games": 15
 }

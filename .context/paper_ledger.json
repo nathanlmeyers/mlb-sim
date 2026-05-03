@@ -1,5 +1,5 @@
 {
-  "bankroll": 17.859999999999996,
+  "bankroll": 17.409999999999997,
   "bets": [
     {
       "date": "2026-04-13",
@@ -280,9 +280,23 @@
       "potential_payout": 1.0,
       "status": "settled",
       "result": "loss"
+    },
+    {
+      "date": "2026-05-03",
+      "game": "Los Angeles  @ St. Louis Ca",
+      "type": "AWAY ML",
+      "side": "AWAY",
+      "model_prob": 0.5456989851485149,
+      "kalshi_price": 0.45499999999999996,
+      "edge": 0.09069898514851493,
+      "shares": 1,
+      "cost": 0.45,
+      "potential_payout": 1.0,
+      "status": "open",
+      "result": null
     }
   ],
   "settled": [],
-  "total_wagered": 8.139999999999999,
+  "total_wagered": 8.589999999999998,
   "total_returned": 6.0
 }
