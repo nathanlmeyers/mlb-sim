@@ -264,8 +264,8 @@
       "shares": 1,
       "cost": 0.44,
       "potential_payout": 1.0,
-      "status": "open",
-      "result": null
+      "status": "settled",
+      "result": "loss"
     },
     {
       "date": "2026-05-02",
@@ -278,8 +278,8 @@
       "shares": 1,
       "cost": 0.33,
       "potential_payout": 1.0,
-      "status": "open",
-      "result": null
+      "status": "settled",
+      "result": "loss"
     }
   ],
   "settled": [],
