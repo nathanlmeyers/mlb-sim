@@ -1,0 +1,44 @@
+{
+  "date": "2026-05-03",
+  "predictions": [
+    {
+      "game_id": "823711",
+      "away": "Toronto Blue Jays",
+      "home": "Minnesota Twins",
+      "venue": "Target Field",
+      "away_sp": "Trey Yesavage",
+      "home_sp": "Joe Ryan",
+      "away_sp_qf": 0.8385219628890181,
+      "home_sp_qf": 0.7563421577899425,
+      "model_home_wp": 0.5894,
+      "home_wp": 0.5400065000000001,
+      "away_wp": 0.45999349999999994,
+      "market_home_wp": 0.5,
+      "market_weight": 0.5525,
+      "home_cover": 0.4474,
+      "total_mean": 8.7554,
+      "total_std": 4.250878831488849,
+      "spread_mean": 0.9182,
+      "over_pct_by_line": {
+        "6.0": 0.6838,
+        "6.5": 0.6838,
+        "7.0": 0.567,
+        "7.5": 0.567,
+        "8.0": 0.4808,
+        "8.5": 0.4808,
+        "9.0": 0.3798,
+        "9.5": 0.3798,
+        "10.0": 0.3134,
+        "10.5": 0.3134,
+        "11.0": 0.2284,
+        "11.5": 0.2284,
+        "12.0": 0.1796
+      },
+      "park_factor": 1.01,
+      "home_rpg": 4.630527861395164,
+      "away_rpg": 4.118755952793887
+    }
+  ],
+  "edges": [],
+  "kalshi_games": 15
+}
