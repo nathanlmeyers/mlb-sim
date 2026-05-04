@@ -37,8 +37,54 @@
       "park_factor": 1.13,
       "home_rpg": 4.588029733979381,
       "away_rpg": 4.295978598316074
+    },
+    {
+      "game_id": "824201",
+      "away": "Los Angeles Dodgers",
+      "home": "Houston Astros",
+      "venue": "Daikin Park",
+      "away_sp": "Yoshinobu Yamamoto",
+      "home_sp": "Steven Okert",
+      "away_sp_qf": 0.6896849544567942,
+      "home_sp_qf": 0.8523879269191023,
+      "model_home_wp": 0.4884,
+      "home_wp": 0.5417715,
+      "away_wp": 0.45822850000000004,
+      "market_home_wp": 0.585,
+      "market_weight": 0.5525,
+      "home_cover": 0.3594,
+      "total_mean": 9.5064,
+      "total_std": 4.420221605304422,
+      "spread_mean": -0.1732,
+      "over_pct_by_line": {
+        "6.0": 0.739,
+        "6.5": 0.739,
+        "7.0": 0.6354,
+        "7.5": 0.6354,
+        "8.0": 0.5478,
+        "8.5": 0.5478,
+        "9.0": 0.4426,
+        "9.5": 0.4426,
+        "10.0": 0.3726,
+        "10.5": 0.3726,
+        "11.0": 0.2898,
+        "11.5": 0.2898,
+        "12.0": 0.2306
+      },
+      "park_factor": 0.99,
+      "home_rpg": 4.725345808680201,
+      "away_rpg": 4.932656898143475
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "game": "Los Angeles  @ Houston Astr",
+      "type": "AWAY ML",
+      "model": 0.45822850000000004,
+      "kalshi": 0.41500000000000004,
+      "edge": 0.0432285,
+      "ev": 0.10416506024096384
+    }
+  ],
   "kalshi_games": 12
 }
