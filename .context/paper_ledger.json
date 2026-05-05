@@ -1,5 +1,5 @@
 {
-  "bankroll": 17.989999999999995,
+  "bankroll": 18.989999999999995,
   "bets": [
     {
       "date": "2026-04-13",
@@ -306,11 +306,11 @@
       "shares": 1,
       "cost": 0.42,
       "potential_payout": 1.0,
-      "status": "open",
-      "result": null
+      "status": "settled",
+      "result": "win"
     }
   ],
   "settled": [],
   "total_wagered": 9.009999999999998,
-  "total_returned": 7.0
+  "total_returned": 8.0
 }
