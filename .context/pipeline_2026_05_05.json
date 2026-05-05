@@ -1,0 +1,44 @@
+{
+  "date": "2026-05-05",
+  "predictions": [
+    {
+      "game_id": "823873",
+      "away": "Baltimore Orioles",
+      "home": "Miami Marlins",
+      "venue": "loanDepot park",
+      "away_sp": "Chris Bassitt",
+      "home_sp": "Sandy Alcantara",
+      "away_sp_qf": 0.8417143548936541,
+      "home_sp_qf": 0.829615559745656,
+      "model_home_wp": 0.5602,
+      "home_wp": 0.562852,
+      "away_wp": 0.437148,
+      "market_home_wp": 0.5650000000000001,
+      "market_weight": 0.5525,
+      "home_cover": 0.4196,
+      "total_mean": 9.1596,
+      "total_std": 4.407281229964796,
+      "spread_mean": 0.648,
+      "over_pct_by_line": {
+        "6.0": 0.7068,
+        "6.5": 0.7068,
+        "7.0": 0.5962,
+        "7.5": 0.5962,
+        "8.0": 0.5192,
+        "8.5": 0.5192,
+        "9.0": 0.4196,
+        "9.5": 0.4196,
+        "10.0": 0.348,
+        "10.5": 0.348,
+        "11.0": 0.2608,
+        "11.5": 0.2608,
+        "12.0": 0.208
+      },
+      "park_factor": 1.01,
+      "home_rpg": 4.588748304468614,
+      "away_rpg": 4.303028752469288
+    }
+  ],
+  "edges": [],
+  "kalshi_games": 15
+}
