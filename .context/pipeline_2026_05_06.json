@@ -1,0 +1,44 @@
+{
+  "date": "2026-05-06",
+  "predictions": [
+    {
+      "game_id": "822985",
+      "away": "Toronto Blue Jays",
+      "home": "Tampa Bay Rays",
+      "venue": "Tropicana Field",
+      "away_sp": "Patrick Corbin",
+      "home_sp": "Shane McClanahan",
+      "away_sp_qf": 0.9362200150576647,
+      "home_sp_qf": 0.997285455353992,
+      "model_home_wp": 0.5442,
+      "home_wp": 0.5556920000000001,
+      "away_wp": 0.4443079999999999,
+      "market_home_wp": 0.5650000000000001,
+      "market_weight": 0.5525,
+      "home_cover": 0.401,
+      "total_mean": 8.5422,
+      "total_std": 4.103976018448451,
+      "spread_mean": 0.415,
+      "over_pct_by_line": {
+        "6.0": 0.6768,
+        "6.5": 0.6768,
+        "7.0": 0.5536,
+        "7.5": 0.5536,
+        "8.0": 0.4618,
+        "8.5": 0.4618,
+        "9.0": 0.3586,
+        "9.5": 0.3586,
+        "10.0": 0.2836,
+        "10.5": 0.2836,
+        "11.0": 0.2082,
+        "11.5": 0.2082,
+        "12.0": 0.16
+      },
+      "park_factor": 0.96,
+      "home_rpg": 4.320247738226853,
+      "away_rpg": 4.118755952793887
+    }
+  ],
+  "edges": [],
+  "kalshi_games": 15
+}
