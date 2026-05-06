@@ -1,5 +1,4432 @@
 [
   {
+    "event_id": "401814702",
+    "home": "SF",
+    "away": "NYY",
+    "home_name": "San Francisco Giants",
+    "away_name": "New York Yankees",
+    "home_score": 0,
+    "away_score": 7,
+    "date": "2026-03-25",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.0,
+      "ml_home": 104,
+      "ml_away": -126
+    }
+  },
+  {
+    "event_id": "401814693",
+    "home": "NYM",
+    "away": "PIT",
+    "home_name": "New York Mets",
+    "away_name": "Pittsburgh Pirates",
+    "home_score": 11,
+    "away_score": 7,
+    "date": "2026-03-26",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.0,
+      "ml_home": -126,
+      "ml_away": 104
+    }
+  },
+  {
+    "event_id": "401814696",
+    "home": "MIL",
+    "away": "CHW",
+    "home_name": "Milwaukee Brewers",
+    "away_name": "Chicago White Sox",
+    "home_score": 14,
+    "away_score": 2,
+    "date": "2026-03-26",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -199,
+      "ml_away": 163
+    }
+  },
+  {
+    "event_id": "401814698",
+    "home": "CHC",
+    "away": "WSH",
+    "home_name": "Chicago Cubs",
+    "away_name": "Washington Nationals",
+    "home_score": 4,
+    "away_score": 10,
+    "date": "2026-03-26",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.0,
+      "ml_home": -207,
+      "ml_away": 169
+    }
+  },
+  {
+    "event_id": "401814692",
+    "home": "BAL",
+    "away": "MIN",
+    "home_name": "Baltimore Orioles",
+    "away_name": "Minnesota Twins",
+    "home_score": 2,
+    "away_score": 1,
+    "date": "2026-03-26",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": -145,
+      "ml_away": 120
+    }
+  },
+  {
+    "event_id": "401814689",
+    "home": "CIN",
+    "away": "BOS",
+    "home_name": "Cincinnati Reds",
+    "away_name": "Boston Red Sox",
+    "home_score": 0,
+    "away_score": 3,
+    "date": "2026-03-26",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": 135,
+      "ml_away": -163
+    }
+  },
+  {
+    "event_id": "401814695",
+    "home": "HOU",
+    "away": "LAA",
+    "home_name": "Houston Astros",
+    "away_name": "Los Angeles Angels",
+    "home_score": 0,
+    "away_score": 3,
+    "date": "2026-03-26",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -186,
+      "ml_away": 153
+    }
+  },
+  {
+    "event_id": "401814701",
+    "home": "SD",
+    "away": "DET",
+    "home_name": "San Diego Padres",
+    "away_name": "Detroit Tigers",
+    "home_score": 2,
+    "away_score": 8,
+    "date": "2026-03-26",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.0,
+      "ml_home": 104,
+      "ml_away": -126
+    }
+  },
+  {
+    "event_id": "401814694",
+    "home": "PHI",
+    "away": "TEX",
+    "home_name": "Philadelphia Phillies",
+    "away_name": "Texas Rangers",
+    "home_score": 5,
+    "away_score": 3,
+    "date": "2026-03-26",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -175,
+      "ml_away": 144
+    }
+  },
+  {
+    "event_id": "401814697",
+    "home": "STL",
+    "away": "TB",
+    "home_name": "St. Louis Cardinals",
+    "away_name": "Tampa Bay Rays",
+    "home_score": 9,
+    "away_score": 7,
+    "date": "2026-03-26",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": 113,
+      "ml_away": -136
+    }
+  },
+  {
+    "event_id": "401814699",
+    "home": "LAD",
+    "away": "ARI",
+    "home_name": "Los Angeles Dodgers",
+    "away_name": "Arizona Diamondbacks",
+    "home_score": 8,
+    "away_score": 2,
+    "date": "2026-03-26",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 9.0,
+      "ml_home": -286,
+      "ml_away": 229
+    }
+  },
+  {
+    "event_id": "401814700",
+    "home": "SEA",
+    "away": "CLE",
+    "home_name": "Seattle Mariners",
+    "away_name": "Cleveland Guardians",
+    "home_score": 4,
+    "away_score": 6,
+    "date": "2026-03-26",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 6.5,
+      "ml_home": -186,
+      "ml_away": 153
+    }
+  },
+  {
+    "event_id": "401814721",
+    "home": "SF",
+    "away": "NYY",
+    "home_name": "San Francisco Giants",
+    "away_name": "New York Yankees",
+    "home_score": 0,
+    "away_score": 3,
+    "date": "2026-03-27",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": 113,
+      "ml_away": -136
+    }
+  },
+  {
+    "event_id": "401814688",
+    "home": "TOR",
+    "away": "ATH",
+    "home_name": "Toronto Blue Jays",
+    "away_name": "Athletics",
+    "home_score": 3,
+    "away_score": 2,
+    "date": "2026-03-27",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": -169,
+      "ml_away": 139
+    }
+  },
+  {
+    "event_id": "401814690",
+    "home": "MIA",
+    "away": "COL",
+    "home_name": "Miami Marlins",
+    "away_name": "Colorado Rockies",
+    "home_score": 2,
+    "away_score": 1,
+    "date": "2026-03-27",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -199,
+      "ml_away": 163
+    }
+  },
+  {
+    "event_id": "401814691",
+    "home": "ATL",
+    "away": "KC",
+    "home_name": "Atlanta Braves",
+    "away_name": "Kansas City Royals",
+    "home_score": 6,
+    "away_score": 0,
+    "date": "2026-03-27",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -143,
+      "ml_away": 119
+    }
+  },
+  {
+    "event_id": "401814703",
+    "home": "HOU",
+    "away": "LAA",
+    "home_name": "Houston Astros",
+    "away_name": "Los Angeles Angels",
+    "home_score": 2,
+    "away_score": 6,
+    "date": "2026-03-27",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": -169,
+      "ml_away": 140
+    }
+  },
+  {
+    "event_id": "401814705",
+    "home": "SEA",
+    "away": "CLE",
+    "home_name": "Seattle Mariners",
+    "away_name": "Cleveland Guardians",
+    "home_score": 5,
+    "away_score": 1,
+    "date": "2026-03-27",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.0,
+      "ml_home": -175,
+      "ml_away": 144
+    }
+  },
+  {
+    "event_id": "401814706",
+    "home": "SD",
+    "away": "DET",
+    "home_name": "San Diego Padres",
+    "away_name": "Detroit Tigers",
+    "home_score": 2,
+    "away_score": 5,
+    "date": "2026-03-27",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -130,
+      "ml_away": 108
+    }
+  },
+  {
+    "event_id": "401814704",
+    "home": "LAD",
+    "away": "ARI",
+    "home_name": "Los Angeles Dodgers",
+    "away_name": "Arizona Diamondbacks",
+    "home_score": 5,
+    "away_score": 4,
+    "date": "2026-03-27",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 9.0,
+      "ml_home": -240,
+      "ml_away": 194
+    }
+  },
+  {
+    "event_id": "401814716",
+    "home": "STL",
+    "away": "TB",
+    "home_name": "St. Louis Cardinals",
+    "away_name": "Tampa Bay Rays",
+    "home_score": 6,
+    "away_score": 5,
+    "date": "2026-03-28",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -105,
+      "ml_away": -115
+    }
+  },
+  {
+    "event_id": "401814717",
+    "home": "CHC",
+    "away": "WSH",
+    "home_name": "Chicago Cubs",
+    "away_name": "Washington Nationals",
+    "home_score": 10,
+    "away_score": 2,
+    "date": "2026-03-28",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": -252,
+      "ml_away": 203
+    }
+  },
+  {
+    "event_id": "401814707",
+    "home": "TOR",
+    "away": "ATH",
+    "home_name": "Toronto Blue Jays",
+    "away_name": "Athletics",
+    "home_score": 8,
+    "away_score": 7,
+    "date": "2026-03-28",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -199,
+      "ml_away": 163
+    }
+  },
+  {
+    "event_id": "401814711",
+    "home": "BAL",
+    "away": "MIN",
+    "home_name": "Baltimore Orioles",
+    "away_name": "Minnesota Twins",
+    "home_score": 1,
+    "away_score": 4,
+    "date": "2026-03-28",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -171,
+      "ml_away": 141
+    }
+  },
+  {
+    "event_id": "401814713",
+    "home": "PHI",
+    "away": "TEX",
+    "home_name": "Philadelphia Phillies",
+    "away_name": "Texas Rangers",
+    "home_score": 4,
+    "away_score": 5,
+    "date": "2026-03-28",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -154,
+      "ml_away": 128
+    }
+  },
+  {
+    "event_id": "401814708",
+    "home": "CIN",
+    "away": "BOS",
+    "home_name": "Cincinnati Reds",
+    "away_name": "Boston Red Sox",
+    "home_score": 6,
+    "away_score": 5,
+    "date": "2026-03-28",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": 113,
+      "ml_away": -136
+    }
+  },
+  {
+    "event_id": "401814709",
+    "home": "MIA",
+    "away": "COL",
+    "home_name": "Miami Marlins",
+    "away_name": "Colorado Rockies",
+    "home_score": 4,
+    "away_score": 3,
+    "date": "2026-03-28",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -199,
+      "ml_away": 163
+    }
+  },
+  {
+    "event_id": "401814712",
+    "home": "NYM",
+    "away": "PIT",
+    "home_name": "New York Mets",
+    "away_name": "Pittsburgh Pirates",
+    "home_score": 4,
+    "away_score": 2,
+    "date": "2026-03-28",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -175,
+      "ml_away": 144
+    }
+  },
+  {
+    "event_id": "401814714",
+    "home": "HOU",
+    "away": "LAA",
+    "home_name": "Houston Astros",
+    "away_name": "Los Angeles Angels",
+    "home_score": 11,
+    "away_score": 9,
+    "date": "2026-03-28",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 9.0,
+      "ml_home": -136,
+      "ml_away": 113
+    }
+  },
+  {
+    "event_id": "401814715",
+    "home": "MIL",
+    "away": "CHW",
+    "home_name": "Milwaukee Brewers",
+    "away_name": "Chicago White Sox",
+    "home_score": 6,
+    "away_score": 1,
+    "date": "2026-03-28",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -199,
+      "ml_away": 163
+    }
+  },
+  {
+    "event_id": "401814710",
+    "home": "ATL",
+    "away": "KC",
+    "home_name": "Atlanta Braves",
+    "away_name": "Kansas City Royals",
+    "home_score": 6,
+    "away_score": 2,
+    "date": "2026-03-28",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": -149,
+      "ml_away": 123
+    }
+  },
+  {
+    "event_id": "401814734",
+    "home": "SF",
+    "away": "NYY",
+    "home_name": "San Francisco Giants",
+    "away_name": "New York Yankees",
+    "home_score": 1,
+    "away_score": 3,
+    "date": "2026-03-28",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": 113,
+      "ml_away": -136
+    }
+  },
+  {
+    "event_id": "401814720",
+    "home": "SD",
+    "away": "DET",
+    "home_name": "San Diego Padres",
+    "away_name": "Detroit Tigers",
+    "home_score": 3,
+    "away_score": 0,
+    "date": "2026-03-28",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -118,
+      "ml_away": -102
+    }
+  },
+  {
+    "event_id": "401814718",
+    "home": "LAD",
+    "away": "ARI",
+    "home_name": "Los Angeles Dodgers",
+    "away_name": "Arizona Diamondbacks",
+    "home_score": 3,
+    "away_score": 2,
+    "date": "2026-03-28",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": -252,
+      "ml_away": 203
+    }
+  },
+  {
+    "event_id": "401814719",
+    "home": "SEA",
+    "away": "CLE",
+    "home_name": "Seattle Mariners",
+    "away_name": "Cleveland Guardians",
+    "home_score": 5,
+    "away_score": 6,
+    "date": "2026-03-28",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.0,
+      "ml_home": -193,
+      "ml_away": 158
+    }
+  },
+  {
+    "event_id": "401814725",
+    "home": "ATL",
+    "away": "KC",
+    "home_name": "Atlanta Braves",
+    "away_name": "Kansas City Royals",
+    "home_score": 1,
+    "away_score": 4,
+    "date": "2026-03-29",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -153,
+      "ml_away": 126
+    }
+  },
+  {
+    "event_id": "401814726",
+    "home": "BAL",
+    "away": "MIN",
+    "home_name": "Baltimore Orioles",
+    "away_name": "Minnesota Twins",
+    "home_score": 8,
+    "away_score": 6,
+    "date": "2026-03-29",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 9.0,
+      "ml_home": -163,
+      "ml_away": 135
+    }
+  },
+  {
+    "event_id": "401814728",
+    "home": "PHI",
+    "away": "TEX",
+    "home_name": "Philadelphia Phillies",
+    "away_name": "Texas Rangers",
+    "home_score": 3,
+    "away_score": 8,
+    "date": "2026-03-29",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -163,
+      "ml_away": 135
+    }
+  },
+  {
+    "event_id": "401814722",
+    "home": "TOR",
+    "away": "ATH",
+    "home_name": "Toronto Blue Jays",
+    "away_name": "Athletics",
+    "home_score": 5,
+    "away_score": 2,
+    "date": "2026-03-29",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 9.0,
+      "ml_home": -156,
+      "ml_away": 129
+    }
+  },
+  {
+    "event_id": "401814723",
+    "home": "CIN",
+    "away": "BOS",
+    "home_name": "Cincinnati Reds",
+    "away_name": "Boston Red Sox",
+    "home_score": 3,
+    "away_score": 2,
+    "date": "2026-03-29",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": 108,
+      "ml_away": -130
+    }
+  },
+  {
+    "event_id": "401814724",
+    "home": "MIA",
+    "away": "COL",
+    "home_name": "Miami Marlins",
+    "away_name": "Colorado Rockies",
+    "home_score": 4,
+    "away_score": 3,
+    "date": "2026-03-29",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -194,
+      "ml_away": 159
+    }
+  },
+  {
+    "event_id": "401814727",
+    "home": "NYM",
+    "away": "PIT",
+    "home_name": "New York Mets",
+    "away_name": "Pittsburgh Pirates",
+    "home_score": 3,
+    "away_score": 4,
+    "date": "2026-03-29",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -186,
+      "ml_away": 153
+    }
+  },
+  {
+    "event_id": "401814729",
+    "home": "HOU",
+    "away": "LAA",
+    "home_name": "Houston Astros",
+    "away_name": "Los Angeles Angels",
+    "home_score": 9,
+    "away_score": 7,
+    "date": "2026-03-29",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 9.0,
+      "ml_home": -175,
+      "ml_away": 144
+    }
+  },
+  {
+    "event_id": "401814730",
+    "home": "MIL",
+    "away": "CHW",
+    "home_name": "Milwaukee Brewers",
+    "away_name": "Chicago White Sox",
+    "home_score": 9,
+    "away_score": 7,
+    "date": "2026-03-29",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -168,
+      "ml_away": 139
+    }
+  },
+  {
+    "event_id": "401814731",
+    "home": "STL",
+    "away": "TB",
+    "home_name": "St. Louis Cardinals",
+    "away_name": "Tampa Bay Rays",
+    "home_score": 7,
+    "away_score": 11,
+    "date": "2026-03-29",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": 102,
+      "ml_away": -122
+    }
+  },
+  {
+    "event_id": "401814732",
+    "home": "CHC",
+    "away": "WSH",
+    "home_name": "Chicago Cubs",
+    "away_name": "Washington Nationals",
+    "home_score": 3,
+    "away_score": 6,
+    "date": "2026-03-29",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 9.0,
+      "ml_home": -243,
+      "ml_away": 197
+    }
+  },
+  {
+    "event_id": "401814733",
+    "home": "SEA",
+    "away": "CLE",
+    "home_name": "Seattle Mariners",
+    "away_name": "Cleveland Guardians",
+    "home_score": 8,
+    "away_score": 0,
+    "date": "2026-03-29",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -149,
+      "ml_away": 123
+    }
+  },
+  {
+    "event_id": "401814743",
+    "home": "KC",
+    "away": "MIN",
+    "home_name": "Kansas City Royals",
+    "away_name": "Minnesota Twins",
+    "home_score": 3,
+    "away_score": 1,
+    "date": "2026-03-30",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 10.5,
+      "ml_home": -168,
+      "ml_away": 139
+    }
+  },
+  {
+    "event_id": "401814739",
+    "home": "BAL",
+    "away": "TEX",
+    "home_name": "Baltimore Orioles",
+    "away_name": "Texas Rangers",
+    "home_score": 2,
+    "away_score": 5,
+    "date": "2026-03-30",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 9.0,
+      "ml_home": -131,
+      "ml_away": 109
+    }
+  },
+  {
+    "event_id": "401814736",
+    "home": "MIA",
+    "away": "CHW",
+    "home_name": "Miami Marlins",
+    "away_name": "Chicago White Sox",
+    "home_score": 4,
+    "away_score": 9,
+    "date": "2026-03-30",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -149,
+      "ml_away": 123
+    }
+  },
+  {
+    "event_id": "401814738",
+    "home": "CIN",
+    "away": "PIT",
+    "home_name": "Cincinnati Reds",
+    "away_name": "Pittsburgh Pirates",
+    "home_score": 2,
+    "away_score": 0,
+    "date": "2026-03-30",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": -136,
+      "ml_away": 113
+    }
+  },
+  {
+    "event_id": "401814740",
+    "home": "PHI",
+    "away": "WSH",
+    "home_name": "Philadelphia Phillies",
+    "away_name": "Washington Nationals",
+    "home_score": 2,
+    "away_score": 13,
+    "date": "2026-03-30",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 9.0,
+      "ml_home": -177,
+      "ml_away": 146
+    }
+  },
+  {
+    "event_id": "401814737",
+    "home": "TOR",
+    "away": "COL",
+    "home_name": "Toronto Blue Jays",
+    "away_name": "Colorado Rockies",
+    "home_score": 5,
+    "away_score": 14,
+    "date": "2026-03-30",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -293,
+      "ml_away": 234
+    }
+  },
+  {
+    "event_id": "401814735",
+    "home": "ATL",
+    "away": "ATH",
+    "home_name": "Atlanta Braves",
+    "away_name": "Athletics",
+    "home_score": 4,
+    "away_score": 0,
+    "date": "2026-03-30",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 9.0,
+      "ml_home": -126,
+      "ml_away": 104
+    }
+  },
+  {
+    "event_id": "401814741",
+    "home": "CHC",
+    "away": "LAA",
+    "home_name": "Chicago Cubs",
+    "away_name": "Los Angeles Angels",
+    "home_score": 7,
+    "away_score": 2,
+    "date": "2026-03-30",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 10.0,
+      "ml_home": -194,
+      "ml_away": 159
+    }
+  },
+  {
+    "event_id": "401814745",
+    "home": "MIL",
+    "away": "TB",
+    "home_name": "Milwaukee Brewers",
+    "away_name": "Tampa Bay Rays",
+    "home_score": 2,
+    "away_score": 3,
+    "date": "2026-03-30",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -163,
+      "ml_away": 135
+    }
+  },
+  {
+    "event_id": "401814744",
+    "home": "STL",
+    "away": "NYM",
+    "home_name": "St. Louis Cardinals",
+    "away_name": "New York Mets",
+    "home_score": 2,
+    "away_score": 4,
+    "date": "2026-03-30",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 9.0,
+      "ml_home": 129,
+      "ml_away": -156
+    }
+  },
+  {
+    "event_id": "401814742",
+    "home": "HOU",
+    "away": "BOS",
+    "home_name": "Houston Astros",
+    "away_name": "Boston Red Sox",
+    "home_score": 8,
+    "away_score": 1,
+    "date": "2026-03-30",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": 109,
+      "ml_away": -131
+    }
+  },
+  {
+    "event_id": "401814748",
+    "home": "SEA",
+    "away": "NYY",
+    "home_name": "Seattle Mariners",
+    "away_name": "New York Yankees",
+    "home_score": 2,
+    "away_score": 1,
+    "date": "2026-03-30",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -103,
+      "ml_away": -117
+    }
+  },
+  {
+    "event_id": "401814749",
+    "home": "SD",
+    "away": "SF",
+    "home_name": "San Diego Padres",
+    "away_name": "San Francisco Giants",
+    "home_score": 2,
+    "away_score": 3,
+    "date": "2026-03-30",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": -118,
+      "ml_away": -102
+    }
+  },
+  {
+    "event_id": "401814746",
+    "home": "LAD",
+    "away": "CLE",
+    "home_name": "Los Angeles Dodgers",
+    "away_name": "Cleveland Guardians",
+    "home_score": 2,
+    "away_score": 4,
+    "date": "2026-03-30",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": -199,
+      "ml_away": 163
+    }
+  },
+  {
+    "event_id": "401814747",
+    "home": "ARI",
+    "away": "DET",
+    "home_name": "Arizona Diamondbacks",
+    "away_name": "Detroit Tigers",
+    "home_score": 9,
+    "away_score": 6,
+    "date": "2026-03-30",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 9.0,
+      "ml_home": -126,
+      "ml_away": 104
+    }
+  },
+  {
+    "event_id": "401814754",
+    "home": "BAL",
+    "away": "TEX",
+    "home_name": "Baltimore Orioles",
+    "away_name": "Texas Rangers",
+    "home_score": 5,
+    "away_score": 8,
+    "date": "2026-03-31",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": 104,
+      "ml_away": -126
+    }
+  },
+  {
+    "event_id": "401814751",
+    "home": "MIA",
+    "away": "CHW",
+    "home_name": "Miami Marlins",
+    "away_name": "Chicago White Sox",
+    "home_score": 9,
+    "away_score": 2,
+    "date": "2026-03-31",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -156,
+      "ml_away": 129
+    }
+  },
+  {
+    "event_id": "401814753",
+    "home": "CIN",
+    "away": "PIT",
+    "home_name": "Cincinnati Reds",
+    "away_name": "Pittsburgh Pirates",
+    "home_score": 3,
+    "away_score": 8,
+    "date": "2026-03-31",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 9.0,
+      "ml_home": 100,
+      "ml_away": -120
+    }
+  },
+  {
+    "event_id": "401814755",
+    "home": "PHI",
+    "away": "WSH",
+    "home_name": "Philadelphia Phillies",
+    "away_name": "Washington Nationals",
+    "home_score": 3,
+    "away_score": 2,
+    "date": "2026-03-31",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 9.5,
+      "ml_home": -199,
+      "ml_away": 163
+    }
+  },
+  {
+    "event_id": "401814752",
+    "home": "TOR",
+    "away": "COL",
+    "home_name": "Toronto Blue Jays",
+    "away_name": "Colorado Rockies",
+    "home_score": 5,
+    "away_score": 1,
+    "date": "2026-03-31",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -271,
+      "ml_away": 218
+    }
+  },
+  {
+    "event_id": "401814750",
+    "home": "ATL",
+    "away": "ATH",
+    "home_name": "Atlanta Braves",
+    "away_name": "Athletics",
+    "home_score": 2,
+    "away_score": 5,
+    "date": "2026-03-31",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 9.0,
+      "ml_home": -156,
+      "ml_away": 129
+    }
+  },
+  {
+    "event_id": "401814756",
+    "home": "CHC",
+    "away": "LAA",
+    "home_name": "Chicago Cubs",
+    "away_name": "Los Angeles Angels",
+    "home_score": 0,
+    "away_score": 2,
+    "date": "2026-03-31",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 6.5,
+      "ml_home": -143,
+      "ml_away": 119
+    }
+  },
+  {
+    "event_id": "401814759",
+    "home": "MIL",
+    "away": "TB",
+    "home_name": "Milwaukee Brewers",
+    "away_name": "Tampa Bay Rays",
+    "home_score": 6,
+    "away_score": 2,
+    "date": "2026-03-31",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -126,
+      "ml_away": 104
+    }
+  },
+  {
+    "event_id": "401814758",
+    "home": "STL",
+    "away": "NYM",
+    "home_name": "St. Louis Cardinals",
+    "away_name": "New York Mets",
+    "home_score": 3,
+    "away_score": 0,
+    "date": "2026-03-31",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": 126,
+      "ml_away": -153
+    }
+  },
+  {
+    "event_id": "401814757",
+    "home": "HOU",
+    "away": "BOS",
+    "home_name": "Houston Astros",
+    "away_name": "Boston Red Sox",
+    "home_score": 9,
+    "away_score": 2,
+    "date": "2026-03-31",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -143,
+      "ml_away": 119
+    }
+  },
+  {
+    "event_id": "401814761",
+    "home": "ARI",
+    "away": "DET",
+    "home_name": "Arizona Diamondbacks",
+    "away_name": "Detroit Tigers",
+    "home_score": 7,
+    "away_score": 5,
+    "date": "2026-03-31",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 9.5,
+      "ml_home": -110,
+      "ml_away": -110
+    }
+  },
+  {
+    "event_id": "401814762",
+    "home": "SEA",
+    "away": "NYY",
+    "home_name": "Seattle Mariners",
+    "away_name": "New York Yankees",
+    "home_score": 0,
+    "away_score": 5,
+    "date": "2026-03-31",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.0,
+      "ml_home": 100,
+      "ml_away": -120
+    }
+  },
+  {
+    "event_id": "401814763",
+    "home": "SD",
+    "away": "SF",
+    "home_name": "San Diego Padres",
+    "away_name": "San Francisco Giants",
+    "home_score": 3,
+    "away_score": 9,
+    "date": "2026-03-31",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": 109,
+      "ml_away": -131
+    }
+  },
+  {
+    "event_id": "401814760",
+    "home": "LAD",
+    "away": "CLE",
+    "home_name": "Los Angeles Dodgers",
+    "away_name": "Cleveland Guardians",
+    "home_score": 4,
+    "away_score": 1,
+    "date": "2026-03-31",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -286,
+      "ml_away": 229
+    }
+  },
+  {
+    "event_id": "401814764",
+    "home": "ATL",
+    "away": "ATH",
+    "home_name": "Atlanta Braves",
+    "away_name": "Athletics",
+    "home_score": 5,
+    "away_score": 1,
+    "date": "2026-04-01",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -232,
+      "ml_away": 189
+    }
+  },
+  {
+    "event_id": "401814768",
+    "home": "BAL",
+    "away": "TEX",
+    "home_name": "Baltimore Orioles",
+    "away_name": "Texas Rangers",
+    "home_score": 8,
+    "away_score": 3,
+    "date": "2026-04-01",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -118,
+      "ml_away": -102
+    }
+  },
+  {
+    "event_id": "401814767",
+    "home": "CIN",
+    "away": "PIT",
+    "home_name": "Cincinnati Reds",
+    "away_name": "Pittsburgh Pirates",
+    "home_score": 3,
+    "away_score": 8,
+    "date": "2026-04-01",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": 120,
+      "ml_away": -145
+    }
+  },
+  {
+    "event_id": "401814769",
+    "home": "PHI",
+    "away": "WSH",
+    "home_name": "Philadelphia Phillies",
+    "away_name": "Washington Nationals",
+    "home_score": 6,
+    "away_score": 5,
+    "date": "2026-04-01",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -285,
+      "ml_away": 228
+    }
+  },
+  {
+    "event_id": "401814766",
+    "home": "TOR",
+    "away": "COL",
+    "home_name": "Toronto Blue Jays",
+    "away_name": "Colorado Rockies",
+    "home_score": 1,
+    "away_score": 2,
+    "date": "2026-04-01",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -280,
+      "ml_away": 224
+    }
+  },
+  {
+    "event_id": "401814765",
+    "home": "MIA",
+    "away": "CHW",
+    "home_name": "Miami Marlins",
+    "away_name": "Chicago White Sox",
+    "home_score": 10,
+    "away_score": 0,
+    "date": "2026-04-01",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -149,
+      "ml_away": 123
+    }
+  },
+  {
+    "event_id": "401814773",
+    "home": "STL",
+    "away": "NYM",
+    "home_name": "St. Louis Cardinals",
+    "away_name": "New York Mets",
+    "home_score": 2,
+    "away_score": 1,
+    "date": "2026-04-01",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": 133,
+      "ml_away": -161
+    }
+  },
+  {
+    "event_id": "401814774",
+    "home": "MIL",
+    "away": "TB",
+    "home_name": "Milwaukee Brewers",
+    "away_name": "Tampa Bay Rays",
+    "home_score": 8,
+    "away_score": 2,
+    "date": "2026-04-01",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.0,
+      "ml_home": -136,
+      "ml_away": 113
+    }
+  },
+  {
+    "event_id": "401814771",
+    "home": "HOU",
+    "away": "BOS",
+    "home_name": "Houston Astros",
+    "away_name": "Boston Red Sox",
+    "home_score": 6,
+    "away_score": 4,
+    "date": "2026-04-01",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.0,
+      "ml_home": 119,
+      "ml_away": -143
+    }
+  },
+  {
+    "event_id": "401814770",
+    "home": "CHC",
+    "away": "LAA",
+    "home_name": "Chicago Cubs",
+    "away_name": "Los Angeles Angels",
+    "home_score": 6,
+    "away_score": 2,
+    "date": "2026-04-01",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 6.0,
+      "ml_home": -163,
+      "ml_away": 135
+    }
+  },
+  {
+    "event_id": "401814776",
+    "home": "ARI",
+    "away": "DET",
+    "home_name": "Arizona Diamondbacks",
+    "away_name": "Detroit Tigers",
+    "home_score": 1,
+    "away_score": 0,
+    "date": "2026-04-01",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": 129,
+      "ml_away": -156
+    }
+  },
+  {
+    "event_id": "401814777",
+    "home": "SEA",
+    "away": "NYY",
+    "home_name": "Seattle Mariners",
+    "away_name": "New York Yankees",
+    "home_score": 3,
+    "away_score": 5,
+    "date": "2026-04-01",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.0,
+      "ml_home": -120,
+      "ml_away": 100
+    }
+  },
+  {
+    "event_id": "401814778",
+    "home": "SD",
+    "away": "SF",
+    "home_name": "San Diego Padres",
+    "away_name": "San Francisco Giants",
+    "home_score": 7,
+    "away_score": 1,
+    "date": "2026-04-01",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -153,
+      "ml_away": 126
+    }
+  },
+  {
+    "event_id": "401814772",
+    "home": "KC",
+    "away": "MIN",
+    "home_name": "Kansas City Royals",
+    "away_name": "Minnesota Twins",
+    "home_score": 13,
+    "away_score": 9,
+    "date": "2026-04-01",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -107,
+      "ml_away": -113
+    }
+  },
+  {
+    "event_id": "401814775",
+    "home": "LAD",
+    "away": "CLE",
+    "home_name": "Los Angeles Dodgers",
+    "away_name": "Cleveland Guardians",
+    "home_score": 1,
+    "away_score": 4,
+    "date": "2026-04-01",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -308,
+      "ml_away": 244
+    }
+  },
+  {
+    "event_id": "401814779",
+    "home": "KC",
+    "away": "MIN",
+    "home_name": "Kansas City Royals",
+    "away_name": "Minnesota Twins",
+    "home_score": 1,
+    "away_score": 5,
+    "date": "2026-04-02",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 9.5,
+      "ml_home": -156,
+      "ml_away": 129
+    }
+  },
+  {
+    "event_id": "401814781",
+    "home": "ARI",
+    "away": "ATL",
+    "home_name": "Arizona Diamondbacks",
+    "away_name": "Atlanta Braves",
+    "home_score": 2,
+    "away_score": 17,
+    "date": "2026-04-02",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 9.0,
+      "ml_home": -110,
+      "ml_away": -110
+    }
+  },
+  {
+    "event_id": "401814782",
+    "home": "SF",
+    "away": "NYM",
+    "home_name": "San Francisco Giants",
+    "away_name": "New York Mets",
+    "home_score": 7,
+    "away_score": 2,
+    "date": "2026-04-02",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -102,
+      "ml_away": -118
+    }
+  },
+  {
+    "event_id": "401814785",
+    "home": "WSH",
+    "away": "LAD",
+    "home_name": "Washington Nationals",
+    "away_name": "Los Angeles Dodgers",
+    "home_score": 6,
+    "away_score": 13,
+    "date": "2026-04-03",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 9.5,
+      "ml_home": 234,
+      "ml_away": -293
+    }
+  },
+  {
+    "event_id": "401814788",
+    "home": "DET",
+    "away": "STL",
+    "home_name": "Detroit Tigers",
+    "away_name": "St. Louis Cardinals",
+    "home_score": 4,
+    "away_score": 0,
+    "date": "2026-04-03",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -186,
+      "ml_away": 153
+    }
+  },
+  {
+    "event_id": "401814786",
+    "home": "NYY",
+    "away": "MIA",
+    "home_name": "New York Yankees",
+    "away_name": "Miami Marlins",
+    "home_score": 8,
+    "away_score": 2,
+    "date": "2026-04-03",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -168,
+      "ml_away": 139
+    }
+  },
+  {
+    "event_id": "401814787",
+    "home": "BOS",
+    "away": "SD",
+    "home_name": "Boston Red Sox",
+    "away_name": "San Diego Padres",
+    "home_score": 5,
+    "away_score": 2,
+    "date": "2026-04-03",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -132,
+      "ml_away": 109
+    }
+  },
+  {
+    "event_id": "401867263",
+    "home": "CHW",
+    "away": "TOR",
+    "home_name": "Chicago White Sox",
+    "away_name": "Toronto Blue Jays",
+    "home_score": 5,
+    "away_score": 4,
+    "date": "2026-04-03",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": 163,
+      "ml_away": -199
+    }
+  },
+  {
+    "event_id": "401814789",
+    "home": "TEX",
+    "away": "CIN",
+    "home_name": "Texas Rangers",
+    "away_name": "Cincinnati Reds",
+    "home_score": 3,
+    "away_score": 5,
+    "date": "2026-04-03",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -166,
+      "ml_away": 137
+    }
+  },
+  {
+    "event_id": "401814784",
+    "home": "CLE",
+    "away": "CHC",
+    "home_name": "Cleveland Guardians",
+    "away_name": "Chicago Cubs",
+    "home_score": 4,
+    "away_score": 1,
+    "date": "2026-04-03",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -108,
+      "ml_away": -112
+    }
+  },
+  {
+    "event_id": "401814792",
+    "home": "COL",
+    "away": "PHI",
+    "home_name": "Colorado Rockies",
+    "away_name": "Philadelphia Phillies",
+    "home_score": 1,
+    "away_score": 10,
+    "date": "2026-04-03",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 10.5,
+      "ml_home": 153,
+      "ml_away": -186
+    }
+  },
+  {
+    "event_id": "401814783",
+    "home": "PIT",
+    "away": "BAL",
+    "home_name": "Pittsburgh Pirates",
+    "away_name": "Baltimore Orioles",
+    "home_score": 5,
+    "away_score": 4,
+    "date": "2026-04-03",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": 100,
+      "ml_away": -121
+    }
+  },
+  {
+    "event_id": "401814791",
+    "home": "MIN",
+    "away": "TB",
+    "home_name": "Minnesota Twins",
+    "away_name": "Tampa Bay Rays",
+    "home_score": 10,
+    "away_score": 4,
+    "date": "2026-04-03",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -110,
+      "ml_away": -110
+    }
+  },
+  {
+    "event_id": "401814796",
+    "home": "LAA",
+    "away": "SEA",
+    "home_name": "Los Angeles Angels",
+    "away_name": "Seattle Mariners",
+    "home_score": 1,
+    "away_score": 3,
+    "date": "2026-04-03",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": 130,
+      "ml_away": -157
+    }
+  },
+  {
+    "event_id": "401814793",
+    "home": "ARI",
+    "away": "ATL",
+    "home_name": "Arizona Diamondbacks",
+    "away_name": "Atlanta Braves",
+    "home_score": 0,
+    "away_score": 2,
+    "date": "2026-04-03",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 9.0,
+      "ml_home": -108,
+      "ml_away": -112
+    }
+  },
+  {
+    "event_id": "401814794",
+    "home": "ATH",
+    "away": "HOU",
+    "home_name": "Athletics",
+    "away_name": "Houston Astros",
+    "home_score": 11,
+    "away_score": 4,
+    "date": "2026-04-03",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 9.5,
+      "ml_home": -110,
+      "ml_away": -110
+    }
+  },
+  {
+    "event_id": "401814795",
+    "home": "SF",
+    "away": "NYM",
+    "home_name": "San Francisco Giants",
+    "away_name": "New York Mets",
+    "home_score": 3,
+    "away_score": 10,
+    "date": "2026-04-03",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": 105,
+      "ml_away": -126
+    }
+  },
+  {
+    "event_id": "401814802",
+    "home": "DET",
+    "away": "STL",
+    "home_name": "Detroit Tigers",
+    "away_name": "St. Louis Cardinals",
+    "home_score": 11,
+    "away_score": 6,
+    "date": "2026-04-04",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -175,
+      "ml_away": 144
+    }
+  },
+  {
+    "event_id": "401814804",
+    "home": "KC",
+    "away": "MIL",
+    "home_name": "Kansas City Royals",
+    "away_name": "Milwaukee Brewers",
+    "home_score": 2,
+    "away_score": 5,
+    "date": "2026-04-04",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": -105,
+      "ml_away": -115
+    }
+  },
+  {
+    "event_id": "401814806",
+    "home": "CHW",
+    "away": "TOR",
+    "home_name": "Chicago White Sox",
+    "away_name": "Toronto Blue Jays",
+    "home_score": 6,
+    "away_score": 3,
+    "date": "2026-04-04",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": 123,
+      "ml_away": -149
+    }
+  },
+  {
+    "event_id": "401814797",
+    "home": "PIT",
+    "away": "BAL",
+    "home_name": "Pittsburgh Pirates",
+    "away_name": "Baltimore Orioles",
+    "home_score": 3,
+    "away_score": 2,
+    "date": "2026-04-04",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": -112,
+      "ml_away": -108
+    }
+  },
+  {
+    "event_id": "401814799",
+    "home": "WSH",
+    "away": "LAD",
+    "home_name": "Washington Nationals",
+    "away_name": "Los Angeles Dodgers",
+    "home_score": 5,
+    "away_score": 10,
+    "date": "2026-04-04",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 9.5,
+      "ml_home": 248,
+      "ml_away": -314
+    }
+  },
+  {
+    "event_id": "401814809",
+    "home": "ATH",
+    "away": "HOU",
+    "home_name": "Athletics",
+    "away_name": "Houston Astros",
+    "home_score": 0,
+    "away_score": 11,
+    "date": "2026-04-04",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 9.5,
+      "ml_home": -118,
+      "ml_away": -102
+    }
+  },
+  {
+    "event_id": "401814801",
+    "home": "BOS",
+    "away": "SD",
+    "home_name": "Boston Red Sox",
+    "away_name": "San Diego Padres",
+    "home_score": 2,
+    "away_score": 3,
+    "date": "2026-04-04",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -149,
+      "ml_away": 123
+    }
+  },
+  {
+    "event_id": "401814800",
+    "home": "NYY",
+    "away": "MIA",
+    "home_name": "New York Yankees",
+    "away_name": "Miami Marlins",
+    "home_score": 9,
+    "away_score": 7,
+    "date": "2026-04-04",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -201,
+      "ml_away": 164
+    }
+  },
+  {
+    "event_id": "401814803",
+    "home": "TEX",
+    "away": "CIN",
+    "home_name": "Texas Rangers",
+    "away_name": "Cincinnati Reds",
+    "home_score": 0,
+    "away_score": 2,
+    "date": "2026-04-04",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": -143,
+      "ml_away": 119
+    }
+  },
+  {
+    "event_id": "401814805",
+    "home": "MIN",
+    "away": "TB",
+    "home_name": "Minnesota Twins",
+    "away_name": "Tampa Bay Rays",
+    "home_score": 1,
+    "away_score": 7,
+    "date": "2026-04-04",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -102,
+      "ml_away": -118
+    }
+  },
+  {
+    "event_id": "401867376",
+    "home": "KC",
+    "away": "MIL",
+    "home_name": "Kansas City Royals",
+    "away_name": "Milwaukee Brewers",
+    "home_score": 8,
+    "away_score": 2,
+    "date": "2026-04-04",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -115,
+      "ml_away": -105
+    }
+  },
+  {
+    "event_id": "401814808",
+    "home": "ARI",
+    "away": "ATL",
+    "home_name": "Arizona Diamondbacks",
+    "away_name": "Atlanta Braves",
+    "home_score": 2,
+    "away_score": 1,
+    "date": "2026-04-04",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 9.5,
+      "ml_home": -113,
+      "ml_away": -107
+    }
+  },
+  {
+    "event_id": "401814807",
+    "home": "COL",
+    "away": "PHI",
+    "home_name": "Colorado Rockies",
+    "away_name": "Philadelphia Phillies",
+    "home_score": 1,
+    "away_score": 2,
+    "date": "2026-04-04",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 10.0,
+      "ml_home": 214,
+      "ml_away": -267
+    }
+  },
+  {
+    "event_id": "401814810",
+    "home": "SF",
+    "away": "NYM",
+    "home_name": "San Francisco Giants",
+    "away_name": "New York Mets",
+    "home_score": 0,
+    "away_score": 9,
+    "date": "2026-04-04",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -120,
+      "ml_away": 100
+    }
+  },
+  {
+    "event_id": "401814811",
+    "home": "LAA",
+    "away": "SEA",
+    "home_name": "Los Angeles Angels",
+    "away_name": "Seattle Mariners",
+    "home_score": 1,
+    "away_score": 0,
+    "date": "2026-04-04",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 9.5,
+      "ml_home": 131,
+      "ml_away": -158
+    }
+  },
+  {
+    "event_id": "401814813",
+    "home": "CLE",
+    "away": "CHC",
+    "home_name": "Cleveland Guardians",
+    "away_name": "Chicago Cubs",
+    "home_score": 0,
+    "away_score": 1,
+    "date": "2026-04-05",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": 109,
+      "ml_away": -131
+    }
+  },
+  {
+    "event_id": "401814812",
+    "home": "PIT",
+    "away": "BAL",
+    "home_name": "Pittsburgh Pirates",
+    "away_name": "Baltimore Orioles",
+    "home_score": 8,
+    "away_score": 2,
+    "date": "2026-04-05",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -126,
+      "ml_away": 104
+    }
+  },
+  {
+    "event_id": "401814814",
+    "home": "WSH",
+    "away": "LAD",
+    "home_name": "Washington Nationals",
+    "away_name": "Los Angeles Dodgers",
+    "home_score": 6,
+    "away_score": 8,
+    "date": "2026-04-05",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 9.0,
+      "ml_home": 149,
+      "ml_away": -181
+    }
+  },
+  {
+    "event_id": "401814815",
+    "home": "NYY",
+    "away": "MIA",
+    "home_name": "New York Yankees",
+    "away_name": "Miami Marlins",
+    "home_score": 6,
+    "away_score": 7,
+    "date": "2026-04-05",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": -317,
+      "ml_away": 251
+    }
+  },
+  {
+    "event_id": "401814816",
+    "home": "BOS",
+    "away": "SD",
+    "home_name": "Boston Red Sox",
+    "away_name": "San Diego Padres",
+    "home_score": 6,
+    "away_score": 8,
+    "date": "2026-04-05",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 9.5,
+      "ml_home": -156,
+      "ml_away": 129
+    }
+  },
+  {
+    "event_id": "401814819",
+    "home": "KC",
+    "away": "MIL",
+    "home_name": "Kansas City Royals",
+    "away_name": "Milwaukee Brewers",
+    "home_score": 5,
+    "away_score": 8,
+    "date": "2026-04-05",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -122,
+      "ml_away": 102
+    }
+  },
+  {
+    "event_id": "401814820",
+    "home": "MIN",
+    "away": "TB",
+    "home_name": "Minnesota Twins",
+    "away_name": "Tampa Bay Rays",
+    "home_score": 1,
+    "away_score": 4,
+    "date": "2026-04-05",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -112,
+      "ml_away": -108
+    }
+  },
+  {
+    "event_id": "401814821",
+    "home": "CHW",
+    "away": "TOR",
+    "home_name": "Chicago White Sox",
+    "away_name": "Toronto Blue Jays",
+    "home_score": 3,
+    "away_score": 0,
+    "date": "2026-04-05",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": 135,
+      "ml_away": -163
+    }
+  },
+  {
+    "event_id": "401814818",
+    "home": "TEX",
+    "away": "CIN",
+    "home_name": "Texas Rangers",
+    "away_name": "Cincinnati Reds",
+    "home_score": 1,
+    "away_score": 2,
+    "date": "2026-04-05",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -132,
+      "ml_away": 109
+    }
+  },
+  {
+    "event_id": "401814822",
+    "home": "COL",
+    "away": "PHI",
+    "home_name": "Colorado Rockies",
+    "away_name": "Philadelphia Phillies",
+    "home_score": 4,
+    "away_score": 1,
+    "date": "2026-04-05",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 11.0,
+      "ml_home": 129,
+      "ml_away": -156
+    }
+  },
+  {
+    "event_id": "401814824",
+    "home": "ATH",
+    "away": "HOU",
+    "home_name": "Athletics",
+    "away_name": "Houston Astros",
+    "home_score": 12,
+    "away_score": 10,
+    "date": "2026-04-05",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 10.0,
+      "ml_home": 110,
+      "ml_away": -133
+    }
+  },
+  {
+    "event_id": "401814825",
+    "home": "SF",
+    "away": "NYM",
+    "home_name": "San Francisco Giants",
+    "away_name": "New York Mets",
+    "home_score": 2,
+    "away_score": 5,
+    "date": "2026-04-05",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.0,
+      "ml_home": -129,
+      "ml_away": 107
+    }
+  },
+  {
+    "event_id": "401814826",
+    "home": "LAA",
+    "away": "SEA",
+    "home_name": "Los Angeles Angels",
+    "away_name": "Seattle Mariners",
+    "home_score": 8,
+    "away_score": 7,
+    "date": "2026-04-05",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 9.0,
+      "ml_home": 139,
+      "ml_away": -168
+    }
+  },
+  {
+    "event_id": "401814823",
+    "home": "ARI",
+    "away": "ATL",
+    "home_name": "Arizona Diamondbacks",
+    "away_name": "Atlanta Braves",
+    "home_score": 6,
+    "away_score": 5,
+    "date": "2026-04-05",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 9.0,
+      "ml_home": -110,
+      "ml_away": -110
+    }
+  },
+  {
+    "event_id": "401867431",
+    "home": "CLE",
+    "away": "CHC",
+    "home_name": "Cleveland Guardians",
+    "away_name": "Chicago Cubs",
+    "home_score": 6,
+    "away_score": 5,
+    "date": "2026-04-05",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.0,
+      "ml_home": 100,
+      "ml_away": -121
+    }
+  },
+  {
+    "event_id": "401814817",
+    "home": "DET",
+    "away": "STL",
+    "home_name": "Detroit Tigers",
+    "away_name": "St. Louis Cardinals",
+    "home_score": 3,
+    "away_score": 5,
+    "date": "2026-04-05",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -149,
+      "ml_away": 124
+    }
+  },
+  {
+    "event_id": "401814827",
+    "home": "TB",
+    "away": "CHC",
+    "home_name": "Tampa Bay Rays",
+    "away_name": "Chicago Cubs",
+    "home_score": 6,
+    "away_score": 4,
+    "date": "2026-04-06",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -126,
+      "ml_away": 104
+    }
+  },
+  {
+    "event_id": "401814829",
+    "home": "CLE",
+    "away": "KC",
+    "home_name": "Cleveland Guardians",
+    "away_name": "Kansas City Royals",
+    "home_score": 2,
+    "away_score": 4,
+    "date": "2026-04-06",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.0,
+      "ml_home": -115,
+      "ml_away": -105
+    }
+  },
+  {
+    "event_id": "401814828",
+    "home": "MIA",
+    "away": "CIN",
+    "home_name": "Miami Marlins",
+    "away_name": "Cincinnati Reds",
+    "home_score": 0,
+    "away_score": 2,
+    "date": "2026-04-06",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": -149,
+      "ml_away": 123
+    }
+  },
+  {
+    "event_id": "401814832",
+    "home": "PIT",
+    "away": "SD",
+    "home_name": "Pittsburgh Pirates",
+    "away_name": "San Diego Padres",
+    "home_score": 0,
+    "away_score": 5,
+    "date": "2026-04-06",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": -143,
+      "ml_away": 119
+    }
+  },
+  {
+    "event_id": "401814831",
+    "home": "BOS",
+    "away": "MIL",
+    "home_name": "Boston Red Sox",
+    "away_name": "Milwaukee Brewers",
+    "home_score": 6,
+    "away_score": 8,
+    "date": "2026-04-06",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": 104,
+      "ml_away": -126
+    }
+  },
+  {
+    "event_id": "401814833",
+    "home": "WSH",
+    "away": "STL",
+    "home_name": "Washington Nationals",
+    "away_name": "St. Louis Cardinals",
+    "home_score": 9,
+    "away_score": 6,
+    "date": "2026-04-06",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -110,
+      "ml_away": -110
+    }
+  },
+  {
+    "event_id": "401814830",
+    "home": "TOR",
+    "away": "LAD",
+    "home_name": "Toronto Blue Jays",
+    "away_name": "Los Angeles Dodgers",
+    "home_score": 2,
+    "away_score": 14,
+    "date": "2026-04-06",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 9.0,
+      "ml_home": 104,
+      "ml_away": -126
+    }
+  },
+  {
+    "event_id": "401814834",
+    "home": "CHW",
+    "away": "BAL",
+    "home_name": "Chicago White Sox",
+    "away_name": "Baltimore Orioles",
+    "home_score": 1,
+    "away_score": 2,
+    "date": "2026-04-06",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": 113,
+      "ml_away": -136
+    }
+  },
+  {
+    "event_id": "401814835",
+    "home": "MIN",
+    "away": "DET",
+    "home_name": "Minnesota Twins",
+    "away_name": "Detroit Tigers",
+    "home_score": 7,
+    "away_score": 3,
+    "date": "2026-04-06",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.0,
+      "ml_home": -126,
+      "ml_away": 104
+    }
+  },
+  {
+    "event_id": "401814836",
+    "home": "TEX",
+    "away": "SEA",
+    "home_name": "Texas Rangers",
+    "away_name": "Seattle Mariners",
+    "home_score": 2,
+    "away_score": 1,
+    "date": "2026-04-06",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -115,
+      "ml_away": -105
+    }
+  },
+  {
+    "event_id": "401814837",
+    "home": "COL",
+    "away": "HOU",
+    "home_name": "Colorado Rockies",
+    "away_name": "Houston Astros",
+    "home_score": 9,
+    "away_score": 7,
+    "date": "2026-04-06",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 10.5,
+      "ml_home": 123,
+      "ml_away": -149
+    }
+  },
+  {
+    "event_id": "401814838",
+    "home": "LAA",
+    "away": "ATL",
+    "home_name": "Los Angeles Angels",
+    "away_name": "Atlanta Braves",
+    "home_score": 6,
+    "away_score": 2,
+    "date": "2026-04-06",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": 149,
+      "ml_away": -181
+    }
+  },
+  {
+    "event_id": "401814839",
+    "home": "SF",
+    "away": "PHI",
+    "home_name": "San Francisco Giants",
+    "away_name": "Philadelphia Phillies",
+    "home_score": 4,
+    "away_score": 6,
+    "date": "2026-04-06",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": 100,
+      "ml_away": -120
+    }
+  },
+  {
+    "event_id": "401814844",
+    "home": "CLE",
+    "away": "KC",
+    "home_name": "Cleveland Guardians",
+    "away_name": "Kansas City Royals",
+    "home_score": 2,
+    "away_score": 1,
+    "date": "2026-04-07",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 6.0,
+      "ml_home": -122,
+      "ml_away": 102
+    }
+  },
+  {
+    "event_id": "401814849",
+    "home": "CHW",
+    "away": "BAL",
+    "home_name": "Chicago White Sox",
+    "away_name": "Baltimore Orioles",
+    "home_score": 2,
+    "away_score": 4,
+    "date": "2026-04-07",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 6.5,
+      "ml_home": 124,
+      "ml_away": -150
+    }
+  },
+  {
+    "event_id": "401814840",
+    "home": "NYM",
+    "away": "ARI",
+    "home_name": "New York Mets",
+    "away_name": "Arizona Diamondbacks",
+    "home_score": 4,
+    "away_score": 3,
+    "date": "2026-04-07",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.0,
+      "ml_home": -156,
+      "ml_away": 129
+    }
+  },
+  {
+    "event_id": "401814842",
+    "home": "TB",
+    "away": "CHC",
+    "home_name": "Tampa Bay Rays",
+    "away_name": "Chicago Cubs",
+    "home_score": 2,
+    "away_score": 9,
+    "date": "2026-04-07",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": -120,
+      "ml_away": 100
+    }
+  },
+  {
+    "event_id": "401814843",
+    "home": "MIA",
+    "away": "CIN",
+    "home_name": "Miami Marlins",
+    "away_name": "Cincinnati Reds",
+    "home_score": 3,
+    "away_score": 6,
+    "date": "2026-04-07",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -144,
+      "ml_away": 119
+    }
+  },
+  {
+    "event_id": "401814847",
+    "home": "PIT",
+    "away": "SD",
+    "home_name": "Pittsburgh Pirates",
+    "away_name": "San Diego Padres",
+    "home_score": 7,
+    "away_score": 1,
+    "date": "2026-04-07",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 6.0,
+      "ml_home": -154,
+      "ml_away": 128
+    }
+  },
+  {
+    "event_id": "401814846",
+    "home": "BOS",
+    "away": "MIL",
+    "home_name": "Boston Red Sox",
+    "away_name": "Milwaukee Brewers",
+    "home_score": 3,
+    "away_score": 2,
+    "date": "2026-04-07",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 6.0,
+      "ml_home": -163,
+      "ml_away": 135
+    }
+  },
+  {
+    "event_id": "401814848",
+    "home": "WSH",
+    "away": "STL",
+    "home_name": "Washington Nationals",
+    "away_name": "St. Louis Cardinals",
+    "home_score": 6,
+    "away_score": 7,
+    "date": "2026-04-07",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.0,
+      "ml_home": -118,
+      "ml_away": -102
+    }
+  },
+  {
+    "event_id": "401814841",
+    "home": "NYY",
+    "away": "ATH",
+    "home_name": "New York Yankees",
+    "away_name": "Athletics",
+    "home_score": 5,
+    "away_score": 3,
+    "date": "2026-04-07",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -271,
+      "ml_away": 218
+    }
+  },
+  {
+    "event_id": "401814845",
+    "home": "TOR",
+    "away": "LAD",
+    "home_name": "Toronto Blue Jays",
+    "away_name": "Los Angeles Dodgers",
+    "home_score": 1,
+    "away_score": 4,
+    "date": "2026-04-07",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": 129,
+      "ml_away": -156
+    }
+  },
+  {
+    "event_id": "401814850",
+    "home": "MIN",
+    "away": "DET",
+    "home_name": "Minnesota Twins",
+    "away_name": "Detroit Tigers",
+    "home_score": 4,
+    "away_score": 2,
+    "date": "2026-04-07",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 6.5,
+      "ml_home": 141,
+      "ml_away": -171
+    }
+  },
+  {
+    "event_id": "401814851",
+    "home": "TEX",
+    "away": "SEA",
+    "home_name": "Texas Rangers",
+    "away_name": "Seattle Mariners",
+    "home_score": 3,
+    "away_score": 2,
+    "date": "2026-04-07",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -102,
+      "ml_away": -118
+    }
+  },
+  {
+    "event_id": "401814852",
+    "home": "COL",
+    "away": "HOU",
+    "home_name": "Colorado Rockies",
+    "away_name": "Houston Astros",
+    "home_score": 5,
+    "away_score": 1,
+    "date": "2026-04-07",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 11.0,
+      "ml_home": 139,
+      "ml_away": -168
+    }
+  },
+  {
+    "event_id": "401814853",
+    "home": "LAA",
+    "away": "ATL",
+    "home_name": "Los Angeles Angels",
+    "away_name": "Atlanta Braves",
+    "home_score": 2,
+    "away_score": 7,
+    "date": "2026-04-07",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": 104,
+      "ml_away": -126
+    }
+  },
+  {
+    "event_id": "401814854",
+    "home": "SF",
+    "away": "PHI",
+    "home_name": "San Francisco Giants",
+    "away_name": "Philadelphia Phillies",
+    "home_score": 6,
+    "away_score": 0,
+    "date": "2026-04-07",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": 123,
+      "ml_away": -149
+    }
+  },
+  {
+    "event_id": "401814862",
+    "home": "PIT",
+    "away": "SD",
+    "home_name": "Pittsburgh Pirates",
+    "away_name": "San Diego Padres",
+    "home_score": 2,
+    "away_score": 8,
+    "date": "2026-04-08",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.0,
+      "ml_home": 100,
+      "ml_away": -121
+    }
+  },
+  {
+    "event_id": "401814859",
+    "home": "CLE",
+    "away": "KC",
+    "home_name": "Cleveland Guardians",
+    "away_name": "Kansas City Royals",
+    "home_score": 10,
+    "away_score": 2,
+    "date": "2026-04-08",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.0,
+      "ml_home": 113,
+      "ml_away": -136
+    }
+  },
+  {
+    "event_id": "401814861",
+    "home": "BOS",
+    "away": "MIL",
+    "home_name": "Boston Red Sox",
+    "away_name": "Milwaukee Brewers",
+    "home_score": 5,
+    "away_score": 0,
+    "date": "2026-04-08",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -143,
+      "ml_away": 119
+    }
+  },
+  {
+    "event_id": "401814864",
+    "home": "CHW",
+    "away": "BAL",
+    "home_name": "Chicago White Sox",
+    "away_name": "Baltimore Orioles",
+    "home_score": 3,
+    "away_score": 5,
+    "date": "2026-04-08",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": 123,
+      "ml_away": -149
+    }
+  },
+  {
+    "event_id": "401814866",
+    "home": "TEX",
+    "away": "SEA",
+    "home_name": "Texas Rangers",
+    "away_name": "Seattle Mariners",
+    "home_score": 3,
+    "away_score": 0,
+    "date": "2026-04-08",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -102,
+      "ml_away": -118
+    }
+  },
+  {
+    "event_id": "401814860",
+    "home": "TOR",
+    "away": "LAD",
+    "home_name": "Toronto Blue Jays",
+    "away_name": "Los Angeles Dodgers",
+    "home_score": 4,
+    "away_score": 3,
+    "date": "2026-04-08",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": 135,
+      "ml_away": -163
+    }
+  },
+  {
+    "event_id": "401814867",
+    "home": "COL",
+    "away": "HOU",
+    "home_name": "Colorado Rockies",
+    "away_name": "Houston Astros",
+    "home_score": 9,
+    "away_score": 1,
+    "date": "2026-04-08",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 11.0,
+      "ml_home": 113,
+      "ml_away": -136
+    }
+  },
+  {
+    "event_id": "401814869",
+    "home": "SF",
+    "away": "PHI",
+    "home_name": "San Francisco Giants",
+    "away_name": "Philadelphia Phillies",
+    "home_score": 5,
+    "away_score": 0,
+    "date": "2026-04-08",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": 113,
+      "ml_away": -136
+    }
+  },
+  {
+    "event_id": "401814863",
+    "home": "WSH",
+    "away": "STL",
+    "home_name": "Washington Nationals",
+    "away_name": "St. Louis Cardinals",
+    "home_score": 1,
+    "away_score": 6,
+    "date": "2026-04-08",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": 104,
+      "ml_away": -126
+    }
+  },
+  {
+    "event_id": "401814868",
+    "home": "LAA",
+    "away": "ATL",
+    "home_name": "Los Angeles Angels",
+    "away_name": "Atlanta Braves",
+    "home_score": 2,
+    "away_score": 8,
+    "date": "2026-04-08",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": 104,
+      "ml_away": -126
+    }
+  },
+  {
+    "event_id": "401814855",
+    "home": "NYM",
+    "away": "ARI",
+    "home_name": "New York Mets",
+    "away_name": "Arizona Diamondbacks",
+    "home_score": 2,
+    "away_score": 7,
+    "date": "2026-04-08",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -141,
+      "ml_away": 117
+    }
+  },
+  {
+    "event_id": "401814857",
+    "home": "TB",
+    "away": "CHC",
+    "home_name": "Tampa Bay Rays",
+    "away_name": "Chicago Cubs",
+    "home_score": 2,
+    "away_score": 6,
+    "date": "2026-04-08",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -115,
+      "ml_away": -105
+    }
+  },
+  {
+    "event_id": "401814858",
+    "home": "MIA",
+    "away": "CIN",
+    "home_name": "Miami Marlins",
+    "away_name": "Cincinnati Reds",
+    "home_score": 7,
+    "away_score": 4,
+    "date": "2026-04-08",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -131,
+      "ml_away": 109
+    }
+  },
+  {
+    "event_id": "401814856",
+    "home": "NYY",
+    "away": "ATH",
+    "home_name": "New York Yankees",
+    "away_name": "Athletics",
+    "home_score": 2,
+    "away_score": 3,
+    "date": "2026-04-08",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -207,
+      "ml_away": 169
+    }
+  },
+  {
+    "event_id": "401814865",
+    "home": "MIN",
+    "away": "DET",
+    "home_name": "Minnesota Twins",
+    "away_name": "Detroit Tigers",
+    "home_score": 8,
+    "away_score": 6,
+    "date": "2026-04-08",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": 129,
+      "ml_away": -156
+    }
+  },
+  {
+    "event_id": "401814872",
+    "home": "MIA",
+    "away": "CIN",
+    "home_name": "Miami Marlins",
+    "away_name": "Cincinnati Reds",
+    "home_score": 8,
+    "away_score": 1,
+    "date": "2026-04-09",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": -126,
+      "ml_away": 104
+    }
+  },
+  {
+    "event_id": "401814871",
+    "home": "NYY",
+    "away": "ATH",
+    "home_name": "New York Yankees",
+    "away_name": "Athletics",
+    "home_score": 0,
+    "away_score": 1,
+    "date": "2026-04-09",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -199,
+      "ml_away": 163
+    }
+  },
+  {
+    "event_id": "401814874",
+    "home": "MIN",
+    "away": "DET",
+    "home_name": "Minnesota Twins",
+    "away_name": "Detroit Tigers",
+    "home_score": 3,
+    "away_score": 1,
+    "date": "2026-04-09",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": 119,
+      "ml_away": -143
+    }
+  },
+  {
+    "event_id": "401814870",
+    "home": "NYM",
+    "away": "ARI",
+    "home_name": "New York Mets",
+    "away_name": "Arizona Diamondbacks",
+    "home_score": 1,
+    "away_score": 7,
+    "date": "2026-04-09",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 6.5,
+      "ml_home": -186,
+      "ml_away": 153
+    }
+  },
+  {
+    "event_id": "401814873",
+    "home": "KC",
+    "away": "CHW",
+    "home_name": "Kansas City Royals",
+    "away_name": "Chicago White Sox",
+    "home_score": 0,
+    "away_score": 2,
+    "date": "2026-04-09",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 9.0,
+      "ml_home": -181,
+      "ml_away": 149
+    }
+  },
+  {
+    "event_id": "401814875",
+    "home": "SD",
+    "away": "COL",
+    "home_name": "San Diego Padres",
+    "away_name": "Colorado Rockies",
+    "home_score": 7,
+    "away_score": 3,
+    "date": "2026-04-09",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -186,
+      "ml_away": 153
+    }
+  },
+  {
+    "event_id": "401814886",
+    "home": "CHC",
+    "away": "PIT",
+    "home_name": "Chicago Cubs",
+    "away_name": "Pittsburgh Pirates",
+    "home_score": 0,
+    "away_score": 2,
+    "date": "2026-04-10",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 6.5,
+      "ml_home": -156,
+      "ml_away": 129
+    }
+  },
+  {
+    "event_id": "401814877",
+    "home": "PHI",
+    "away": "ARI",
+    "home_name": "Philadelphia Phillies",
+    "away_name": "Arizona Diamondbacks",
+    "home_score": 4,
+    "away_score": 5,
+    "date": "2026-04-10",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -186,
+      "ml_away": 153
+    }
+  },
+  {
+    "event_id": "401814880",
+    "home": "DET",
+    "away": "MIA",
+    "home_name": "Detroit Tigers",
+    "away_name": "Miami Marlins",
+    "home_score": 2,
+    "away_score": 0,
+    "date": "2026-04-10",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": -131,
+      "ml_away": 109
+    }
+  },
+  {
+    "event_id": "401814876",
+    "home": "CIN",
+    "away": "LAA",
+    "home_name": "Cincinnati Reds",
+    "away_name": "Los Angeles Angels",
+    "home_score": 2,
+    "away_score": 10,
+    "date": "2026-04-10",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 9.0,
+      "ml_home": -181,
+      "ml_away": 149
+    }
+  },
+  {
+    "event_id": "401814881",
+    "home": "TOR",
+    "away": "MIN",
+    "home_name": "Toronto Blue Jays",
+    "away_name": "Minnesota Twins",
+    "home_score": 10,
+    "away_score": 4,
+    "date": "2026-04-10",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 9.0,
+      "ml_home": -156,
+      "ml_away": 129
+    }
+  },
+  {
+    "event_id": "401814878",
+    "home": "NYM",
+    "away": "ATH",
+    "home_name": "New York Mets",
+    "away_name": "Athletics",
+    "home_score": 0,
+    "away_score": 4,
+    "date": "2026-04-10",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -149,
+      "ml_away": 124
+    }
+  },
+  {
+    "event_id": "401814882",
+    "home": "TB",
+    "away": "NYY",
+    "home_name": "Tampa Bay Rays",
+    "away_name": "New York Yankees",
+    "home_score": 5,
+    "away_score": 3,
+    "date": "2026-04-10",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": -105,
+      "ml_away": -115
+    }
+  },
+  {
+    "event_id": "401814879",
+    "home": "ATL",
+    "away": "CLE",
+    "home_name": "Atlanta Braves",
+    "away_name": "Cleveland Guardians",
+    "home_score": 11,
+    "away_score": 5,
+    "date": "2026-04-10",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": -141,
+      "ml_away": 117
+    }
+  },
+  {
+    "event_id": "401814883",
+    "home": "BAL",
+    "away": "SF",
+    "home_name": "Baltimore Orioles",
+    "away_name": "San Francisco Giants",
+    "home_score": 3,
+    "away_score": 6,
+    "date": "2026-04-10",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": -132,
+      "ml_away": 109
+    }
+  },
+  {
+    "event_id": "401814885",
+    "home": "KC",
+    "away": "CHW",
+    "home_name": "Kansas City Royals",
+    "away_name": "Chicago White Sox",
+    "home_score": 2,
+    "away_score": 0,
+    "date": "2026-04-10",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -186,
+      "ml_away": 153
+    }
+  },
+  {
+    "event_id": "401814887",
+    "home": "MIL",
+    "away": "WSH",
+    "home_name": "Milwaukee Brewers",
+    "away_name": "Washington Nationals",
+    "home_score": 3,
+    "away_score": 7,
+    "date": "2026-04-10",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": -207,
+      "ml_away": 169
+    }
+  },
+  {
+    "event_id": "401814884",
+    "home": "STL",
+    "away": "BOS",
+    "home_name": "St. Louis Cardinals",
+    "away_name": "Boston Red Sox",
+    "home_score": 3,
+    "away_score": 2,
+    "date": "2026-04-10",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.0,
+      "ml_home": 113,
+      "ml_away": -136
+    }
+  },
+  {
+    "event_id": "401814888",
+    "home": "SD",
+    "away": "COL",
+    "home_name": "San Diego Padres",
+    "away_name": "Colorado Rockies",
+    "home_score": 5,
+    "away_score": 2,
+    "date": "2026-04-10",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -171,
+      "ml_away": 141
+    }
+  },
+  {
+    "event_id": "401814889",
+    "home": "SEA",
+    "away": "HOU",
+    "home_name": "Seattle Mariners",
+    "away_name": "Houston Astros",
+    "home_score": 9,
+    "away_score": 6,
+    "date": "2026-04-10",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -136,
+      "ml_away": 113
+    }
+  },
+  {
+    "event_id": "401814890",
+    "home": "LAD",
+    "away": "TEX",
+    "home_name": "Los Angeles Dodgers",
+    "away_name": "Texas Rangers",
+    "home_score": 8,
+    "away_score": 7,
+    "date": "2026-04-10",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": -240,
+      "ml_away": 194
+    }
+  },
+  {
+    "event_id": "401814892",
+    "home": "PHI",
+    "away": "ARI",
+    "home_name": "Philadelphia Phillies",
+    "away_name": "Arizona Diamondbacks",
+    "home_score": 4,
+    "away_score": 3,
+    "date": "2026-04-11",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 9.0,
+      "ml_home": -126,
+      "ml_away": 104
+    }
+  },
+  {
+    "event_id": "401814895",
+    "home": "DET",
+    "away": "MIA",
+    "home_name": "Detroit Tigers",
+    "away_name": "Miami Marlins",
+    "home_score": 6,
+    "away_score": 1,
+    "date": "2026-04-11",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.0,
+      "ml_home": -149,
+      "ml_away": 124
+    }
+  },
+  {
+    "event_id": "401814901",
+    "home": "CHC",
+    "away": "PIT",
+    "home_name": "Chicago Cubs",
+    "away_name": "Pittsburgh Pirates",
+    "home_score": 3,
+    "away_score": 4,
+    "date": "2026-04-11",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 6.5,
+      "ml_home": -149,
+      "ml_away": 123
+    }
+  },
+  {
+    "event_id": "401814896",
+    "home": "TOR",
+    "away": "MIN",
+    "home_name": "Toronto Blue Jays",
+    "away_name": "Minnesota Twins",
+    "home_score": 4,
+    "away_score": 7,
+    "date": "2026-04-11",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -126,
+      "ml_away": 105
+    }
+  },
+  {
+    "event_id": "401814891",
+    "home": "CIN",
+    "away": "LAA",
+    "home_name": "Cincinnati Reds",
+    "away_name": "Los Angeles Angels",
+    "home_score": 7,
+    "away_score": 3,
+    "date": "2026-04-11",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 9.0,
+      "ml_home": -131,
+      "ml_away": 109
+    }
+  },
+  {
+    "event_id": "401814893",
+    "home": "NYM",
+    "away": "ATH",
+    "home_name": "New York Mets",
+    "away_name": "Athletics",
+    "home_score": 6,
+    "away_score": 11,
+    "date": "2026-04-11",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -163,
+      "ml_away": 135
+    }
+  },
+  {
+    "event_id": "401814900",
+    "home": "KC",
+    "away": "CHW",
+    "home_name": "Kansas City Royals",
+    "away_name": "Chicago White Sox",
+    "home_score": 2,
+    "away_score": 0,
+    "date": "2026-04-11",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 9.0,
+      "ml_home": -194,
+      "ml_away": 159
+    }
+  },
+  {
+    "event_id": "401814897",
+    "home": "TB",
+    "away": "NYY",
+    "home_name": "Tampa Bay Rays",
+    "away_name": "New York Yankees",
+    "home_score": 5,
+    "away_score": 4,
+    "date": "2026-04-11",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": 144,
+      "ml_away": -175
+    }
+  },
+  {
+    "event_id": "401814902",
+    "home": "MIL",
+    "away": "WSH",
+    "home_name": "Milwaukee Brewers",
+    "away_name": "Washington Nationals",
+    "home_score": 1,
+    "away_score": 3,
+    "date": "2026-04-11",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -181,
+      "ml_away": 149
+    }
+  },
+  {
+    "event_id": "401814894",
+    "home": "ATL",
+    "away": "CLE",
+    "home_name": "Atlanta Braves",
+    "away_name": "Cleveland Guardians",
+    "home_score": 0,
+    "away_score": 6,
+    "date": "2026-04-11",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -120,
+      "ml_away": 100
+    }
+  },
+  {
+    "event_id": "401814898",
+    "home": "BAL",
+    "away": "SF",
+    "home_name": "Baltimore Orioles",
+    "away_name": "San Francisco Giants",
+    "home_score": 6,
+    "away_score": 2,
+    "date": "2026-04-11",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -102,
+      "ml_away": -118
+    }
+  },
+  {
+    "event_id": "401814899",
+    "home": "STL",
+    "away": "BOS",
+    "home_name": "St. Louis Cardinals",
+    "away_name": "Boston Red Sox",
+    "home_score": 1,
+    "away_score": 7,
+    "date": "2026-04-11",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": 113,
+      "ml_away": -136
+    }
+  },
+  {
+    "event_id": "401814903",
+    "home": "SD",
+    "away": "COL",
+    "home_name": "San Diego Padres",
+    "away_name": "Colorado Rockies",
+    "home_score": 9,
+    "away_score": 5,
+    "date": "2026-04-11",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": -173,
+      "ml_away": 143
+    }
+  },
+  {
+    "event_id": "401814905",
+    "home": "LAD",
+    "away": "TEX",
+    "home_name": "Los Angeles Dodgers",
+    "away_name": "Texas Rangers",
+    "home_score": 6,
+    "away_score": 3,
+    "date": "2026-04-11",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -186,
+      "ml_away": 153
+    }
+  },
+  {
+    "event_id": "401814904",
+    "home": "SEA",
+    "away": "HOU",
+    "home_name": "Seattle Mariners",
+    "away_name": "Houston Astros",
+    "home_score": 8,
+    "away_score": 7,
+    "date": "2026-04-11",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -163,
+      "ml_away": 135
+    }
+  },
+  {
+    "event_id": "401814907",
+    "home": "PHI",
+    "away": "ARI",
+    "home_name": "Philadelphia Phillies",
+    "away_name": "Arizona Diamondbacks",
+    "home_score": 3,
+    "away_score": 4,
+    "date": "2026-04-12",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": -132,
+      "ml_away": 109
+    }
+  },
+  {
+    "event_id": "401814913",
+    "home": "BAL",
+    "away": "SF",
+    "home_name": "Baltimore Orioles",
+    "away_name": "San Francisco Giants",
+    "home_score": 6,
+    "away_score": 2,
+    "date": "2026-04-12",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": -126,
+      "ml_away": 104
+    }
+  },
+  {
+    "event_id": "401814911",
+    "home": "TOR",
+    "away": "MIN",
+    "home_name": "Toronto Blue Jays",
+    "away_name": "Minnesota Twins",
+    "home_score": 2,
+    "away_score": 8,
+    "date": "2026-04-12",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -136,
+      "ml_away": 113
+    }
+  },
+  {
+    "event_id": "401814906",
+    "home": "CIN",
+    "away": "LAA",
+    "home_name": "Cincinnati Reds",
+    "away_name": "Los Angeles Angels",
+    "home_score": 6,
+    "away_score": 9,
+    "date": "2026-04-12",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": -105,
+      "ml_away": -115
+    }
+  },
+  {
+    "event_id": "401814908",
+    "home": "NYM",
+    "away": "ATH",
+    "home_name": "New York Mets",
+    "away_name": "Athletics",
+    "home_score": 0,
+    "away_score": 1,
+    "date": "2026-04-12",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.0,
+      "ml_home": -163,
+      "ml_away": 135
+    }
+  },
+  {
+    "event_id": "401814910",
+    "home": "DET",
+    "away": "MIA",
+    "home_name": "Detroit Tigers",
+    "away_name": "Miami Marlins",
+    "home_score": 8,
+    "away_score": 2,
+    "date": "2026-04-12",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 6.0,
+      "ml_home": -171,
+      "ml_away": 141
+    }
+  },
+  {
+    "event_id": "401814912",
+    "home": "TB",
+    "away": "NYY",
+    "home_name": "Tampa Bay Rays",
+    "away_name": "New York Yankees",
+    "home_score": 5,
+    "away_score": 4,
+    "date": "2026-04-12",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": 113,
+      "ml_away": -136
+    }
+  },
+  {
+    "event_id": "401814915",
+    "home": "KC",
+    "away": "CHW",
+    "home_name": "Kansas City Royals",
+    "away_name": "Chicago White Sox",
+    "home_score": 5,
+    "away_score": 6,
+    "date": "2026-04-12",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 9.0,
+      "ml_home": -185,
+      "ml_away": 152
+    }
+  },
+  {
+    "event_id": "401814917",
+    "home": "MIL",
+    "away": "WSH",
+    "home_name": "Milwaukee Brewers",
+    "away_name": "Washington Nationals",
+    "home_score": 6,
+    "away_score": 8,
+    "date": "2026-04-12",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -219,
+      "ml_away": 179
+    }
+  },
+  {
+    "event_id": "401814914",
+    "home": "STL",
+    "away": "BOS",
+    "home_name": "St. Louis Cardinals",
+    "away_name": "Boston Red Sox",
+    "home_score": 3,
+    "away_score": 9,
+    "date": "2026-04-12",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 9.0,
+      "ml_home": -102,
+      "ml_away": -118
+    }
+  },
+  {
+    "event_id": "401814916",
+    "home": "CHC",
+    "away": "PIT",
+    "home_name": "Chicago Cubs",
+    "away_name": "Pittsburgh Pirates",
+    "home_score": 7,
+    "away_score": 6,
+    "date": "2026-04-12",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 12.5,
+      "ml_home": -136,
+      "ml_away": 113
+    }
+  },
+  {
+    "event_id": "401814918",
+    "home": "SD",
+    "away": "COL",
+    "home_name": "San Diego Padres",
+    "away_name": "Colorado Rockies",
+    "home_score": 7,
+    "away_score": 2,
+    "date": "2026-04-12",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -226,
+      "ml_away": 184
+    }
+  },
+  {
+    "event_id": "401814919",
+    "home": "SEA",
+    "away": "HOU",
+    "home_name": "Seattle Mariners",
+    "away_name": "Houston Astros",
+    "home_score": 6,
+    "away_score": 1,
+    "date": "2026-04-12",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -193,
+      "ml_away": 159
+    }
+  },
+  {
+    "event_id": "401814920",
+    "home": "LAD",
+    "away": "TEX",
+    "home_name": "Los Angeles Dodgers",
+    "away_name": "Texas Rangers",
+    "home_score": 2,
+    "away_score": 5,
+    "date": "2026-04-12",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": -143,
+      "ml_away": 118
+    }
+  },
+  {
+    "event_id": "401814909",
+    "home": "ATL",
+    "away": "CLE",
+    "home_name": "Atlanta Braves",
+    "away_name": "Cleveland Guardians",
+    "home_score": 13,
+    "away_score": 1,
+    "date": "2026-04-12",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.0,
+      "ml_home": -188,
+      "ml_away": 155
+    }
+  },
+  {
     "event_id": "401814928",
     "home": "SEA",
     "away": "HOU",
@@ -947,6 +5374,861 @@
       "total_close": 8.5,
       "ml_home": 102,
       "ml_away": -122
+    }
+  },
+  {
+    "event_id": "401814979",
+    "home": "CHC",
+    "away": "NYM",
+    "home_name": "Chicago Cubs",
+    "away_name": "New York Mets",
+    "home_score": 12,
+    "away_score": 4,
+    "date": "2026-04-17",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 10.0,
+      "ml_home": -150,
+      "ml_away": 124
+    }
+  },
+  {
+    "event_id": "401814972",
+    "home": "CLE",
+    "away": "BAL",
+    "home_name": "Cleveland Guardians",
+    "away_name": "Baltimore Orioles",
+    "home_score": 4,
+    "away_score": 6,
+    "date": "2026-04-17",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -143,
+      "ml_away": 119
+    }
+  },
+  {
+    "event_id": "401814971",
+    "home": "PHI",
+    "away": "ATL",
+    "home_name": "Philadelphia Phillies",
+    "away_name": "Atlanta Braves",
+    "home_score": 0,
+    "away_score": 9,
+    "date": "2026-04-17",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 9.5,
+      "ml_home": -102,
+      "ml_away": -118
+    }
+  },
+  {
+    "event_id": "401814977",
+    "home": "PIT",
+    "away": "TB",
+    "home_name": "Pittsburgh Pirates",
+    "away_name": "Tampa Bay Rays",
+    "home_score": 5,
+    "away_score": 1,
+    "date": "2026-04-17",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": -120,
+      "ml_away": 100
+    }
+  },
+  {
+    "event_id": "401814976",
+    "home": "WSH",
+    "away": "SF",
+    "home_name": "Washington Nationals",
+    "away_name": "San Francisco Giants",
+    "home_score": 5,
+    "away_score": 10,
+    "date": "2026-04-17",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": 119,
+      "ml_away": -143
+    }
+  },
+  {
+    "event_id": "401814974",
+    "home": "NYY",
+    "away": "KC",
+    "home_name": "New York Yankees",
+    "away_name": "Kansas City Royals",
+    "home_score": 4,
+    "away_score": 2,
+    "date": "2026-04-17",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -181,
+      "ml_away": 149
+    }
+  },
+  {
+    "event_id": "401814975",
+    "home": "MIA",
+    "away": "MIL",
+    "home_name": "Miami Marlins",
+    "away_name": "Milwaukee Brewers",
+    "home_score": 5,
+    "away_score": 7,
+    "date": "2026-04-17",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -115,
+      "ml_away": -105
+    }
+  },
+  {
+    "event_id": "401814973",
+    "home": "BOS",
+    "away": "DET",
+    "home_name": "Boston Red Sox",
+    "away_name": "Detroit Tigers",
+    "home_score": 1,
+    "away_score": 0,
+    "date": "2026-04-17",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -131,
+      "ml_away": 109
+    }
+  },
+  {
+    "event_id": "401814978",
+    "home": "MIN",
+    "away": "CIN",
+    "home_name": "Minnesota Twins",
+    "away_name": "Cincinnati Reds",
+    "home_score": 1,
+    "away_score": 2,
+    "date": "2026-04-17",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": -171,
+      "ml_away": 141
+    }
+  },
+  {
+    "event_id": "401814980",
+    "home": "HOU",
+    "away": "STL",
+    "home_name": "Houston Astros",
+    "away_name": "St. Louis Cardinals",
+    "home_score": 4,
+    "away_score": 9,
+    "date": "2026-04-17",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 9.0,
+      "ml_home": -126,
+      "ml_away": 104
+    }
+  },
+  {
+    "event_id": "401814981",
+    "home": "COL",
+    "away": "LAD",
+    "home_name": "Colorado Rockies",
+    "away_name": "Los Angeles Dodgers",
+    "home_score": 1,
+    "away_score": 7,
+    "date": "2026-04-17",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 9.5,
+      "ml_home": 258,
+      "ml_away": -328
+    }
+  },
+  {
+    "event_id": "401814983",
+    "home": "LAA",
+    "away": "SD",
+    "home_name": "Los Angeles Angels",
+    "away_name": "San Diego Padres",
+    "home_score": 8,
+    "away_score": 0,
+    "date": "2026-04-17",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": -136,
+      "ml_away": 113
+    }
+  },
+  {
+    "event_id": "401814982",
+    "home": "ATH",
+    "away": "CHW",
+    "home_name": "Athletics",
+    "away_name": "Chicago White Sox",
+    "home_score": 2,
+    "away_score": 9,
+    "date": "2026-04-17",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 9.0,
+      "ml_home": -163,
+      "ml_away": 135
+    }
+  },
+  {
+    "event_id": "401814984",
+    "home": "SEA",
+    "away": "TEX",
+    "home_name": "Seattle Mariners",
+    "away_name": "Texas Rangers",
+    "home_score": 0,
+    "away_score": 5,
+    "date": "2026-04-17",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 6.5,
+      "ml_home": -136,
+      "ml_away": 113
+    }
+  },
+  {
+    "event_id": "401814985",
+    "home": "ARI",
+    "away": "TOR",
+    "home_name": "Arizona Diamondbacks",
+    "away_name": "Toronto Blue Jays",
+    "home_score": 6,
+    "away_score": 3,
+    "date": "2026-04-17",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": -143,
+      "ml_away": 119
+    }
+  },
+  {
+    "event_id": "401814989",
+    "home": "NYY",
+    "away": "KC",
+    "home_name": "New York Yankees",
+    "away_name": "Kansas City Royals",
+    "home_score": 13,
+    "away_score": 4,
+    "date": "2026-04-18",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -169,
+      "ml_away": 139
+    }
+  },
+  {
+    "event_id": "401814993",
+    "home": "MIN",
+    "away": "CIN",
+    "home_name": "Minnesota Twins",
+    "away_name": "Cincinnati Reds",
+    "home_score": 4,
+    "away_score": 5,
+    "date": "2026-04-18",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -131,
+      "ml_away": 109
+    }
+  },
+  {
+    "event_id": "401814994",
+    "home": "CHC",
+    "away": "NYM",
+    "home_name": "Chicago Cubs",
+    "away_name": "New York Mets",
+    "home_score": 4,
+    "away_score": 2,
+    "date": "2026-04-18",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.5,
+      "ml_home": -118,
+      "ml_away": -102
+    }
+  },
+  {
+    "event_id": "401814992",
+    "home": "PIT",
+    "away": "TB",
+    "home_name": "Pittsburgh Pirates",
+    "away_name": "Tampa Bay Rays",
+    "home_score": 7,
+    "away_score": 8,
+    "date": "2026-04-18",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -161,
+      "ml_away": 133
+    }
+  },
+  {
+    "event_id": "401814991",
+    "home": "WSH",
+    "away": "SF",
+    "home_name": "Washington Nationals",
+    "away_name": "San Francisco Giants",
+    "home_score": 6,
+    "away_score": 7,
+    "date": "2026-04-18",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 9.5,
+      "ml_home": -105,
+      "ml_away": -115
+    }
+  },
+  {
+    "event_id": "401814997",
+    "home": "ATH",
+    "away": "CHW",
+    "home_name": "Athletics",
+    "away_name": "Chicago White Sox",
+    "home_score": 7,
+    "away_score": 6,
+    "date": "2026-04-18",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 9.0,
+      "ml_home": -163,
+      "ml_away": 135
+    }
+  },
+  {
+    "event_id": "401814988",
+    "home": "BOS",
+    "away": "DET",
+    "home_name": "Boston Red Sox",
+    "away_name": "Detroit Tigers",
+    "home_score": 1,
+    "away_score": 4,
+    "date": "2026-04-18",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 6.5,
+      "ml_home": 119,
+      "ml_away": -143
+    }
+  },
+  {
+    "event_id": "401814990",
+    "home": "MIA",
+    "away": "MIL",
+    "home_name": "Miami Marlins",
+    "away_name": "Milwaukee Brewers",
+    "home_score": 2,
+    "away_score": 5,
+    "date": "2026-04-18",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -120,
+      "ml_away": 100
+    }
+  },
+  {
+    "event_id": "401814987",
+    "home": "CLE",
+    "away": "BAL",
+    "home_name": "Cleveland Guardians",
+    "away_name": "Baltimore Orioles",
+    "home_score": 4,
+    "away_score": 2,
+    "date": "2026-04-18",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -143,
+      "ml_away": 119
+    }
+  },
+  {
+    "event_id": "401814995",
+    "home": "HOU",
+    "away": "STL",
+    "home_name": "Houston Astros",
+    "away_name": "St. Louis Cardinals",
+    "home_score": 5,
+    "away_score": 7,
+    "date": "2026-04-18",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 9.0,
+      "ml_home": -149,
+      "ml_away": 124
+    }
+  },
+  {
+    "event_id": "401814986",
+    "home": "PHI",
+    "away": "ATL",
+    "home_name": "Philadelphia Phillies",
+    "away_name": "Atlanta Braves",
+    "home_score": 1,
+    "away_score": 3,
+    "date": "2026-04-18",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.0,
+      "ml_home": -132,
+      "ml_away": 109
+    }
+  },
+  {
+    "event_id": "401814999",
+    "home": "SEA",
+    "away": "TEX",
+    "home_name": "Seattle Mariners",
+    "away_name": "Texas Rangers",
+    "home_score": 7,
+    "away_score": 3,
+    "date": "2026-04-18",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -143,
+      "ml_away": 119
+    }
+  },
+  {
+    "event_id": "401814996",
+    "home": "COL",
+    "away": "LAD",
+    "home_name": "Colorado Rockies",
+    "away_name": "Los Angeles Dodgers",
+    "home_score": 4,
+    "away_score": 3,
+    "date": "2026-04-18",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 10.5,
+      "ml_home": 234,
+      "ml_away": -293
+    }
+  },
+  {
+    "event_id": "401815000",
+    "home": "ARI",
+    "away": "TOR",
+    "home_name": "Arizona Diamondbacks",
+    "away_name": "Toronto Blue Jays",
+    "home_score": 6,
+    "away_score": 2,
+    "date": "2026-04-18",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 9.0,
+      "ml_home": -150,
+      "ml_away": 124
+    }
+  },
+  {
+    "event_id": "401814998",
+    "home": "LAA",
+    "away": "SD",
+    "home_name": "Los Angeles Angels",
+    "away_name": "San Diego Padres",
+    "home_score": 1,
+    "away_score": 4,
+    "date": "2026-04-18",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 9.5,
+      "ml_home": -110,
+      "ml_away": -110
+    }
+  },
+  {
+    "event_id": "401815004",
+    "home": "NYY",
+    "away": "KC",
+    "home_name": "New York Yankees",
+    "away_name": "Kansas City Royals",
+    "home_score": 7,
+    "away_score": 0,
+    "date": "2026-04-19",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -144,
+      "ml_away": 119
+    }
+  },
+  {
+    "event_id": "401815006",
+    "home": "WSH",
+    "away": "SF",
+    "home_name": "Washington Nationals",
+    "away_name": "San Francisco Giants",
+    "home_score": 3,
+    "away_score": 0,
+    "date": "2026-04-19",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": 119,
+      "ml_away": -143
+    }
+  },
+  {
+    "event_id": "401815007",
+    "home": "PIT",
+    "away": "TB",
+    "home_name": "Pittsburgh Pirates",
+    "away_name": "Tampa Bay Rays",
+    "home_score": 6,
+    "away_score": 3,
+    "date": "2026-04-19",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -115,
+      "ml_away": -105
+    }
+  },
+  {
+    "event_id": "401815002",
+    "home": "CLE",
+    "away": "BAL",
+    "home_name": "Cleveland Guardians",
+    "away_name": "Baltimore Orioles",
+    "home_score": 8,
+    "away_score": 4,
+    "date": "2026-04-19",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 6.5,
+      "ml_home": -120,
+      "ml_away": 100
+    }
+  },
+  {
+    "event_id": "401815005",
+    "home": "MIA",
+    "away": "MIL",
+    "home_name": "Miami Marlins",
+    "away_name": "Milwaukee Brewers",
+    "home_score": 5,
+    "away_score": 3,
+    "date": "2026-04-19",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -115,
+      "ml_away": -105
+    }
+  },
+  {
+    "event_id": "401815008",
+    "home": "MIN",
+    "away": "CIN",
+    "home_name": "Minnesota Twins",
+    "away_name": "Cincinnati Reds",
+    "home_score": 4,
+    "away_score": 7,
+    "date": "2026-04-19",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -115,
+      "ml_away": -105
+    }
+  },
+  {
+    "event_id": "401815010",
+    "home": "HOU",
+    "away": "STL",
+    "home_name": "Houston Astros",
+    "away_name": "St. Louis Cardinals",
+    "home_score": 5,
+    "away_score": 7,
+    "date": "2026-04-19",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 9.0,
+      "ml_home": -154,
+      "ml_away": 128
+    }
+  },
+  {
+    "event_id": "401815009",
+    "home": "CHC",
+    "away": "NYM",
+    "home_name": "Chicago Cubs",
+    "away_name": "New York Mets",
+    "home_score": 2,
+    "away_score": 1,
+    "date": "2026-04-19",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -143,
+      "ml_away": 119
+    }
+  },
+  {
+    "event_id": "401815011",
+    "home": "COL",
+    "away": "LAD",
+    "home_name": "Colorado Rockies",
+    "away_name": "Los Angeles Dodgers",
+    "home_score": 9,
+    "away_score": 6,
+    "date": "2026-04-19",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 12.0,
+      "ml_home": 169,
+      "ml_away": -207
+    }
+  },
+  {
+    "event_id": "401815012",
+    "home": "ATH",
+    "away": "CHW",
+    "home_name": "Athletics",
+    "away_name": "Chicago White Sox",
+    "home_score": 4,
+    "away_score": 7,
+    "date": "2026-04-19",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 9.5,
+      "ml_home": -163,
+      "ml_away": 135
+    }
+  },
+  {
+    "event_id": "401815013",
+    "home": "LAA",
+    "away": "SD",
+    "home_name": "Los Angeles Angels",
+    "away_name": "San Diego Padres",
+    "home_score": 1,
+    "away_score": 2,
+    "date": "2026-04-19",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 9.0,
+      "ml_home": 123,
+      "ml_away": -149
+    }
+  },
+  {
+    "event_id": "401815014",
+    "home": "SEA",
+    "away": "TEX",
+    "home_name": "Seattle Mariners",
+    "away_name": "Texas Rangers",
+    "home_score": 5,
+    "away_score": 2,
+    "date": "2026-04-19",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.5,
+      "ml_home": -143,
+      "ml_away": 119
+    }
+  },
+  {
+    "event_id": "401815015",
+    "home": "ARI",
+    "away": "TOR",
+    "home_name": "Arizona Diamondbacks",
+    "away_name": "Toronto Blue Jays",
+    "home_score": 4,
+    "away_score": 10,
+    "date": "2026-04-19",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -103,
+      "ml_away": -117
+    }
+  },
+  {
+    "event_id": "401815003",
+    "home": "BOS",
+    "away": "DET",
+    "home_name": "Boston Red Sox",
+    "away_name": "Detroit Tigers",
+    "home_score": 2,
+    "away_score": 6,
+    "date": "2026-04-19",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": -1.5,
+      "total_open": null,
+      "total_close": 7.0,
+      "ml_home": -143,
+      "ml_away": 119
+    }
+  },
+  {
+    "event_id": "401815001",
+    "home": "PHI",
+    "away": "ATL",
+    "home_name": "Philadelphia Phillies",
+    "away_name": "Atlanta Braves",
+    "home_score": 2,
+    "away_score": 4,
+    "date": "2026-04-19",
+    "odds": {
+      "provider": "DraftKings",
+      "spread_open": null,
+      "spread_close": 1.5,
+      "total_open": null,
+      "total_close": 8.0,
+      "ml_home": -102,
+      "ml_away": -118
     }
   }
 ]

@@ -134,6 +134,8 @@ def build_pitcher_from_json(
     pitcher_index: dict[str, list[dict]],
     as_of_date: str,
     prior_season_index: dict[str, list[dict]] | None = None,
+    prior_weight: float = 0.5,
+    reg_n: int = 20,
 ) -> PitcherModel | None:
     """Build a pitcher model from accumulated JSON game logs.
 
@@ -141,6 +143,10 @@ def build_pitcher_from_json(
     falling back to league averages. This is critical early-season
     when a pitcher may only have 2-3 starts in the current year
     but 30+ from last season.
+
+    Hyperparameters `prior_weight` and `reg_n` were previously hardcoded
+    based on a single-shot grid search on the full season. They are now
+    parameterized so walk-forward validation can re-tune per fold.
     """
     # Current season appearances before as_of_date
     appearances = pitcher_index.get(pitcher_name, [])
@@ -165,10 +171,6 @@ def build_pitcher_from_json(
             prior_hr_rate = sum(a["hr"] for a in prior) / prior_bf
             prior_hr_per_fb = prior_hr_rate / config.LEAGUE_AVG_FB_PCT if config.LEAGUE_AVG_FB_PCT > 0 else config.LEAGUE_AVG_HR_PER_FB
 
-    # Blend current season + prior season stats (prior at 50% weight)
-    # This was the optimal config from grid search: wt=0.5, reg=20
-    PRIOR_WEIGHT = 0.5
-
     c_bf = sum(a["bf"] for a in current)
     c_k = sum(a["k"] for a in current)
     c_bb = sum(a["bb"] for a in current)
@@ -182,11 +184,10 @@ def build_pitcher_from_json(
     p_bb = sum(a["bb"] for a in prior)
     p_hr = sum(a["hr"] for a in prior)
 
-    # Blend: current at full weight + prior at discounted weight
-    total_bf = c_bf + p_bf * PRIOR_WEIGHT
-    total_k = c_k + p_k * PRIOR_WEIGHT
-    total_bb = c_bb + p_bb * PRIOR_WEIGHT
-    total_hr = c_hr + p_hr * PRIOR_WEIGHT
+    total_bf = c_bf + p_bf * prior_weight
+    total_k = c_k + p_k * prior_weight
+    total_bb = c_bb + p_bb * prior_weight
+    total_hr = c_hr + p_hr * prior_weight
 
     if total_bf < 10:
         return None
@@ -195,8 +196,6 @@ def build_pitcher_from_json(
     raw_bb_pct = total_bb / total_bf
     raw_hr_rate = total_hr / total_bf
 
-    # Light regression toward league average (reg=20 optimal from grid search)
-    reg_n = 20
     k_pct = (total_bf * raw_k_pct + reg_n * config.LEAGUE_AVG_K_PCT) / (total_bf + reg_n)
     bb_pct = (total_bf * raw_bb_pct + reg_n * config.LEAGUE_AVG_BB_PCT) / (total_bf + reg_n)
 
@@ -640,6 +639,175 @@ def print_backtest_report(result: BacktestResult) -> None:
                   f"Pred:{p['pred_wp']} Actual:{p['actual']}")
 
     print("=" * 60)
+
+
+# ---------------------------------------------------------------------------
+# Parametric prediction generator (used by walk-forward backtest)
+# ---------------------------------------------------------------------------
+
+def _backfill_team_ids(all_games: list[dict]) -> int:
+    """Some game rows are missing home_id/away_id (newer scraper output).
+
+    Build a team_name → team_id map from games that DO have IDs, then fill
+    in the missing ones. Returns count of rows backfilled.
+    """
+    name_to_id: dict[str, int] = {}
+    for g in all_games:
+        if g.get("home_id") and g.get("home_team"):
+            name_to_id.setdefault(g["home_team"], g["home_id"])
+        if g.get("away_id") and g.get("away_team"):
+            name_to_id.setdefault(g["away_team"], g["away_id"])
+
+    filled = 0
+    for g in all_games:
+        if not g.get("home_id"):
+            tid = name_to_id.get(g.get("home_team"))
+            if tid:
+                g["home_id"] = tid
+                filled += 1
+        if not g.get("away_id"):
+            tid = name_to_id.get(g.get("away_team"))
+            if tid:
+                g["away_id"] = tid
+                filled += 1
+    return filled
+
+
+def load_backtest_inputs(
+    season_file: str = ".context/season_2026.json",
+    prior_season_file: str | None = ".context/season_2025.json",
+) -> dict:
+    """Load all season data once so callers can reuse across folds.
+
+    Returns dict with: all_games, prior_games, pitcher_index, prior_pitcher_index,
+    starter_lookup, park_factors, neutral_park, league_avg_pitcher.
+    """
+    with open(season_file) as f:
+        all_games = json.load(f)
+    backfilled = _backfill_team_ids(all_games)
+    if backfilled:
+        print(f"  Backfilled {backfilled} missing team IDs from name lookup")
+
+    prior_games = None
+    prior_pitcher_index = None
+    if prior_season_file and Path(prior_season_file).exists():
+        with open(prior_season_file) as f:
+            prior_games = json.load(f)
+        prior_pitcher_index = _build_pitcher_index(prior_games)
+
+    summary_path = season_file.replace(".json", "_summary.json")
+    starter_lookup = {}
+    if Path(summary_path).exists():
+        with open(summary_path) as f:
+            summaries = json.load(f)
+        for s in summaries:
+            starter_lookup[s["game_id"]] = (
+                s.get("home_starter", ""),
+                s.get("away_starter", ""),
+            )
+
+    pitcher_index = _build_pitcher_index(all_games)
+    park_factors = load_park_factors_from_json()
+    neutral_park = ParkFactor(
+        venue="Neutral", overall_factor=1.0,
+        hr_factor=1.0, h_factor=1.0, bb_factor=1.0,
+    )
+    league_avg_pitcher = build_league_average_pitcher(is_starter=True)
+
+    return {
+        "all_games": all_games,
+        "prior_games": prior_games,
+        "pitcher_index": pitcher_index,
+        "prior_pitcher_index": prior_pitcher_index,
+        "starter_lookup": starter_lookup,
+        "park_factors": park_factors,
+        "neutral_park": neutral_park,
+        "league_avg_pitcher": league_avg_pitcher,
+    }
+
+
+def simulate_predictions_with_params(
+    inputs: dict,
+    target_games: list[dict],
+    prior_weight: float = 0.5,
+    reg_n: int = 20,
+    n_sims: int = 2000,
+    min_team_games: int = 3,
+    seed: int = 42,
+) -> list[dict]:
+    """Simulate raw box-score predictions for the given games using provided pitcher hyperparams.
+
+    Returns one dict per game with model output and actual outcome. Market
+    blending and edge filtering are deliberately NOT applied here — those are
+    layered on by the walk-forward driver so the same predictions can be
+    re-scored under different market_weight / min_edge values without
+    re-simulating.
+    """
+    all_games = inputs["all_games"]
+    pitcher_index = inputs["pitcher_index"]
+    prior_pitcher_index = inputs["prior_pitcher_index"]
+    starter_lookup = inputs["starter_lookup"]
+    park_factors = inputs["park_factors"]
+    neutral_park = inputs["neutral_park"]
+    league_avg_pitcher = inputs["league_avg_pitcher"]
+
+    rng = np.random.default_rng(seed)
+    out = []
+    for g in target_games:
+        home_id = g.get("home_id")
+        away_id = g.get("away_id")
+        if not home_id or not away_id:
+            continue
+        game_date = g["game_date"]
+
+        home_team = build_team_model_from_json(home_id, g["home_team"], all_games, game_date, None)
+        away_team = build_team_model_from_json(away_id, g["away_team"], all_games, game_date, None)
+        if home_team.wins + home_team.losses < min_team_games:
+            continue
+        if away_team.wins + away_team.losses < min_team_games:
+            continue
+
+        hs_name, as_name = starter_lookup.get(g["game_id"], ("", ""))
+        home_starter = league_avg_pitcher
+        away_starter = league_avg_pitcher
+        if hs_name:
+            sp = build_pitcher_from_json(
+                hs_name, pitcher_index, game_date, prior_pitcher_index,
+                prior_weight=prior_weight, reg_n=reg_n,
+            )
+            if sp:
+                home_starter = sp
+        if as_name:
+            sp = build_pitcher_from_json(
+                as_name, pitcher_index, game_date, prior_pitcher_index,
+                prior_weight=prior_weight, reg_n=reg_n,
+            )
+            if sp:
+                away_starter = sp
+
+        park = park_factors.get(TEAM_ABBR.get(g["home_team"], ""), neutral_park)
+
+        results = simulate_n_box_score_games(
+            home_team, away_team, home_starter, away_starter, park,
+            n_sims=n_sims, rng=rng,
+        )
+
+        actual_home_win = g["home_score"] > g["away_score"]
+        actual_total = g["home_score"] + g["away_score"]
+
+        out.append({
+            "game_id": g["game_id"],
+            "date": game_date,
+            "home_team": g["home_team"],
+            "away_team": g["away_team"],
+            "model_home_wp": results["home_win_pct"],
+            "pred_total": results["total_mean"],
+            "over_pct_by_line": results["over_pct_by_line"],
+            "actual_home_win": actual_home_win,
+            "actual_total": actual_total,
+            "actual_margin": g["home_score"] - g["away_score"],
+        })
+    return out
 
 
 if __name__ == "__main__":
