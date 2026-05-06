@@ -821,7 +821,7 @@
   },
   "2026-05-06": {
     "Pittsburgh vs Arizona": {
-      "PIT": 0.545,
+      "PIT": 0.535,
       "AZ": 0.45499999999999996
     },
     "Cleveland vs Kansas City": {
@@ -845,8 +845,8 @@
       "DET": 0.515
     },
     "Baltimore vs Miami": {
-      "BAL": 0.45499999999999996,
-      "MIA": 0.545
+      "BAL": 0.44499999999999995,
+      "MIA": 0.555
     },
     "A's vs Philadelphia": {
       "ATH": 0.385,
@@ -870,11 +870,11 @@
     },
     "Los Angeles D vs Houston": {
       "LAD": 0.665,
-      "HOU": 0.345
+      "HOU": 0.33499999999999996
     },
     "Milwaukee vs St. Louis": {
-      "MIL": 0.505,
-      "STL": 0.505
+      "MIL": 0.825,
+      "STL": 0.175
     },
     "Toronto vs Tampa Bay": {
       "TOR": 0.43499999999999994,
